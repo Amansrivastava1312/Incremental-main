@@ -1,0 +1,1201 @@
+review_text,true_label,logreg_pred,bert_pred,logreg_correct,bert_correct
+Excellent purchase. The SonicWave Lite has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+Very happy with the SonicWave Lite. The sound quality exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Very happy with the PulseBottle Pro. The lid seal exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The SonicWave Lite feels reliable and the comfort is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The AeroRun Flex feels reliable and the comfort is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"I have used the AeroRun Flex for several weeks. Great comfort, simple setup, and helpful service.",positive,positive,positive,True,True
+Very happy with the FitTrack Neo. The display exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Very happy with the SonicWave Lite. The comfort exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The FitTrack Neo feels reliable and the display is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The SonicWave Lite is fine for regular use. The sound quality matches the listed specifications.,neutral,neutral,positive,True,False
+"I received the AeroRun Flex. It works as described, although the price is neither great nor poor.",neutral,neutral,positive,True,False
+The PulseBottle Pro costs too much for this level of price. I requested a return.,negative,negative,negative,True,True
+Excellent purchase. The AeroRun Flex has strong sole quality and arrived in perfect condition.,positive,positive,positive,True,True
+"I have used the AeroRun Flex for several weeks. Great sole quality, simple setup, and helpful service.",positive,positive,positive,True,True
+The FitTrack Neo feels reliable and the display is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Excellent purchase. The AeroRun Flex has strong fit and arrived in perfect condition.,positive,positive,positive,True,True
+Very happy with the SonicWave Lite. The comfort exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"Bad experience. The PulseBottle Pro has weak lid seal, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+Excellent purchase. The AeroRun Flex has strong fit and arrived in perfect condition.,positive,positive,positive,True,True
+"Bad experience. The SonicWave Lite has weak sound quality, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+"Bad experience. The AeroRun Flex has weak fit, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+Very happy with the AeroRun Flex. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"I have used the FitTrack Neo for several weeks. Great battery, simple setup, and helpful service.",positive,positive,positive,True,True
+Excellent purchase. The SonicWave Lite has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+An ordinary experience with the AeroRun Flex. The price is okay for the price.,neutral,neutral,positive,True,False
+Excellent purchase. The SonicWave Lite has strong sound quality and arrived in perfect condition.,positive,positive,positive,True,True
+The FitTrack Neo is fine for regular use. The fitness tracking matches the listed specifications.,neutral,neutral,positive,True,False
+The AeroRun Flex disappointed me. The fit is poor and support took too long to respond.,negative,negative,negative,True,True
+The PulseBottle Pro is acceptable. The lid seal is average and delivery took the expected time.,neutral,neutral,positive,True,False
+"Bad experience. The FitTrack Neo has weak display, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+An ordinary experience with the FitTrack Neo. The price is okay for the price.,neutral,neutral,positive,True,False
+Very happy with the AeroRun Flex. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The FitTrack Neo feels reliable and the display is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The FitTrack Neo feels reliable and the fitness tracking is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Very happy with the SonicWave Lite. The battery exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The SonicWave Lite is acceptable. The sound quality is average and delivery took the expected time.,neutral,neutral,positive,True,False
+"I have used the PulseBottle Pro for several weeks. Great temperature retention, simple setup, and helpful service.",positive,positive,positive,True,True
+Not satisfied with the AeroRun Flex. The sole quality failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+Excellent purchase. The AeroRun Flex has strong sole quality and arrived in perfect condition.,positive,positive,positive,True,True
+Excellent purchase. The FitTrack Neo has strong fitness tracking and arrived in perfect condition.,positive,positive,positive,True,True
+Excellent purchase. The SonicWave Lite has strong sound quality and arrived in perfect condition.,positive,positive,positive,True,True
+The SonicWave Lite feels reliable and the battery is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"I received the AeroRun Flex. It works as described, although the sole quality is neither great nor poor.",neutral,neutral,positive,True,False
+Excellent purchase. The FitTrack Neo has strong fitness tracking and arrived in perfect condition.,positive,positive,positive,True,True
+Very happy with the FitTrack Neo. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Very happy with the PulseBottle Pro. The build quality exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Not satisfied with the SonicWave Lite. The comfort failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+The FitTrack Neo feels reliable and the display is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Not satisfied with the AeroRun Flex. The price failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+The SonicWave Lite disappointed me. The comfort is poor and support took too long to respond.,negative,negative,negative,True,True
+An ordinary experience with the PulseBottle Pro. The build quality is okay for the price.,neutral,neutral,positive,True,False
+Excellent purchase. The PulseBottle Pro has strong temperature retention and arrived in perfect condition.,positive,positive,positive,True,True
+"Bad experience. The FitTrack Neo has weak fitness tracking, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+Very happy with the SonicWave Lite. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The FitTrack Neo feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"I have used the AeroRun Flex for several weeks. Great comfort, simple setup, and helpful service.",positive,positive,positive,True,True
+Excellent purchase. The PulseBottle Pro has strong build quality and arrived in perfect condition.,positive,positive,positive,True,True
+Excellent purchase. The PulseBottle Pro has strong build quality and arrived in perfect condition.,positive,positive,positive,True,True
+"I have used the FitTrack Neo for several weeks. Great battery, simple setup, and helpful service.",positive,positive,positive,True,True
+Not satisfied with the PulseBottle Pro. The temperature retention failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+The FitTrack Neo is fine for regular use. The battery matches the listed specifications.,neutral,neutral,positive,True,False
+The AeroRun Flex is fine for regular use. The price matches the listed specifications.,neutral,neutral,positive,True,False
+The SonicWave Lite is acceptable. The price is average and delivery took the expected time.,neutral,neutral,positive,True,False
+The PulseBottle Pro feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The FitTrack Neo feels reliable and the fitness tracking is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The AeroRun Flex is acceptable. The sole quality is average and delivery took the expected time.,neutral,neutral,positive,True,False
+The FitTrack Neo disappointed me. The price is poor and support took too long to respond.,negative,negative,negative,True,True
+Not satisfied with the AeroRun Flex. The fit failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+The FitTrack Neo is acceptable. The battery is average and delivery took the expected time.,neutral,neutral,positive,True,False
+Excellent purchase. The SonicWave Lite has strong comfort and arrived in perfect condition.,positive,positive,positive,True,True
+"Bad experience. The FitTrack Neo has weak price, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+Very happy with the FitTrack Neo. The fitness tracking exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Not satisfied with the PulseBottle Pro. The lid seal failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+Very happy with the SonicWave Lite. The sound quality exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Excellent purchase. The FitTrack Neo has strong display and arrived in perfect condition.,positive,positive,positive,True,True
+Not satisfied with the AeroRun Flex. The price failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+Not satisfied with the SonicWave Lite. The battery failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+The FitTrack Neo feels reliable and the fitness tracking is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The SonicWave Lite costs too much for this level of battery. I requested a return.,negative,negative,negative,True,True
+The AeroRun Flex feels reliable and the comfort is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+An ordinary experience with the FitTrack Neo. The fitness tracking is okay for the price.,neutral,neutral,positive,True,False
+The FitTrack Neo feels reliable and the battery is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"I received the FitTrack Neo. It works as described, although the display is neither great nor poor.",neutral,neutral,positive,True,False
+The AeroRun Flex feels reliable and the fit is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The AeroRun Flex feels reliable and the sole quality is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The FitTrack Neo feels reliable and the battery is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The AeroRun Flex disappointed me. The price is poor and support took too long to respond.,negative,negative,negative,True,True
+Excellent purchase. The AeroRun Flex has strong fit and arrived in perfect condition.,positive,positive,positive,True,True
+The SonicWave Lite is acceptable. The sound quality is average and delivery took the expected time.,neutral,neutral,positive,True,False
+Very happy with the SonicWave Lite. The comfort exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The FitTrack Neo is fine for regular use. The price matches the listed specifications.,neutral,neutral,positive,True,False
+Very happy with the AeroRun Flex. The sole quality exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The FitTrack Neo feels reliable and the fitness tracking is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The FitTrack Neo feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+An ordinary experience with the AeroRun Flex. The fit is okay for the price.,neutral,neutral,positive,True,False
+The SonicWave Lite costs too much for this level of comfort. I requested a return.,negative,negative,negative,True,True
+The AeroRun Flex feels reliable and the fit is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"I have used the AeroRun Flex for several weeks. Great fit, simple setup, and helpful service.",positive,positive,positive,True,True
+The SonicWave Lite is fine for regular use. The battery matches the listed specifications.,neutral,neutral,positive,True,False
+The FitTrack Neo costs too much for this level of display. I requested a return.,negative,negative,negative,True,True
+Very happy with the PulseBottle Pro. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Excellent purchase. The PulseBottle Pro has strong build quality and arrived in perfect condition.,positive,positive,positive,True,True
+The SonicWave Lite feels reliable and the battery is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Very happy with the SonicWave Lite. The battery exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Not satisfied with the AeroRun Flex. The sole quality failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+The PulseBottle Pro is acceptable. The lid seal is average and delivery took the expected time.,neutral,neutral,positive,True,False
+Excellent purchase. The FitTrack Neo has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+The PulseBottle Pro disappointed me. The build quality is poor and support took too long to respond.,negative,negative,negative,True,True
+The FitTrack Neo disappointed me. The display is poor and support took too long to respond.,negative,negative,negative,True,True
+"I received the AeroRun Flex. It works as described, although the sole quality is neither great nor poor.",neutral,neutral,positive,True,False
+Excellent purchase. The PulseBottle Pro has strong build quality and arrived in perfect condition.,positive,positive,positive,True,True
+Very happy with the AeroRun Flex. The comfort exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Excellent purchase. The PulseBottle Pro has strong lid seal and arrived in perfect condition.,positive,positive,positive,True,True
+"I have used the FitTrack Neo for several weeks. Great battery, simple setup, and helpful service.",positive,positive,positive,True,True
+Excellent purchase. The AeroRun Flex has strong comfort and arrived in perfect condition.,positive,positive,positive,True,True
+Excellent purchase. The SonicWave Lite has strong sound quality and arrived in perfect condition.,positive,positive,positive,True,True
+Very happy with the FitTrack Neo. The battery exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"I received the PulseBottle Pro. It works as described, although the temperature retention is neither great nor poor.",neutral,neutral,positive,True,False
+The AeroRun Flex costs too much for this level of price. I requested a return.,negative,negative,negative,True,True
+"I have used the AeroRun Flex for several weeks. Great sole quality, simple setup, and helpful service.",positive,positive,positive,True,True
+The FitTrack Neo feels reliable and the display is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Very happy with the PulseBottle Pro. The lid seal exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+An ordinary experience with the AeroRun Flex. The fit is okay for the price.,neutral,neutral,positive,True,False
+An ordinary experience with the FitTrack Neo. The display is okay for the price.,neutral,neutral,positive,True,False
+"I have used the FitTrack Neo for several weeks. Great fitness tracking, simple setup, and helpful service.",positive,positive,positive,True,True
+Very happy with the SonicWave Lite. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Excellent purchase. The AeroRun Flex has strong fit and arrived in perfect condition.,positive,positive,positive,True,True
+"I have used the AeroRun Flex for several weeks. Great fit, simple setup, and helpful service.",positive,positive,positive,True,True
+"I have used the FitTrack Neo for several weeks. Great display, simple setup, and helpful service.",positive,positive,positive,True,True
+An ordinary experience with the AeroRun Flex. The comfort is okay for the price.,neutral,neutral,positive,True,False
+Very happy with the SonicWave Lite. The comfort exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Excellent purchase. The FitTrack Neo has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+Not satisfied with the FitTrack Neo. The price failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+Excellent purchase. The FitTrack Neo has strong fitness tracking and arrived in perfect condition.,positive,positive,positive,True,True
+An ordinary experience with the FitTrack Neo. The battery is okay for the price.,neutral,neutral,positive,True,False
+"I received the AeroRun Flex. It works as described, although the sole quality is neither great nor poor.",neutral,neutral,positive,True,False
+"I received the FitTrack Neo. It works as described, although the display is neither great nor poor.",neutral,neutral,positive,True,False
+Very happy with the SonicWave Lite. The comfort exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"I received the FitTrack Neo. It works as described, although the price is neither great nor poor.",neutral,neutral,positive,True,False
+The FitTrack Neo is fine for regular use. The fitness tracking matches the listed specifications.,neutral,neutral,positive,True,False
+"I received the AeroRun Flex. It works as described, although the comfort is neither great nor poor.",neutral,neutral,positive,True,False
+The PulseBottle Pro is fine for regular use. The price matches the listed specifications.,neutral,neutral,positive,True,False
+An ordinary experience with the AeroRun Flex. The fit is okay for the price.,neutral,neutral,positive,True,False
+Excellent purchase. The AeroRun Flex has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+The AeroRun Flex feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The FitTrack Neo is acceptable. The display is average and delivery took the expected time.,neutral,neutral,positive,True,False
+"I have used the AeroRun Flex for several weeks. Great sole quality, simple setup, and helpful service.",positive,positive,positive,True,True
+The FitTrack Neo feels reliable and the fitness tracking is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The AeroRun Flex costs too much for this level of fit. I requested a return.,negative,negative,negative,True,True
+"I received the FitTrack Neo. It works as described, although the battery is neither great nor poor.",neutral,neutral,positive,True,False
+An ordinary experience with the SonicWave Lite. The comfort is okay for the price.,neutral,neutral,positive,True,False
+Not satisfied with the SonicWave Lite. The comfort failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+Excellent purchase. The SonicWave Lite has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+Not satisfied with the SonicWave Lite. The battery failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+"Bad experience. The FitTrack Neo has weak battery, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+"I have used the FitTrack Neo for several weeks. Great battery, simple setup, and helpful service.",positive,positive,positive,True,True
+The SonicWave Lite disappointed me. The sound quality is poor and support took too long to respond.,negative,negative,negative,True,True
+The FitTrack Neo is acceptable. The battery is average and delivery took the expected time.,neutral,neutral,positive,True,False
+The AeroRun Flex is acceptable. The price is average and delivery took the expected time.,neutral,neutral,positive,True,False
+"I have used the AeroRun Flex for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+The SonicWave Lite feels reliable and the sound quality is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The SonicWave Lite is acceptable. The comfort is average and delivery took the expected time.,neutral,neutral,positive,True,False
+Not satisfied with the FitTrack Neo. The price failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+"Bad experience. The SonicWave Lite has weak sound quality, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+The PulseBottle Pro is fine for regular use. The build quality matches the listed specifications.,neutral,neutral,positive,True,False
+The SonicWave Lite feels reliable and the battery is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Excellent purchase. The PulseBottle Pro has strong temperature retention and arrived in perfect condition.,positive,positive,positive,True,True
+"I have used the AeroRun Flex for several weeks. Great sole quality, simple setup, and helpful service.",positive,positive,positive,True,True
+"I received the FitTrack Neo. It works as described, although the display is neither great nor poor.",neutral,neutral,positive,True,False
+Excellent purchase. The SonicWave Lite has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+"Bad experience. The FitTrack Neo has weak fitness tracking, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+"I received the SonicWave Lite. It works as described, although the battery is neither great nor poor.",neutral,neutral,positive,True,False
+The SonicWave Lite is acceptable. The battery is average and delivery took the expected time.,neutral,neutral,positive,True,False
+The SonicWave Lite feels reliable and the sound quality is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+An ordinary experience with the PulseBottle Pro. The temperature retention is okay for the price.,neutral,neutral,positive,True,False
+The AeroRun Flex feels reliable and the sole quality is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Very happy with the SonicWave Lite. The comfort exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"I have used the SonicWave Lite for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+"I received the AeroRun Flex. It works as described, although the comfort is neither great nor poor.",neutral,neutral,positive,True,False
+Excellent purchase. The AeroRun Flex has strong fit and arrived in perfect condition.,positive,positive,positive,True,True
+The FitTrack Neo is acceptable. The battery is average and delivery took the expected time.,neutral,neutral,positive,True,False
+The SonicWave Lite costs too much for this level of sound quality. I requested a return.,negative,negative,negative,True,True
+The SonicWave Lite is acceptable. The price is average and delivery took the expected time.,neutral,neutral,positive,True,False
+The AeroRun Flex is acceptable. The sole quality is average and delivery took the expected time.,neutral,neutral,positive,True,False
+"I received the AeroRun Flex. It works as described, although the fit is neither great nor poor.",neutral,neutral,positive,True,False
+Not satisfied with the FitTrack Neo. The battery failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+"Bad experience. The PulseBottle Pro has weak temperature retention, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+The SonicWave Lite feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Excellent purchase. The PulseBottle Pro has strong lid seal and arrived in perfect condition.,positive,positive,positive,True,True
+Excellent purchase. The FitTrack Neo has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+"I received the FitTrack Neo. It works as described, although the price is neither great nor poor.",neutral,neutral,positive,True,False
+Very happy with the FitTrack Neo. The fitness tracking exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Not satisfied with the SonicWave Lite. The comfort failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+An ordinary experience with the PulseBottle Pro. The temperature retention is okay for the price.,neutral,neutral,positive,True,False
+"Bad experience. The FitTrack Neo has weak fitness tracking, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+The SonicWave Lite costs too much for this level of comfort. I requested a return.,negative,negative,negative,True,True
+"I have used the PulseBottle Pro for several weeks. Great temperature retention, simple setup, and helpful service.",positive,positive,positive,True,True
+The FitTrack Neo feels reliable and the battery is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"I have used the FitTrack Neo for several weeks. Great display, simple setup, and helpful service.",positive,positive,positive,True,True
+Not satisfied with the PulseBottle Pro. The build quality failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+The PulseBottle Pro costs too much for this level of temperature retention. I requested a return.,negative,negative,negative,True,True
+The SonicWave Lite disappointed me. The price is poor and support took too long to respond.,negative,negative,negative,True,True
+Very happy with the AeroRun Flex. The comfort exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"I received the FitTrack Neo. It works as described, although the price is neither great nor poor.",neutral,neutral,positive,True,False
+Very happy with the FitTrack Neo. The display exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Excellent purchase. The PulseBottle Pro has strong temperature retention and arrived in perfect condition.,positive,positive,positive,True,True
+Not satisfied with the SonicWave Lite. The battery failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+The AeroRun Flex feels reliable and the fit is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"I have used the AeroRun Flex for several weeks. Great comfort, simple setup, and helpful service.",positive,positive,positive,True,True
+The FitTrack Neo is fine for regular use. The display matches the listed specifications.,neutral,neutral,positive,True,False
+"I have used the PulseBottle Pro for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+"Bad experience. The AeroRun Flex has weak comfort, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+Excellent purchase. The AeroRun Flex has strong comfort and arrived in perfect condition.,positive,positive,positive,True,True
+"Bad experience. The PulseBottle Pro has weak build quality, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+The SonicWave Lite feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The SonicWave Lite feels reliable and the comfort is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Excellent purchase. The PulseBottle Pro has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+An ordinary experience with the FitTrack Neo. The display is okay for the price.,neutral,neutral,positive,True,False
+"I have used the FitTrack Neo for several weeks. Great battery, simple setup, and helpful service.",positive,positive,positive,True,True
+The PulseBottle Pro feels reliable and the build quality is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The PulseBottle Pro feels reliable and the lid seal is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The FitTrack Neo feels reliable and the fitness tracking is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The FitTrack Neo feels reliable and the display is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Very happy with the FitTrack Neo. The battery exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The FitTrack Neo feels reliable and the display is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Very happy with the SonicWave Lite. The battery exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Not satisfied with the SonicWave Lite. The comfort failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+An ordinary experience with the PulseBottle Pro. The lid seal is okay for the price.,neutral,neutral,positive,True,False
+Not satisfied with the SonicWave Lite. The sound quality failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+Excellent purchase. The FitTrack Neo has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+The FitTrack Neo feels reliable and the battery is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Excellent purchase. The FitTrack Neo has strong display and arrived in perfect condition.,positive,positive,positive,True,True
+"I have used the SonicWave Lite for several weeks. Great sound quality, simple setup, and helpful service.",positive,positive,positive,True,True
+"I have used the AeroRun Flex for several weeks. Great fit, simple setup, and helpful service.",positive,positive,positive,True,True
+Excellent purchase. The AeroRun Flex has strong sole quality and arrived in perfect condition.,positive,positive,positive,True,True
+"I have used the PulseBottle Pro for several weeks. Great lid seal, simple setup, and helpful service.",positive,positive,positive,True,True
+Very happy with the AeroRun Flex. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Excellent purchase. The AeroRun Flex has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+The PulseBottle Pro is fine for regular use. The temperature retention matches the listed specifications.,neutral,neutral,positive,True,False
+Excellent purchase. The FitTrack Neo has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+"I received the AeroRun Flex. It works as described, although the comfort is neither great nor poor.",neutral,neutral,positive,True,False
+The FitTrack Neo costs too much for this level of fitness tracking. I requested a return.,negative,negative,negative,True,True
+"I have used the AeroRun Flex for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+Not satisfied with the SonicWave Lite. The price failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+Excellent purchase. The SonicWave Lite has strong comfort and arrived in perfect condition.,positive,positive,positive,True,True
+"Bad experience. The AeroRun Flex has weak fit, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+The FitTrack Neo is fine for regular use. The display matches the listed specifications.,neutral,neutral,positive,True,False
+An ordinary experience with the SonicWave Lite. The price is okay for the price.,neutral,neutral,positive,True,False
+The PulseBottle Pro is acceptable. The temperature retention is average and delivery took the expected time.,neutral,neutral,positive,True,False
+"Bad experience. The PulseBottle Pro has weak temperature retention, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+Very happy with the PulseBottle Pro. The lid seal exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The SonicWave Lite feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"I received the SonicWave Lite. It works as described, although the comfort is neither great nor poor.",neutral,neutral,positive,True,False
+"I received the AeroRun Flex. It works as described, although the comfort is neither great nor poor.",neutral,neutral,positive,True,False
+The AeroRun Flex is acceptable. The fit is average and delivery took the expected time.,neutral,neutral,positive,True,False
+"I have used the PulseBottle Pro for several weeks. Great lid seal, simple setup, and helpful service.",positive,positive,positive,True,True
+The FitTrack Neo is fine for regular use. The display matches the listed specifications.,neutral,neutral,positive,True,False
+"I have used the SonicWave Lite for several weeks. Great battery, simple setup, and helpful service.",positive,positive,positive,True,True
+"I have used the FitTrack Neo for several weeks. Great fitness tracking, simple setup, and helpful service.",positive,positive,positive,True,True
+The FitTrack Neo is acceptable. The price is average and delivery took the expected time.,neutral,neutral,positive,True,False
+The AeroRun Flex is acceptable. The comfort is average and delivery took the expected time.,neutral,neutral,positive,True,False
+The AeroRun Flex is fine for regular use. The price matches the listed specifications.,neutral,neutral,positive,True,False
+The SonicWave Lite feels reliable and the comfort is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The PulseBottle Pro feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The FitTrack Neo feels reliable and the display is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The PulseBottle Pro feels reliable and the build quality is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The PulseBottle Pro is acceptable. The lid seal is average and delivery took the expected time.,neutral,neutral,positive,True,False
+The PulseBottle Pro feels reliable and the temperature retention is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Very happy with the FitTrack Neo. The battery exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Very happy with the AeroRun Flex. The fit exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Not satisfied with the FitTrack Neo. The fitness tracking failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+Not satisfied with the AeroRun Flex. The price failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+The PulseBottle Pro feels reliable and the build quality is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Not satisfied with the FitTrack Neo. The battery failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+The AeroRun Flex disappointed me. The comfort is poor and support took too long to respond.,negative,negative,negative,True,True
+"Bad experience. The PulseBottle Pro has weak price, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+"Bad experience. The AeroRun Flex has weak fit, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+An ordinary experience with the PulseBottle Pro. The price is okay for the price.,neutral,neutral,positive,True,False
+An ordinary experience with the FitTrack Neo. The display is okay for the price.,neutral,neutral,positive,True,False
+"I have used the PulseBottle Pro for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+Excellent purchase. The FitTrack Neo has strong battery and arrived in perfect condition.,positive,positive,positive,True,True
+Not satisfied with the AeroRun Flex. The comfort failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+"I received the FitTrack Neo. It works as described, although the fitness tracking is neither great nor poor.",neutral,neutral,positive,True,False
+Excellent purchase. The AeroRun Flex has strong fit and arrived in perfect condition.,positive,positive,positive,True,True
+"I have used the SonicWave Lite for several weeks. Great comfort, simple setup, and helpful service.",positive,positive,positive,True,True
+Excellent purchase. The PulseBottle Pro has strong temperature retention and arrived in perfect condition.,positive,positive,positive,True,True
+The SonicWave Lite is acceptable. The battery is average and delivery took the expected time.,neutral,neutral,positive,True,False
+"I received the FitTrack Neo. It works as described, although the fitness tracking is neither great nor poor.",neutral,neutral,positive,True,False
+An ordinary experience with the FitTrack Neo. The price is okay for the price.,neutral,neutral,positive,True,False
+"I have used the SonicWave Lite for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+Excellent purchase. The AeroRun Flex has strong comfort and arrived in perfect condition.,positive,positive,positive,True,True
+Excellent purchase. The SonicWave Lite has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+"Bad experience. The FitTrack Neo has weak price, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+The SonicWave Lite is fine for regular use. The battery matches the listed specifications.,neutral,neutral,positive,True,False
+Very happy with the FitTrack Neo. The fitness tracking exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Excellent purchase. The AeroRun Flex has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+"I received the PulseBottle Pro. It works as described, although the build quality is neither great nor poor.",neutral,neutral,positive,True,False
+The PulseBottle Pro feels reliable and the build quality is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"Bad experience. The AeroRun Flex has weak price, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+"I have used the AeroRun Flex for several weeks. Great comfort, simple setup, and helpful service.",positive,positive,positive,True,True
+Excellent purchase. The FitTrack Neo has strong display and arrived in perfect condition.,positive,positive,positive,True,True
+Excellent purchase. The FitTrack Neo has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+Excellent purchase. The SonicWave Lite has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+The PulseBottle Pro is acceptable. The price is average and delivery took the expected time.,neutral,neutral,positive,True,False
+"I received the SonicWave Lite. It works as described, although the comfort is neither great nor poor.",neutral,neutral,positive,True,False
+Not satisfied with the AeroRun Flex. The fit failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+The SonicWave Lite disappointed me. The battery is poor and support took too long to respond.,negative,negative,negative,True,True
+The AeroRun Flex disappointed me. The price is poor and support took too long to respond.,negative,negative,negative,True,True
+Excellent purchase. The SonicWave Lite has strong sound quality and arrived in perfect condition.,positive,positive,positive,True,True
+The SonicWave Lite is fine for regular use. The sound quality matches the listed specifications.,neutral,neutral,positive,True,False
+"I have used the AeroRun Flex for several weeks. Great comfort, simple setup, and helpful service.",positive,positive,positive,True,True
+"I have used the PulseBottle Pro for several weeks. Great temperature retention, simple setup, and helpful service.",positive,positive,positive,True,True
+The FitTrack Neo costs too much for this level of battery. I requested a return.,negative,negative,negative,True,True
+Excellent purchase. The FitTrack Neo has strong fitness tracking and arrived in perfect condition.,positive,positive,positive,True,True
+"I have used the FitTrack Neo for several weeks. Great fitness tracking, simple setup, and helpful service.",positive,positive,positive,True,True
+Very happy with the AeroRun Flex. The sole quality exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The SonicWave Lite feels reliable and the battery is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Excellent purchase. The SonicWave Lite has strong sound quality and arrived in perfect condition.,positive,positive,positive,True,True
+The FitTrack Neo feels reliable and the fitness tracking is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The AeroRun Flex disappointed me. The price is poor and support took too long to respond.,negative,negative,negative,True,True
+The AeroRun Flex feels reliable and the sole quality is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The SonicWave Lite is acceptable. The battery is average and delivery took the expected time.,neutral,neutral,positive,True,False
+Excellent purchase. The PulseBottle Pro has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+Excellent purchase. The AeroRun Flex has strong comfort and arrived in perfect condition.,positive,positive,positive,True,True
+The AeroRun Flex feels reliable and the sole quality is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Very happy with the FitTrack Neo. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Very happy with the AeroRun Flex. The fit exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Very happy with the PulseBottle Pro. The temperature retention exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Not satisfied with the PulseBottle Pro. The build quality failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+"I have used the SonicWave Lite for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+Excellent purchase. The AeroRun Flex has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+The FitTrack Neo feels reliable and the display is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Excellent purchase. The PulseBottle Pro has strong build quality and arrived in perfect condition.,positive,positive,positive,True,True
+The FitTrack Neo disappointed me. The price is poor and support took too long to respond.,negative,negative,negative,True,True
+"I have used the AeroRun Flex for several weeks. Great fit, simple setup, and helpful service.",positive,positive,positive,True,True
+Very happy with the FitTrack Neo. The display exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The FitTrack Neo disappointed me. The battery is poor and support took too long to respond.,negative,negative,negative,True,True
+Excellent purchase. The PulseBottle Pro has strong lid seal and arrived in perfect condition.,positive,positive,positive,True,True
+Not satisfied with the FitTrack Neo. The fitness tracking failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+"I received the FitTrack Neo. It works as described, although the display is neither great nor poor.",neutral,neutral,positive,True,False
+"Bad experience. The SonicWave Lite has weak battery, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+Very happy with the SonicWave Lite. The sound quality exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Excellent purchase. The AeroRun Flex has strong comfort and arrived in perfect condition.,positive,positive,positive,True,True
+"Bad experience. The FitTrack Neo has weak fitness tracking, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+"I have used the PulseBottle Pro for several weeks. Great build quality, simple setup, and helpful service.",positive,positive,positive,True,True
+The SonicWave Lite is acceptable. The comfort is average and delivery took the expected time.,neutral,neutral,positive,True,False
+Excellent purchase. The PulseBottle Pro has strong temperature retention and arrived in perfect condition.,positive,positive,positive,True,True
+The PulseBottle Pro is acceptable. The lid seal is average and delivery took the expected time.,neutral,neutral,positive,True,False
+"I have used the FitTrack Neo for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+Very happy with the AeroRun Flex. The sole quality exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The SonicWave Lite is fine for regular use. The comfort matches the listed specifications.,neutral,neutral,positive,True,False
+The SonicWave Lite costs too much for this level of battery. I requested a return.,negative,negative,negative,True,True
+Not satisfied with the SonicWave Lite. The sound quality failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+Very happy with the PulseBottle Pro. The build quality exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The FitTrack Neo feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The SonicWave Lite costs too much for this level of battery. I requested a return.,negative,negative,negative,True,True
+An ordinary experience with the PulseBottle Pro. The build quality is okay for the price.,neutral,neutral,positive,True,False
+"I received the FitTrack Neo. It works as described, although the battery is neither great nor poor.",neutral,neutral,positive,True,False
+The FitTrack Neo feels reliable and the display is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The FitTrack Neo costs too much for this level of price. I requested a return.,negative,negative,negative,True,True
+The SonicWave Lite disappointed me. The price is poor and support took too long to respond.,negative,negative,negative,True,True
+"I have used the PulseBottle Pro for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+"I have used the PulseBottle Pro for several weeks. Great build quality, simple setup, and helpful service.",positive,positive,positive,True,True
+Excellent purchase. The PulseBottle Pro has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+"I have used the PulseBottle Pro for several weeks. Great lid seal, simple setup, and helpful service.",positive,positive,positive,True,True
+"Bad experience. The FitTrack Neo has weak battery, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+The SonicWave Lite is acceptable. The sound quality is average and delivery took the expected time.,neutral,neutral,positive,True,False
+Not satisfied with the AeroRun Flex. The sole quality failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+"I have used the AeroRun Flex for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+The FitTrack Neo feels reliable and the battery is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"I received the AeroRun Flex. It works as described, although the fit is neither great nor poor.",neutral,neutral,positive,True,False
+The PulseBottle Pro feels reliable and the build quality is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"I have used the AeroRun Flex for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+"I have used the FitTrack Neo for several weeks. Great fitness tracking, simple setup, and helpful service.",positive,positive,positive,True,True
+Very happy with the FitTrack Neo. The battery exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Not satisfied with the AeroRun Flex. The comfort failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+"I have used the PulseBottle Pro for several weeks. Great temperature retention, simple setup, and helpful service.",positive,positive,positive,True,True
+Excellent purchase. The SonicWave Lite has strong comfort and arrived in perfect condition.,positive,positive,positive,True,True
+Very happy with the AeroRun Flex. The fit exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The SonicWave Lite costs too much for this level of comfort. I requested a return.,negative,negative,negative,True,True
+Not satisfied with the FitTrack Neo. The display failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+The AeroRun Flex disappointed me. The sole quality is poor and support took too long to respond.,negative,negative,negative,True,True
+"I have used the SonicWave Lite for several weeks. Great battery, simple setup, and helpful service.",positive,positive,positive,True,True
+"I have used the PulseBottle Pro for several weeks. Great temperature retention, simple setup, and helpful service.",positive,positive,positive,True,True
+Very happy with the PulseBottle Pro. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Excellent purchase. The SonicWave Lite has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+An ordinary experience with the FitTrack Neo. The fitness tracking is okay for the price.,neutral,neutral,positive,True,False
+Excellent purchase. The AeroRun Flex has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+The AeroRun Flex feels reliable and the fit is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Excellent purchase. The AeroRun Flex has strong sole quality and arrived in perfect condition.,positive,positive,positive,True,True
+The FitTrack Neo feels reliable and the display is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Excellent purchase. The PulseBottle Pro has strong lid seal and arrived in perfect condition.,positive,positive,positive,True,True
+The PulseBottle Pro costs too much for this level of build quality. I requested a return.,negative,negative,negative,True,True
+The FitTrack Neo is fine for regular use. The battery matches the listed specifications.,neutral,neutral,positive,True,False
+Excellent purchase. The PulseBottle Pro has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+Very happy with the AeroRun Flex. The comfort exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"I have used the PulseBottle Pro for several weeks. Great lid seal, simple setup, and helpful service.",positive,positive,positive,True,True
+"Bad experience. The SonicWave Lite has weak comfort, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+The FitTrack Neo feels reliable and the battery is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Excellent purchase. The SonicWave Lite has strong comfort and arrived in perfect condition.,positive,positive,positive,True,True
+"I have used the PulseBottle Pro for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+Not satisfied with the SonicWave Lite. The battery failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+"I have used the PulseBottle Pro for several weeks. Great temperature retention, simple setup, and helpful service.",positive,positive,positive,True,True
+The PulseBottle Pro disappointed me. The temperature retention is poor and support took too long to respond.,negative,negative,negative,True,True
+"Bad experience. The SonicWave Lite has weak price, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+Very happy with the FitTrack Neo. The fitness tracking exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"I have used the AeroRun Flex for several weeks. Great sole quality, simple setup, and helpful service.",positive,positive,positive,True,True
+The SonicWave Lite feels reliable and the sound quality is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The AeroRun Flex feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Very happy with the SonicWave Lite. The comfort exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"I have used the FitTrack Neo for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+The FitTrack Neo costs too much for this level of display. I requested a return.,negative,negative,negative,True,True
+The SonicWave Lite feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"I have used the PulseBottle Pro for several weeks. Great temperature retention, simple setup, and helpful service.",positive,positive,positive,True,True
+The PulseBottle Pro costs too much for this level of build quality. I requested a return.,negative,negative,negative,True,True
+Very happy with the PulseBottle Pro. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Excellent purchase. The AeroRun Flex has strong comfort and arrived in perfect condition.,positive,positive,positive,True,True
+Very happy with the FitTrack Neo. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Excellent purchase. The SonicWave Lite has strong battery and arrived in perfect condition.,positive,positive,positive,True,True
+Excellent purchase. The SonicWave Lite has strong battery and arrived in perfect condition.,positive,positive,positive,True,True
+The FitTrack Neo costs too much for this level of price. I requested a return.,negative,negative,negative,True,True
+Not satisfied with the AeroRun Flex. The sole quality failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+"I have used the FitTrack Neo for several weeks. Great display, simple setup, and helpful service.",positive,positive,positive,True,True
+The PulseBottle Pro is fine for regular use. The build quality matches the listed specifications.,neutral,neutral,positive,True,False
+"I have used the FitTrack Neo for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+Excellent purchase. The PulseBottle Pro has strong temperature retention and arrived in perfect condition.,positive,positive,positive,True,True
+Not satisfied with the AeroRun Flex. The price failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+The PulseBottle Pro feels reliable and the build quality is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Not satisfied with the PulseBottle Pro. The temperature retention failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+"I have used the PulseBottle Pro for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+"Bad experience. The FitTrack Neo has weak battery, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+Excellent purchase. The AeroRun Flex has strong comfort and arrived in perfect condition.,positive,positive,positive,True,True
+Very happy with the PulseBottle Pro. The lid seal exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The PulseBottle Pro costs too much for this level of temperature retention. I requested a return.,negative,negative,negative,True,True
+Excellent purchase. The PulseBottle Pro has strong temperature retention and arrived in perfect condition.,positive,positive,positive,True,True
+Excellent purchase. The SonicWave Lite has strong battery and arrived in perfect condition.,positive,positive,positive,True,True
+The PulseBottle Pro is acceptable. The lid seal is average and delivery took the expected time.,neutral,neutral,positive,True,False
+The FitTrack Neo disappointed me. The fitness tracking is poor and support took too long to respond.,negative,negative,negative,True,True
+Very happy with the AeroRun Flex. The comfort exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"I received the PulseBottle Pro. It works as described, although the build quality is neither great nor poor.",neutral,neutral,positive,True,False
+The AeroRun Flex feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Excellent purchase. The SonicWave Lite has strong comfort and arrived in perfect condition.,positive,positive,positive,True,True
+The PulseBottle Pro feels reliable and the temperature retention is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Very happy with the SonicWave Lite. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Very happy with the AeroRun Flex. The sole quality exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The SonicWave Lite feels reliable and the comfort is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The AeroRun Flex feels reliable and the comfort is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Not satisfied with the FitTrack Neo. The battery failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+The AeroRun Flex feels reliable and the fit is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The AeroRun Flex costs too much for this level of price. I requested a return.,negative,negative,negative,True,True
+An ordinary experience with the FitTrack Neo. The battery is okay for the price.,neutral,neutral,positive,True,False
+Excellent purchase. The SonicWave Lite has strong comfort and arrived in perfect condition.,positive,positive,positive,True,True
+Excellent purchase. The AeroRun Flex has strong sole quality and arrived in perfect condition.,positive,positive,positive,True,True
+The SonicWave Lite is acceptable. The sound quality is average and delivery took the expected time.,neutral,neutral,positive,True,False
+"I received the PulseBottle Pro. It works as described, although the temperature retention is neither great nor poor.",neutral,neutral,positive,True,False
+Excellent purchase. The SonicWave Lite has strong comfort and arrived in perfect condition.,positive,positive,positive,True,True
+Excellent purchase. The AeroRun Flex has strong comfort and arrived in perfect condition.,positive,positive,positive,True,True
+The FitTrack Neo costs too much for this level of price. I requested a return.,negative,negative,negative,True,True
+"Bad experience. The PulseBottle Pro has weak lid seal, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+An ordinary experience with the FitTrack Neo. The display is okay for the price.,neutral,neutral,positive,True,False
+Excellent purchase. The SonicWave Lite has strong sound quality and arrived in perfect condition.,positive,positive,positive,True,True
+The PulseBottle Pro is acceptable. The temperature retention is average and delivery took the expected time.,neutral,neutral,positive,True,False
+The PulseBottle Pro is fine for regular use. The lid seal matches the listed specifications.,neutral,neutral,positive,True,False
+Very happy with the FitTrack Neo. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Very happy with the PulseBottle Pro. The lid seal exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Not satisfied with the SonicWave Lite. The battery failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+The AeroRun Flex feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Very happy with the SonicWave Lite. The comfort exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Very happy with the FitTrack Neo. The fitness tracking exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+An ordinary experience with the SonicWave Lite. The battery is okay for the price.,neutral,neutral,positive,True,False
+"I received the FitTrack Neo. It works as described, although the price is neither great nor poor.",neutral,neutral,positive,True,False
+The PulseBottle Pro feels reliable and the build quality is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Not satisfied with the AeroRun Flex. The comfort failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+The AeroRun Flex costs too much for this level of sole quality. I requested a return.,negative,negative,negative,True,True
+The AeroRun Flex feels reliable and the comfort is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The AeroRun Flex is fine for regular use. The price matches the listed specifications.,neutral,neutral,positive,True,False
+Excellent purchase. The SonicWave Lite has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+The PulseBottle Pro is fine for regular use. The build quality matches the listed specifications.,neutral,neutral,positive,True,False
+Very happy with the FitTrack Neo. The display exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"I received the AeroRun Flex. It works as described, although the price is neither great nor poor.",neutral,neutral,positive,True,False
+"I have used the FitTrack Neo for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+The FitTrack Neo is acceptable. The fitness tracking is average and delivery took the expected time.,neutral,neutral,positive,True,False
+The SonicWave Lite feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"I have used the FitTrack Neo for several weeks. Great battery, simple setup, and helpful service.",positive,positive,positive,True,True
+The PulseBottle Pro disappointed me. The price is poor and support took too long to respond.,negative,negative,negative,True,True
+The PulseBottle Pro is fine for regular use. The price matches the listed specifications.,neutral,neutral,positive,True,False
+The FitTrack Neo is acceptable. The battery is average and delivery took the expected time.,neutral,neutral,positive,True,False
+An ordinary experience with the PulseBottle Pro. The lid seal is okay for the price.,neutral,neutral,positive,True,False
+The FitTrack Neo feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The PulseBottle Pro costs too much for this level of build quality. I requested a return.,negative,negative,negative,True,True
+The SonicWave Lite is acceptable. The comfort is average and delivery took the expected time.,neutral,neutral,positive,True,False
+The PulseBottle Pro is acceptable. The lid seal is average and delivery took the expected time.,neutral,neutral,positive,True,False
+"I have used the PulseBottle Pro for several weeks. Great build quality, simple setup, and helpful service.",positive,positive,positive,True,True
+Very happy with the PulseBottle Pro. The lid seal exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The PulseBottle Pro disappointed me. The price is poor and support took too long to respond.,negative,negative,negative,True,True
+Excellent purchase. The FitTrack Neo has strong battery and arrived in perfect condition.,positive,positive,positive,True,True
+The PulseBottle Pro feels reliable and the temperature retention is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The PulseBottle Pro costs too much for this level of price. I requested a return.,negative,negative,negative,True,True
+The AeroRun Flex is fine for regular use. The sole quality matches the listed specifications.,neutral,neutral,positive,True,False
+Excellent purchase. The FitTrack Neo has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+Excellent purchase. The SonicWave Lite has strong comfort and arrived in perfect condition.,positive,positive,positive,True,True
+The PulseBottle Pro feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+An ordinary experience with the FitTrack Neo. The fitness tracking is okay for the price.,neutral,neutral,positive,True,False
+The FitTrack Neo costs too much for this level of display. I requested a return.,negative,negative,negative,True,True
+Excellent purchase. The PulseBottle Pro has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+"I received the SonicWave Lite. It works as described, although the price is neither great nor poor.",neutral,neutral,positive,True,False
+Very happy with the SonicWave Lite. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+An ordinary experience with the PulseBottle Pro. The build quality is okay for the price.,neutral,neutral,positive,True,False
+The PulseBottle Pro feels reliable and the build quality is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"I have used the AeroRun Flex for several weeks. Great comfort, simple setup, and helpful service.",positive,positive,positive,True,True
+Very happy with the FitTrack Neo. The display exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The FitTrack Neo is fine for regular use. The fitness tracking matches the listed specifications.,neutral,neutral,positive,True,False
+Very happy with the SonicWave Lite. The comfort exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The PulseBottle Pro is acceptable. The lid seal is average and delivery took the expected time.,neutral,neutral,positive,True,False
+The FitTrack Neo feels reliable and the battery is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Excellent purchase. The AeroRun Flex has strong comfort and arrived in perfect condition.,positive,positive,positive,True,True
+Very happy with the SonicWave Lite. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Very happy with the SonicWave Lite. The battery exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Very happy with the SonicWave Lite. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"I have used the FitTrack Neo for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+"Bad experience. The SonicWave Lite has weak sound quality, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+"I have used the FitTrack Neo for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+"I have used the AeroRun Flex for several weeks. Great sole quality, simple setup, and helpful service.",positive,positive,positive,True,True
+"I have used the FitTrack Neo for several weeks. Great fitness tracking, simple setup, and helpful service.",positive,positive,positive,True,True
+The PulseBottle Pro is acceptable. The temperature retention is average and delivery took the expected time.,neutral,neutral,positive,True,False
+The AeroRun Flex costs too much for this level of comfort. I requested a return.,negative,negative,negative,True,True
+"I have used the SonicWave Lite for several weeks. Great sound quality, simple setup, and helpful service.",positive,positive,positive,True,True
+The AeroRun Flex is fine for regular use. The sole quality matches the listed specifications.,neutral,neutral,positive,True,False
+Excellent purchase. The FitTrack Neo has strong display and arrived in perfect condition.,positive,positive,positive,True,True
+The FitTrack Neo costs too much for this level of fitness tracking. I requested a return.,negative,negative,negative,True,True
+Excellent purchase. The SonicWave Lite has strong sound quality and arrived in perfect condition.,positive,positive,positive,True,True
+"Bad experience. The FitTrack Neo has weak price, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+The PulseBottle Pro is fine for regular use. The temperature retention matches the listed specifications.,neutral,neutral,positive,True,False
+"I have used the AeroRun Flex for several weeks. Great comfort, simple setup, and helpful service.",positive,positive,positive,True,True
+"I received the PulseBottle Pro. It works as described, although the temperature retention is neither great nor poor.",neutral,neutral,positive,True,False
+The AeroRun Flex is acceptable. The sole quality is average and delivery took the expected time.,neutral,neutral,positive,True,False
+The PulseBottle Pro is acceptable. The build quality is average and delivery took the expected time.,neutral,neutral,positive,True,False
+The AeroRun Flex feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The PulseBottle Pro feels reliable and the lid seal is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The PulseBottle Pro feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Very happy with the SonicWave Lite. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Excellent purchase. The FitTrack Neo has strong fitness tracking and arrived in perfect condition.,positive,positive,positive,True,True
+"I have used the AeroRun Flex for several weeks. Great sole quality, simple setup, and helpful service.",positive,positive,positive,True,True
+Excellent purchase. The AeroRun Flex has strong sole quality and arrived in perfect condition.,positive,positive,positive,True,True
+"Bad experience. The FitTrack Neo has weak battery, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+Excellent purchase. The SonicWave Lite has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+The PulseBottle Pro disappointed me. The price is poor and support took too long to respond.,negative,negative,negative,True,True
+Excellent purchase. The SonicWave Lite has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+An ordinary experience with the AeroRun Flex. The fit is okay for the price.,neutral,neutral,positive,True,False
+The AeroRun Flex disappointed me. The price is poor and support took too long to respond.,negative,negative,negative,True,True
+The PulseBottle Pro is acceptable. The temperature retention is average and delivery took the expected time.,neutral,neutral,positive,True,False
+Very happy with the PulseBottle Pro. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The SonicWave Lite feels reliable and the comfort is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The PulseBottle Pro disappointed me. The lid seal is poor and support took too long to respond.,negative,negative,negative,True,True
+An ordinary experience with the PulseBottle Pro. The temperature retention is okay for the price.,neutral,neutral,positive,True,False
+The FitTrack Neo disappointed me. The display is poor and support took too long to respond.,negative,negative,negative,True,True
+"I have used the SonicWave Lite for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+Very happy with the PulseBottle Pro. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Excellent purchase. The SonicWave Lite has strong comfort and arrived in perfect condition.,positive,positive,positive,True,True
+The FitTrack Neo disappointed me. The price is poor and support took too long to respond.,negative,negative,negative,True,True
+Not satisfied with the PulseBottle Pro. The price failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+The AeroRun Flex feels reliable and the fit is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Excellent purchase. The AeroRun Flex has strong comfort and arrived in perfect condition.,positive,positive,positive,True,True
+The PulseBottle Pro feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The SonicWave Lite is fine for regular use. The battery matches the listed specifications.,neutral,neutral,positive,True,False
+Very happy with the PulseBottle Pro. The lid seal exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"I have used the PulseBottle Pro for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+"I have used the PulseBottle Pro for several weeks. Great lid seal, simple setup, and helpful service.",positive,positive,positive,True,True
+The PulseBottle Pro is acceptable. The temperature retention is average and delivery took the expected time.,neutral,neutral,positive,True,False
+"I received the PulseBottle Pro. It works as described, although the build quality is neither great nor poor.",neutral,neutral,positive,True,False
+Excellent purchase. The AeroRun Flex has strong fit and arrived in perfect condition.,positive,positive,positive,True,True
+Not satisfied with the FitTrack Neo. The price failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+Excellent purchase. The FitTrack Neo has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+"I have used the PulseBottle Pro for several weeks. Great build quality, simple setup, and helpful service.",positive,positive,positive,True,True
+The SonicWave Lite costs too much for this level of sound quality. I requested a return.,negative,negative,negative,True,True
+The AeroRun Flex feels reliable and the fit is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"I have used the FitTrack Neo for several weeks. Great fitness tracking, simple setup, and helpful service.",positive,positive,positive,True,True
+An ordinary experience with the AeroRun Flex. The price is okay for the price.,neutral,neutral,positive,True,False
+Excellent purchase. The AeroRun Flex has strong fit and arrived in perfect condition.,positive,positive,positive,True,True
+Very happy with the SonicWave Lite. The comfort exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"Bad experience. The SonicWave Lite has weak sound quality, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+An ordinary experience with the PulseBottle Pro. The temperature retention is okay for the price.,neutral,neutral,positive,True,False
+Very happy with the SonicWave Lite. The sound quality exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The AeroRun Flex feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The PulseBottle Pro feels reliable and the build quality is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"I have used the PulseBottle Pro for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+The SonicWave Lite disappointed me. The sound quality is poor and support took too long to respond.,negative,negative,negative,True,True
+The AeroRun Flex feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The PulseBottle Pro costs too much for this level of lid seal. I requested a return.,negative,negative,negative,True,True
+Very happy with the FitTrack Neo. The display exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Excellent purchase. The SonicWave Lite has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+The AeroRun Flex is fine for regular use. The price matches the listed specifications.,neutral,neutral,positive,True,False
+The AeroRun Flex is fine for regular use. The sole quality matches the listed specifications.,neutral,neutral,positive,True,False
+The AeroRun Flex feels reliable and the comfort is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"Bad experience. The FitTrack Neo has weak price, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+Very happy with the FitTrack Neo. The fitness tracking exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"I received the SonicWave Lite. It works as described, although the price is neither great nor poor.",neutral,neutral,positive,True,False
+The SonicWave Lite costs too much for this level of price. I requested a return.,negative,negative,negative,True,True
+Excellent purchase. The PulseBottle Pro has strong temperature retention and arrived in perfect condition.,positive,positive,positive,True,True
+Very happy with the SonicWave Lite. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Excellent purchase. The SonicWave Lite has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+The SonicWave Lite disappointed me. The price is poor and support took too long to respond.,negative,negative,negative,True,True
+The PulseBottle Pro is fine for regular use. The temperature retention matches the listed specifications.,neutral,neutral,positive,True,False
+The AeroRun Flex is acceptable. The fit is average and delivery took the expected time.,neutral,neutral,positive,True,False
+Very happy with the AeroRun Flex. The sole quality exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Not satisfied with the PulseBottle Pro. The temperature retention failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+"Bad experience. The SonicWave Lite has weak sound quality, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+The SonicWave Lite feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The AeroRun Flex is fine for regular use. The sole quality matches the listed specifications.,neutral,neutral,positive,True,False
+"Bad experience. The FitTrack Neo has weak display, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+Excellent purchase. The AeroRun Flex has strong fit and arrived in perfect condition.,positive,positive,positive,True,True
+"Bad experience. The SonicWave Lite has weak battery, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+The SonicWave Lite feels reliable and the sound quality is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The PulseBottle Pro feels reliable and the lid seal is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Very happy with the PulseBottle Pro. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"I received the PulseBottle Pro. It works as described, although the build quality is neither great nor poor.",neutral,neutral,positive,True,False
+"I received the PulseBottle Pro. It works as described, although the temperature retention is neither great nor poor.",neutral,neutral,positive,True,False
+"I have used the PulseBottle Pro for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+The SonicWave Lite feels reliable and the battery is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The AeroRun Flex disappointed me. The sole quality is poor and support took too long to respond.,negative,negative,negative,True,True
+The SonicWave Lite feels reliable and the comfort is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Very happy with the PulseBottle Pro. The lid seal exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"Bad experience. The PulseBottle Pro has weak price, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+The SonicWave Lite disappointed me. The battery is poor and support took too long to respond.,negative,negative,negative,True,True
+"I have used the PulseBottle Pro for several weeks. Great build quality, simple setup, and helpful service.",positive,positive,positive,True,True
+Very happy with the PulseBottle Pro. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Excellent purchase. The SonicWave Lite has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+The SonicWave Lite feels reliable and the battery is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The AeroRun Flex feels reliable and the comfort is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The AeroRun Flex is fine for regular use. The comfort matches the listed specifications.,neutral,neutral,positive,True,False
+An ordinary experience with the AeroRun Flex. The fit is okay for the price.,neutral,neutral,positive,True,False
+The SonicWave Lite feels reliable and the battery is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The AeroRun Flex feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"Bad experience. The AeroRun Flex has weak fit, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+An ordinary experience with the FitTrack Neo. The battery is okay for the price.,neutral,neutral,positive,True,False
+"I have used the SonicWave Lite for several weeks. Great battery, simple setup, and helpful service.",positive,positive,positive,True,True
+Very happy with the PulseBottle Pro. The lid seal exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The AeroRun Flex is acceptable. The sole quality is average and delivery took the expected time.,neutral,neutral,positive,True,False
+"Bad experience. The AeroRun Flex has weak comfort, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+Excellent purchase. The SonicWave Lite has strong comfort and arrived in perfect condition.,positive,positive,positive,True,True
+"I have used the SonicWave Lite for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+Very happy with the FitTrack Neo. The battery exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"I have used the SonicWave Lite for several weeks. Great comfort, simple setup, and helpful service.",positive,positive,positive,True,True
+"I have used the PulseBottle Pro for several weeks. Great build quality, simple setup, and helpful service.",positive,positive,positive,True,True
+The PulseBottle Pro is acceptable. The lid seal is average and delivery took the expected time.,neutral,neutral,positive,True,False
+The SonicWave Lite is acceptable. The sound quality is average and delivery took the expected time.,neutral,neutral,positive,True,False
+The PulseBottle Pro is fine for regular use. The temperature retention matches the listed specifications.,neutral,neutral,positive,True,False
+"I received the PulseBottle Pro. It works as described, although the price is neither great nor poor.",neutral,neutral,positive,True,False
+Very happy with the SonicWave Lite. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The SonicWave Lite is acceptable. The battery is average and delivery took the expected time.,neutral,neutral,positive,True,False
+"I have used the FitTrack Neo for several weeks. Great battery, simple setup, and helpful service.",positive,positive,positive,True,True
+"Bad experience. The AeroRun Flex has weak price, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+Not satisfied with the SonicWave Lite. The price failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+The FitTrack Neo is acceptable. The price is average and delivery took the expected time.,neutral,neutral,positive,True,False
+The SonicWave Lite costs too much for this level of sound quality. I requested a return.,negative,negative,negative,True,True
+"I have used the FitTrack Neo for several weeks. Great display, simple setup, and helpful service.",positive,positive,positive,True,True
+Not satisfied with the AeroRun Flex. The comfort failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+The SonicWave Lite is fine for regular use. The price matches the listed specifications.,neutral,neutral,positive,True,False
+Very happy with the PulseBottle Pro. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Excellent purchase. The FitTrack Neo has strong display and arrived in perfect condition.,positive,positive,positive,True,True
+Very happy with the SonicWave Lite. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The SonicWave Lite is fine for regular use. The comfort matches the listed specifications.,neutral,neutral,positive,True,False
+The FitTrack Neo disappointed me. The display is poor and support took too long to respond.,negative,negative,negative,True,True
+Not satisfied with the FitTrack Neo. The price failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+The SonicWave Lite disappointed me. The sound quality is poor and support took too long to respond.,negative,negative,negative,True,True
+The FitTrack Neo costs too much for this level of price. I requested a return.,negative,negative,negative,True,True
+Excellent purchase. The SonicWave Lite has strong comfort and arrived in perfect condition.,positive,positive,positive,True,True
+"I received the AeroRun Flex. It works as described, although the comfort is neither great nor poor.",neutral,neutral,positive,True,False
+Very happy with the SonicWave Lite. The comfort exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The SonicWave Lite is acceptable. The sound quality is average and delivery took the expected time.,neutral,neutral,positive,True,False
+"Bad experience. The AeroRun Flex has weak sole quality, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+Excellent purchase. The FitTrack Neo has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+Very happy with the PulseBottle Pro. The lid seal exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The PulseBottle Pro costs too much for this level of temperature retention. I requested a return.,negative,negative,negative,True,True
+Excellent purchase. The SonicWave Lite has strong comfort and arrived in perfect condition.,positive,positive,positive,True,True
+"I have used the AeroRun Flex for several weeks. Great comfort, simple setup, and helpful service.",positive,positive,positive,True,True
+Excellent purchase. The AeroRun Flex has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+Excellent purchase. The AeroRun Flex has strong fit and arrived in perfect condition.,positive,positive,positive,True,True
+The FitTrack Neo is fine for regular use. The fitness tracking matches the listed specifications.,neutral,neutral,positive,True,False
+An ordinary experience with the AeroRun Flex. The comfort is okay for the price.,neutral,neutral,positive,True,False
+The SonicWave Lite feels reliable and the comfort is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"I received the FitTrack Neo. It works as described, although the battery is neither great nor poor.",neutral,neutral,positive,True,False
+The PulseBottle Pro costs too much for this level of lid seal. I requested a return.,negative,negative,negative,True,True
+An ordinary experience with the AeroRun Flex. The fit is okay for the price.,neutral,neutral,positive,True,False
+Very happy with the SonicWave Lite. The sound quality exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"I have used the PulseBottle Pro for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+The FitTrack Neo is acceptable. The fitness tracking is average and delivery took the expected time.,neutral,neutral,positive,True,False
+Very happy with the FitTrack Neo. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Excellent purchase. The FitTrack Neo has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+"I have used the PulseBottle Pro for several weeks. Great build quality, simple setup, and helpful service.",positive,positive,positive,True,True
+Excellent purchase. The SonicWave Lite has strong battery and arrived in perfect condition.,positive,positive,positive,True,True
+"I received the SonicWave Lite. It works as described, although the price is neither great nor poor.",neutral,neutral,positive,True,False
+Very happy with the PulseBottle Pro. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Not satisfied with the AeroRun Flex. The price failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+The PulseBottle Pro costs too much for this level of temperature retention. I requested a return.,negative,negative,negative,True,True
+Very happy with the FitTrack Neo. The display exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"I received the SonicWave Lite. It works as described, although the price is neither great nor poor.",neutral,neutral,positive,True,False
+The PulseBottle Pro feels reliable and the build quality is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Excellent purchase. The AeroRun Flex has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+The FitTrack Neo costs too much for this level of battery. I requested a return.,negative,negative,negative,True,True
+"I have used the AeroRun Flex for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+Very happy with the FitTrack Neo. The battery exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Very happy with the AeroRun Flex. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The AeroRun Flex disappointed me. The sole quality is poor and support took too long to respond.,negative,negative,negative,True,True
+Very happy with the FitTrack Neo. The display exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"I have used the FitTrack Neo for several weeks. Great battery, simple setup, and helpful service.",positive,positive,positive,True,True
+Very happy with the PulseBottle Pro. The lid seal exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"I have used the SonicWave Lite for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+The AeroRun Flex feels reliable and the fit is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"I have used the AeroRun Flex for several weeks. Great sole quality, simple setup, and helpful service.",positive,positive,positive,True,True
+The PulseBottle Pro is fine for regular use. The build quality matches the listed specifications.,neutral,neutral,positive,True,False
+"I received the PulseBottle Pro. It works as described, although the temperature retention is neither great nor poor.",neutral,neutral,positive,True,False
+The SonicWave Lite feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Excellent purchase. The AeroRun Flex has strong sole quality and arrived in perfect condition.,positive,positive,positive,True,True
+"I have used the AeroRun Flex for several weeks. Great sole quality, simple setup, and helpful service.",positive,positive,positive,True,True
+"Bad experience. The PulseBottle Pro has weak price, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+Excellent purchase. The SonicWave Lite has strong comfort and arrived in perfect condition.,positive,positive,positive,True,True
+Not satisfied with the FitTrack Neo. The display failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+"Bad experience. The AeroRun Flex has weak fit, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+Very happy with the AeroRun Flex. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"I have used the AeroRun Flex for several weeks. Great sole quality, simple setup, and helpful service.",positive,positive,positive,True,True
+Excellent purchase. The SonicWave Lite has strong comfort and arrived in perfect condition.,positive,positive,positive,True,True
+Very happy with the PulseBottle Pro. The temperature retention exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The PulseBottle Pro costs too much for this level of price. I requested a return.,negative,negative,negative,True,True
+"Bad experience. The FitTrack Neo has weak fitness tracking, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+The AeroRun Flex feels reliable and the sole quality is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+An ordinary experience with the AeroRun Flex. The sole quality is okay for the price.,neutral,neutral,positive,True,False
+The PulseBottle Pro feels reliable and the temperature retention is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The FitTrack Neo feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The FitTrack Neo is fine for regular use. The fitness tracking matches the listed specifications.,neutral,neutral,positive,True,False
+Not satisfied with the SonicWave Lite. The comfort failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+Excellent purchase. The AeroRun Flex has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+Very happy with the AeroRun Flex. The comfort exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The FitTrack Neo feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The SonicWave Lite feels reliable and the sound quality is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Very happy with the PulseBottle Pro. The lid seal exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Excellent purchase. The AeroRun Flex has strong comfort and arrived in perfect condition.,positive,positive,positive,True,True
+The FitTrack Neo costs too much for this level of display. I requested a return.,negative,negative,negative,True,True
+The PulseBottle Pro feels reliable and the temperature retention is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"I received the AeroRun Flex. It works as described, although the price is neither great nor poor.",neutral,neutral,positive,True,False
+The AeroRun Flex feels reliable and the fit is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"I received the SonicWave Lite. It works as described, although the sound quality is neither great nor poor.",neutral,neutral,positive,True,False
+The AeroRun Flex is acceptable. The sole quality is average and delivery took the expected time.,neutral,neutral,positive,True,False
+The AeroRun Flex is acceptable. The sole quality is average and delivery took the expected time.,neutral,neutral,positive,True,False
+The SonicWave Lite disappointed me. The price is poor and support took too long to respond.,negative,negative,negative,True,True
+The AeroRun Flex feels reliable and the comfort is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The PulseBottle Pro is fine for regular use. The temperature retention matches the listed specifications.,neutral,neutral,positive,True,False
+Not satisfied with the SonicWave Lite. The comfort failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+The SonicWave Lite costs too much for this level of battery. I requested a return.,negative,negative,negative,True,True
+"I received the FitTrack Neo. It works as described, although the fitness tracking is neither great nor poor.",neutral,neutral,positive,True,False
+Not satisfied with the PulseBottle Pro. The lid seal failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+"I have used the PulseBottle Pro for several weeks. Great lid seal, simple setup, and helpful service.",positive,positive,positive,True,True
+Not satisfied with the SonicWave Lite. The sound quality failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+The PulseBottle Pro costs too much for this level of build quality. I requested a return.,negative,negative,negative,True,True
+"I have used the PulseBottle Pro for several weeks. Great temperature retention, simple setup, and helpful service.",positive,positive,positive,True,True
+The PulseBottle Pro is acceptable. The build quality is average and delivery took the expected time.,neutral,neutral,positive,True,False
+Excellent purchase. The PulseBottle Pro has strong build quality and arrived in perfect condition.,positive,positive,positive,True,True
+"I have used the PulseBottle Pro for several weeks. Great temperature retention, simple setup, and helpful service.",positive,positive,positive,True,True
+"Bad experience. The AeroRun Flex has weak sole quality, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+An ordinary experience with the FitTrack Neo. The fitness tracking is okay for the price.,neutral,neutral,positive,True,False
+Very happy with the FitTrack Neo. The fitness tracking exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Very happy with the FitTrack Neo. The display exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The PulseBottle Pro costs too much for this level of lid seal. I requested a return.,negative,negative,negative,True,True
+The AeroRun Flex costs too much for this level of comfort. I requested a return.,negative,negative,negative,True,True
+"I received the FitTrack Neo. It works as described, although the display is neither great nor poor.",neutral,neutral,positive,True,False
+The AeroRun Flex feels reliable and the comfort is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Not satisfied with the PulseBottle Pro. The price failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+Very happy with the SonicWave Lite. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Very happy with the SonicWave Lite. The battery exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"I have used the FitTrack Neo for several weeks. Great battery, simple setup, and helpful service.",positive,positive,positive,True,True
+"I have used the SonicWave Lite for several weeks. Great sound quality, simple setup, and helpful service.",positive,positive,positive,True,True
+The PulseBottle Pro feels reliable and the build quality is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+An ordinary experience with the FitTrack Neo. The fitness tracking is okay for the price.,neutral,neutral,positive,True,False
+Excellent purchase. The AeroRun Flex has strong fit and arrived in perfect condition.,positive,positive,positive,True,True
+The FitTrack Neo feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"I have used the PulseBottle Pro for several weeks. Great temperature retention, simple setup, and helpful service.",positive,positive,positive,True,True
+Very happy with the FitTrack Neo. The display exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Excellent purchase. The SonicWave Lite has strong sound quality and arrived in perfect condition.,positive,positive,positive,True,True
+The PulseBottle Pro feels reliable and the build quality is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+An ordinary experience with the PulseBottle Pro. The price is okay for the price.,neutral,neutral,positive,True,False
+The SonicWave Lite feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"I have used the FitTrack Neo for several weeks. Great fitness tracking, simple setup, and helpful service.",positive,positive,positive,True,True
+The FitTrack Neo is fine for regular use. The battery matches the listed specifications.,neutral,neutral,positive,True,False
+"I have used the AeroRun Flex for several weeks. Great sole quality, simple setup, and helpful service.",positive,positive,positive,True,True
+"I have used the SonicWave Lite for several weeks. Great sound quality, simple setup, and helpful service.",positive,positive,positive,True,True
+Not satisfied with the SonicWave Lite. The sound quality failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+The FitTrack Neo feels reliable and the display is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The FitTrack Neo feels reliable and the display is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"Bad experience. The SonicWave Lite has weak battery, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+"Bad experience. The FitTrack Neo has weak battery, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+The PulseBottle Pro is acceptable. The build quality is average and delivery took the expected time.,neutral,neutral,positive,True,False
+Excellent purchase. The AeroRun Flex has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+The AeroRun Flex feels reliable and the sole quality is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"Bad experience. The AeroRun Flex has weak sole quality, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+Excellent purchase. The AeroRun Flex has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+Very happy with the FitTrack Neo. The battery exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The PulseBottle Pro is acceptable. The temperature retention is average and delivery took the expected time.,neutral,neutral,positive,True,False
+Very happy with the FitTrack Neo. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The FitTrack Neo feels reliable and the fitness tracking is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The SonicWave Lite feels reliable and the sound quality is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"I have used the AeroRun Flex for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+Very happy with the FitTrack Neo. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+An ordinary experience with the PulseBottle Pro. The price is okay for the price.,neutral,neutral,positive,True,False
+"I have used the FitTrack Neo for several weeks. Great fitness tracking, simple setup, and helpful service.",positive,positive,positive,True,True
+Very happy with the FitTrack Neo. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The SonicWave Lite is fine for regular use. The sound quality matches the listed specifications.,neutral,neutral,positive,True,False
+The SonicWave Lite feels reliable and the comfort is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The PulseBottle Pro is fine for regular use. The lid seal matches the listed specifications.,neutral,neutral,positive,True,False
+The AeroRun Flex is fine for regular use. The sole quality matches the listed specifications.,neutral,neutral,positive,True,False
+The AeroRun Flex feels reliable and the fit is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Very happy with the FitTrack Neo. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"Bad experience. The AeroRun Flex has weak fit, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+"I received the SonicWave Lite. It works as described, although the comfort is neither great nor poor.",neutral,neutral,positive,True,False
+"I have used the FitTrack Neo for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+The FitTrack Neo costs too much for this level of fitness tracking. I requested a return.,negative,negative,negative,True,True
+Excellent purchase. The AeroRun Flex has strong sole quality and arrived in perfect condition.,positive,positive,positive,True,True
+Very happy with the SonicWave Lite. The comfort exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The SonicWave Lite costs too much for this level of comfort. I requested a return.,negative,negative,negative,True,True
+"Bad experience. The AeroRun Flex has weak comfort, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+The SonicWave Lite feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The FitTrack Neo feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"I have used the PulseBottle Pro for several weeks. Great build quality, simple setup, and helpful service.",positive,positive,positive,True,True
+The PulseBottle Pro disappointed me. The price is poor and support took too long to respond.,negative,negative,negative,True,True
+Very happy with the PulseBottle Pro. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Excellent purchase. The SonicWave Lite has strong comfort and arrived in perfect condition.,positive,positive,positive,True,True
+The AeroRun Flex disappointed me. The price is poor and support took too long to respond.,negative,negative,negative,True,True
+The AeroRun Flex is fine for regular use. The price matches the listed specifications.,neutral,neutral,positive,True,False
+Excellent purchase. The AeroRun Flex has strong comfort and arrived in perfect condition.,positive,positive,positive,True,True
+Very happy with the PulseBottle Pro. The build quality exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Excellent purchase. The SonicWave Lite has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+The FitTrack Neo disappointed me. The fitness tracking is poor and support took too long to respond.,negative,negative,negative,True,True
+Not satisfied with the FitTrack Neo. The fitness tracking failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+Excellent purchase. The SonicWave Lite has strong battery and arrived in perfect condition.,positive,positive,positive,True,True
+The AeroRun Flex disappointed me. The comfort is poor and support took too long to respond.,negative,negative,negative,True,True
+Very happy with the FitTrack Neo. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"I have used the PulseBottle Pro for several weeks. Great build quality, simple setup, and helpful service.",positive,positive,positive,True,True
+Excellent purchase. The AeroRun Flex has strong sole quality and arrived in perfect condition.,positive,positive,positive,True,True
+The PulseBottle Pro disappointed me. The lid seal is poor and support took too long to respond.,negative,negative,negative,True,True
+An ordinary experience with the PulseBottle Pro. The build quality is okay for the price.,neutral,neutral,positive,True,False
+The PulseBottle Pro feels reliable and the temperature retention is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The PulseBottle Pro is acceptable. The temperature retention is average and delivery took the expected time.,neutral,neutral,positive,True,False
+The AeroRun Flex disappointed me. The comfort is poor and support took too long to respond.,negative,negative,negative,True,True
+"I have used the SonicWave Lite for several weeks. Great sound quality, simple setup, and helpful service.",positive,positive,positive,True,True
+Excellent purchase. The FitTrack Neo has strong battery and arrived in perfect condition.,positive,positive,positive,True,True
+Excellent purchase. The AeroRun Flex has strong fit and arrived in perfect condition.,positive,positive,positive,True,True
+"I received the AeroRun Flex. It works as described, although the sole quality is neither great nor poor.",neutral,neutral,positive,True,False
+The AeroRun Flex feels reliable and the sole quality is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"I received the SonicWave Lite. It works as described, although the price is neither great nor poor.",neutral,neutral,positive,True,False
+The FitTrack Neo feels reliable and the battery is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Excellent purchase. The PulseBottle Pro has strong lid seal and arrived in perfect condition.,positive,positive,positive,True,True
+"I have used the PulseBottle Pro for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+The AeroRun Flex is fine for regular use. The fit matches the listed specifications.,neutral,neutral,positive,True,False
+An ordinary experience with the FitTrack Neo. The battery is okay for the price.,neutral,neutral,positive,True,False
+The PulseBottle Pro is fine for regular use. The build quality matches the listed specifications.,neutral,neutral,positive,True,False
+Not satisfied with the SonicWave Lite. The comfort failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+Not satisfied with the SonicWave Lite. The price failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+The PulseBottle Pro is fine for regular use. The lid seal matches the listed specifications.,neutral,neutral,positive,True,False
+The SonicWave Lite feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The AeroRun Flex is acceptable. The fit is average and delivery took the expected time.,neutral,neutral,positive,True,False
+The FitTrack Neo feels reliable and the fitness tracking is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Not satisfied with the AeroRun Flex. The comfort failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+The FitTrack Neo is acceptable. The price is average and delivery took the expected time.,neutral,neutral,positive,True,False
+The AeroRun Flex is fine for regular use. The price matches the listed specifications.,neutral,neutral,positive,True,False
+The AeroRun Flex feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Not satisfied with the SonicWave Lite. The price failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+"I received the FitTrack Neo. It works as described, although the battery is neither great nor poor.",neutral,neutral,positive,True,False
+An ordinary experience with the FitTrack Neo. The price is okay for the price.,neutral,neutral,positive,True,False
+Excellent purchase. The FitTrack Neo has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+The FitTrack Neo costs too much for this level of price. I requested a return.,negative,negative,negative,True,True
+The FitTrack Neo feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+An ordinary experience with the AeroRun Flex. The fit is okay for the price.,neutral,neutral,positive,True,False
+The SonicWave Lite disappointed me. The battery is poor and support took too long to respond.,negative,negative,negative,True,True
+Very happy with the FitTrack Neo. The battery exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"I have used the PulseBottle Pro for several weeks. Great build quality, simple setup, and helpful service.",positive,positive,positive,True,True
+Very happy with the SonicWave Lite. The comfort exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Excellent purchase. The PulseBottle Pro has strong lid seal and arrived in perfect condition.,positive,positive,positive,True,True
+Very happy with the FitTrack Neo. The battery exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The SonicWave Lite feels reliable and the battery is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Excellent purchase. The FitTrack Neo has strong display and arrived in perfect condition.,positive,positive,positive,True,True
+Excellent purchase. The FitTrack Neo has strong display and arrived in perfect condition.,positive,positive,positive,True,True
+"I have used the SonicWave Lite for several weeks. Great sound quality, simple setup, and helpful service.",positive,positive,positive,True,True
+The AeroRun Flex disappointed me. The comfort is poor and support took too long to respond.,negative,negative,negative,True,True
+The SonicWave Lite is fine for regular use. The price matches the listed specifications.,neutral,neutral,positive,True,False
+"I have used the PulseBottle Pro for several weeks. Great temperature retention, simple setup, and helpful service.",positive,positive,positive,True,True
+The PulseBottle Pro costs too much for this level of temperature retention. I requested a return.,negative,negative,negative,True,True
+An ordinary experience with the SonicWave Lite. The sound quality is okay for the price.,neutral,neutral,positive,True,False
+The PulseBottle Pro is fine for regular use. The price matches the listed specifications.,neutral,neutral,positive,True,False
+Not satisfied with the PulseBottle Pro. The price failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+Very happy with the AeroRun Flex. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Excellent purchase. The PulseBottle Pro has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+An ordinary experience with the FitTrack Neo. The battery is okay for the price.,neutral,neutral,positive,True,False
+Not satisfied with the AeroRun Flex. The price failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+Very happy with the PulseBottle Pro. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"Bad experience. The AeroRun Flex has weak fit, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+Excellent purchase. The AeroRun Flex has strong sole quality and arrived in perfect condition.,positive,positive,positive,True,True
+An ordinary experience with the PulseBottle Pro. The build quality is okay for the price.,neutral,neutral,positive,True,False
+The PulseBottle Pro feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The SonicWave Lite feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"I have used the PulseBottle Pro for several weeks. Great temperature retention, simple setup, and helpful service.",positive,positive,positive,True,True
+An ordinary experience with the PulseBottle Pro. The price is okay for the price.,neutral,neutral,positive,True,False
+The PulseBottle Pro feels reliable and the build quality is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+An ordinary experience with the PulseBottle Pro. The temperature retention is okay for the price.,neutral,neutral,positive,True,False
+"I have used the AeroRun Flex for several weeks. Great sole quality, simple setup, and helpful service.",positive,positive,positive,True,True
+The PulseBottle Pro is fine for regular use. The lid seal matches the listed specifications.,neutral,neutral,positive,True,False
+"I have used the AeroRun Flex for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+"Bad experience. The SonicWave Lite has weak price, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+"I have used the FitTrack Neo for several weeks. Great fitness tracking, simple setup, and helpful service.",positive,positive,positive,True,True
+The SonicWave Lite feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The PulseBottle Pro feels reliable and the build quality is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The AeroRun Flex costs too much for this level of fit. I requested a return.,negative,negative,negative,True,True
+"I received the SonicWave Lite. It works as described, although the sound quality is neither great nor poor.",neutral,neutral,positive,True,False
+The PulseBottle Pro feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The AeroRun Flex feels reliable and the sole quality is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+An ordinary experience with the PulseBottle Pro. The lid seal is okay for the price.,neutral,neutral,positive,True,False
+The FitTrack Neo feels reliable and the battery is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The AeroRun Flex feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Excellent purchase. The FitTrack Neo has strong display and arrived in perfect condition.,positive,positive,positive,True,True
+The SonicWave Lite disappointed me. The battery is poor and support took too long to respond.,negative,negative,negative,True,True
+"I have used the SonicWave Lite for several weeks. Great sound quality, simple setup, and helpful service.",positive,positive,positive,True,True
+The FitTrack Neo disappointed me. The battery is poor and support took too long to respond.,negative,negative,negative,True,True
+The FitTrack Neo feels reliable and the fitness tracking is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Not satisfied with the SonicWave Lite. The battery failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+Excellent purchase. The SonicWave Lite has strong comfort and arrived in perfect condition.,positive,positive,positive,True,True
+"I have used the AeroRun Flex for several weeks. Great fit, simple setup, and helpful service.",positive,positive,positive,True,True
+The FitTrack Neo feels reliable and the display is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Excellent purchase. The SonicWave Lite has strong sound quality and arrived in perfect condition.,positive,positive,positive,True,True
+Excellent purchase. The PulseBottle Pro has strong build quality and arrived in perfect condition.,positive,positive,positive,True,True
+Very happy with the PulseBottle Pro. The lid seal exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"I have used the FitTrack Neo for several weeks. Great fitness tracking, simple setup, and helpful service.",positive,positive,positive,True,True
+The PulseBottle Pro disappointed me. The lid seal is poor and support took too long to respond.,negative,negative,negative,True,True
+Excellent purchase. The PulseBottle Pro has strong temperature retention and arrived in perfect condition.,positive,positive,positive,True,True
+Not satisfied with the AeroRun Flex. The fit failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+The AeroRun Flex feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The SonicWave Lite feels reliable and the comfort is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The AeroRun Flex is acceptable. The sole quality is average and delivery took the expected time.,neutral,neutral,positive,True,False
+"I have used the AeroRun Flex for several weeks. Great comfort, simple setup, and helpful service.",positive,positive,positive,True,True
+Excellent purchase. The PulseBottle Pro has strong lid seal and arrived in perfect condition.,positive,positive,positive,True,True
+"I have used the PulseBottle Pro for several weeks. Great temperature retention, simple setup, and helpful service.",positive,positive,positive,True,True
+Very happy with the PulseBottle Pro. The temperature retention exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Very happy with the PulseBottle Pro. The lid seal exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+An ordinary experience with the SonicWave Lite. The comfort is okay for the price.,neutral,neutral,positive,True,False
+The AeroRun Flex feels reliable and the fit is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The PulseBottle Pro is acceptable. The lid seal is average and delivery took the expected time.,neutral,neutral,positive,True,False
+Excellent purchase. The AeroRun Flex has strong comfort and arrived in perfect condition.,positive,positive,positive,True,True
+"I have used the FitTrack Neo for several weeks. Great battery, simple setup, and helpful service.",positive,positive,positive,True,True
+"I have used the FitTrack Neo for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+Very happy with the AeroRun Flex. The sole quality exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Excellent purchase. The SonicWave Lite has strong sound quality and arrived in perfect condition.,positive,positive,positive,True,True
+Very happy with the SonicWave Lite. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"Bad experience. The AeroRun Flex has weak comfort, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+The FitTrack Neo is fine for regular use. The battery matches the listed specifications.,neutral,neutral,positive,True,False
+"Bad experience. The AeroRun Flex has weak comfort, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+"I received the PulseBottle Pro. It works as described, although the temperature retention is neither great nor poor.",neutral,neutral,positive,True,False
+The PulseBottle Pro feels reliable and the build quality is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Not satisfied with the SonicWave Lite. The price failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+Very happy with the AeroRun Flex. The fit exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The SonicWave Lite feels reliable and the battery is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"I received the AeroRun Flex. It works as described, although the price is neither great nor poor.",neutral,neutral,positive,True,False
+The AeroRun Flex disappointed me. The fit is poor and support took too long to respond.,negative,negative,negative,True,True
+Excellent purchase. The AeroRun Flex has strong sole quality and arrived in perfect condition.,positive,positive,positive,True,True
+The SonicWave Lite is fine for regular use. The comfort matches the listed specifications.,neutral,neutral,positive,True,False
+The SonicWave Lite disappointed me. The price is poor and support took too long to respond.,negative,negative,negative,True,True
+The PulseBottle Pro costs too much for this level of temperature retention. I requested a return.,negative,negative,negative,True,True
+The AeroRun Flex feels reliable and the sole quality is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The FitTrack Neo is acceptable. The fitness tracking is average and delivery took the expected time.,neutral,neutral,positive,True,False
+An ordinary experience with the AeroRun Flex. The sole quality is okay for the price.,neutral,neutral,positive,True,False
+The PulseBottle Pro disappointed me. The temperature retention is poor and support took too long to respond.,negative,negative,negative,True,True
+The PulseBottle Pro feels reliable and the build quality is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Very happy with the AeroRun Flex. The comfort exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Excellent purchase. The FitTrack Neo has strong battery and arrived in perfect condition.,positive,positive,positive,True,True
+"Bad experience. The PulseBottle Pro has weak temperature retention, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+The AeroRun Flex is acceptable. The sole quality is average and delivery took the expected time.,neutral,neutral,positive,True,False
+"I have used the SonicWave Lite for several weeks. Great comfort, simple setup, and helpful service.",positive,positive,positive,True,True
+"I have used the FitTrack Neo for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+"Bad experience. The AeroRun Flex has weak comfort, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+The SonicWave Lite is acceptable. The sound quality is average and delivery took the expected time.,neutral,neutral,positive,True,False
+Very happy with the AeroRun Flex. The comfort exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"Bad experience. The AeroRun Flex has weak comfort, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+The SonicWave Lite feels reliable and the comfort is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The AeroRun Flex costs too much for this level of price. I requested a return.,negative,negative,negative,True,True
+Very happy with the PulseBottle Pro. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"I have used the SonicWave Lite for several weeks. Great battery, simple setup, and helpful service.",positive,positive,positive,True,True
+The AeroRun Flex is acceptable. The fit is average and delivery took the expected time.,neutral,neutral,positive,True,False
+The SonicWave Lite disappointed me. The battery is poor and support took too long to respond.,negative,negative,negative,True,True
+"Bad experience. The AeroRun Flex has weak comfort, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+Excellent purchase. The FitTrack Neo has strong fitness tracking and arrived in perfect condition.,positive,positive,positive,True,True
+The FitTrack Neo is acceptable. The fitness tracking is average and delivery took the expected time.,neutral,neutral,positive,True,False
+The AeroRun Flex disappointed me. The fit is poor and support took too long to respond.,negative,negative,negative,True,True
+The AeroRun Flex costs too much for this level of price. I requested a return.,negative,negative,negative,True,True
+"I have used the PulseBottle Pro for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+Very happy with the PulseBottle Pro. The lid seal exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Very happy with the AeroRun Flex. The comfort exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The FitTrack Neo is acceptable. The battery is average and delivery took the expected time.,neutral,neutral,positive,True,False
+Very happy with the PulseBottle Pro. The lid seal exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"I have used the AeroRun Flex for several weeks. Great fit, simple setup, and helpful service.",positive,positive,positive,True,True
+Very happy with the FitTrack Neo. The display exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Very happy with the FitTrack Neo. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The AeroRun Flex is fine for regular use. The sole quality matches the listed specifications.,neutral,neutral,positive,True,False
+"I received the SonicWave Lite. It works as described, although the comfort is neither great nor poor.",neutral,neutral,positive,True,False
+The FitTrack Neo is acceptable. The price is average and delivery took the expected time.,neutral,neutral,positive,True,False
+"I have used the FitTrack Neo for several weeks. Great battery, simple setup, and helpful service.",positive,positive,positive,True,True
+"I have used the SonicWave Lite for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+Very happy with the PulseBottle Pro. The build quality exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The AeroRun Flex costs too much for this level of comfort. I requested a return.,negative,negative,negative,True,True
+Excellent purchase. The PulseBottle Pro has strong lid seal and arrived in perfect condition.,positive,positive,positive,True,True
+The SonicWave Lite feels reliable and the battery is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The PulseBottle Pro feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The SonicWave Lite costs too much for this level of comfort. I requested a return.,negative,negative,negative,True,True
+The SonicWave Lite costs too much for this level of sound quality. I requested a return.,negative,negative,negative,True,True
+"I have used the FitTrack Neo for several weeks. Great display, simple setup, and helpful service.",positive,positive,positive,True,True
+"I have used the PulseBottle Pro for several weeks. Great temperature retention, simple setup, and helpful service.",positive,positive,positive,True,True
+Very happy with the PulseBottle Pro. The build quality exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"Bad experience. The FitTrack Neo has weak display, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+The PulseBottle Pro is acceptable. The price is average and delivery took the expected time.,neutral,neutral,positive,True,False
+"I received the PulseBottle Pro. It works as described, although the lid seal is neither great nor poor.",neutral,neutral,positive,True,False
+Excellent purchase. The AeroRun Flex has strong sole quality and arrived in perfect condition.,positive,positive,positive,True,True
+The FitTrack Neo costs too much for this level of display. I requested a return.,negative,negative,negative,True,True
+Not satisfied with the PulseBottle Pro. The price failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+"I received the FitTrack Neo. It works as described, although the display is neither great nor poor.",neutral,neutral,positive,True,False
+The AeroRun Flex feels reliable and the comfort is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"Bad experience. The PulseBottle Pro has weak lid seal, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+Excellent purchase. The PulseBottle Pro has strong temperature retention and arrived in perfect condition.,positive,positive,positive,True,True
+Excellent purchase. The SonicWave Lite has strong comfort and arrived in perfect condition.,positive,positive,positive,True,True
+"I received the PulseBottle Pro. It works as described, although the build quality is neither great nor poor.",neutral,neutral,positive,True,False
+The FitTrack Neo feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"I have used the PulseBottle Pro for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+The FitTrack Neo feels reliable and the display is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"I have used the SonicWave Lite for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+Very happy with the SonicWave Lite. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Excellent purchase. The AeroRun Flex has strong fit and arrived in perfect condition.,positive,positive,positive,True,True
+"I have used the AeroRun Flex for several weeks. Great fit, simple setup, and helpful service.",positive,positive,positive,True,True
+Not satisfied with the PulseBottle Pro. The lid seal failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+Very happy with the AeroRun Flex. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The FitTrack Neo feels reliable and the fitness tracking is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The FitTrack Neo costs too much for this level of fitness tracking. I requested a return.,negative,negative,negative,True,True
+"I have used the AeroRun Flex for several weeks. Great fit, simple setup, and helpful service.",positive,positive,positive,True,True
+"I received the FitTrack Neo. It works as described, although the display is neither great nor poor.",neutral,neutral,positive,True,False
+The FitTrack Neo costs too much for this level of price. I requested a return.,negative,negative,negative,True,True
+The AeroRun Flex is fine for regular use. The fit matches the listed specifications.,neutral,neutral,positive,True,False
+Very happy with the SonicWave Lite. The battery exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Very happy with the SonicWave Lite. The sound quality exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The SonicWave Lite is acceptable. The battery is average and delivery took the expected time.,neutral,neutral,positive,True,False
+The PulseBottle Pro feels reliable and the lid seal is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The SonicWave Lite is acceptable. The sound quality is average and delivery took the expected time.,neutral,neutral,positive,True,False
+The PulseBottle Pro disappointed me. The lid seal is poor and support took too long to respond.,negative,negative,negative,True,True
+Very happy with the SonicWave Lite. The comfort exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The SonicWave Lite costs too much for this level of battery. I requested a return.,negative,negative,negative,True,True
+Very happy with the AeroRun Flex. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"I have used the FitTrack Neo for several weeks. Great display, simple setup, and helpful service.",positive,positive,positive,True,True
+The PulseBottle Pro disappointed me. The lid seal is poor and support took too long to respond.,negative,negative,negative,True,True
+The PulseBottle Pro costs too much for this level of build quality. I requested a return.,negative,negative,negative,True,True
+The PulseBottle Pro costs too much for this level of temperature retention. I requested a return.,negative,negative,negative,True,True
+Very happy with the SonicWave Lite. The battery exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"Bad experience. The FitTrack Neo has weak price, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+Very happy with the AeroRun Flex. The comfort exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+An ordinary experience with the AeroRun Flex. The fit is okay for the price.,neutral,neutral,positive,True,False
+"I have used the SonicWave Lite for several weeks. Great battery, simple setup, and helpful service.",positive,positive,positive,True,True
+"I have used the FitTrack Neo for several weeks. Great fitness tracking, simple setup, and helpful service.",positive,positive,positive,True,True
+Not satisfied with the AeroRun Flex. The fit failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+Excellent purchase. The FitTrack Neo has strong fitness tracking and arrived in perfect condition.,positive,positive,positive,True,True
+"I have used the AeroRun Flex for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+The SonicWave Lite costs too much for this level of battery. I requested a return.,negative,negative,negative,True,True
+Excellent purchase. The SonicWave Lite has strong sound quality and arrived in perfect condition.,positive,positive,positive,True,True
+"I have used the SonicWave Lite for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+Excellent purchase. The PulseBottle Pro has strong build quality and arrived in perfect condition.,positive,positive,positive,True,True
+Excellent purchase. The SonicWave Lite has strong comfort and arrived in perfect condition.,positive,positive,positive,True,True
+"I have used the PulseBottle Pro for several weeks. Great lid seal, simple setup, and helpful service.",positive,positive,positive,True,True
+"I have used the FitTrack Neo for several weeks. Great display, simple setup, and helpful service.",positive,positive,positive,True,True
+"I have used the FitTrack Neo for several weeks. Great display, simple setup, and helpful service.",positive,positive,positive,True,True
+The AeroRun Flex is fine for regular use. The comfort matches the listed specifications.,neutral,neutral,positive,True,False
+"I have used the SonicWave Lite for several weeks. Great comfort, simple setup, and helpful service.",positive,positive,positive,True,True
+The SonicWave Lite feels reliable and the sound quality is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The FitTrack Neo feels reliable and the display is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The SonicWave Lite feels reliable and the sound quality is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The AeroRun Flex is fine for regular use. The price matches the listed specifications.,neutral,neutral,positive,True,False
+"Bad experience. The FitTrack Neo has weak battery, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+Excellent purchase. The AeroRun Flex has strong fit and arrived in perfect condition.,positive,positive,positive,True,True
+The SonicWave Lite is acceptable. The sound quality is average and delivery took the expected time.,neutral,neutral,positive,True,False
+Not satisfied with the SonicWave Lite. The battery failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+"I have used the SonicWave Lite for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+"I have used the AeroRun Flex for several weeks. Great sole quality, simple setup, and helpful service.",positive,positive,positive,True,True
+Very happy with the AeroRun Flex. The fit exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"I have used the PulseBottle Pro for several weeks. Great build quality, simple setup, and helpful service.",positive,positive,positive,True,True
+Excellent purchase. The AeroRun Flex has strong fit and arrived in perfect condition.,positive,positive,positive,True,True
+"I have used the FitTrack Neo for several weeks. Great fitness tracking, simple setup, and helpful service.",positive,positive,positive,True,True
+An ordinary experience with the SonicWave Lite. The sound quality is okay for the price.,neutral,neutral,positive,True,False
+The SonicWave Lite is fine for regular use. The price matches the listed specifications.,neutral,neutral,positive,True,False
+"I received the SonicWave Lite. It works as described, although the battery is neither great nor poor.",neutral,neutral,positive,True,False
+The SonicWave Lite feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Excellent purchase. The AeroRun Flex has strong sole quality and arrived in perfect condition.,positive,positive,positive,True,True
+The SonicWave Lite is acceptable. The comfort is average and delivery took the expected time.,neutral,neutral,positive,True,False
+"I have used the FitTrack Neo for several weeks. Great battery, simple setup, and helpful service.",positive,positive,positive,True,True
+The PulseBottle Pro costs too much for this level of price. I requested a return.,negative,negative,negative,True,True
+Very happy with the SonicWave Lite. The comfort exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Excellent purchase. The SonicWave Lite has strong comfort and arrived in perfect condition.,positive,positive,positive,True,True
+Very happy with the PulseBottle Pro. The build quality exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The FitTrack Neo feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"Bad experience. The PulseBottle Pro has weak lid seal, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+The PulseBottle Pro feels reliable and the temperature retention is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The FitTrack Neo feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"I have used the SonicWave Lite for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+The SonicWave Lite feels reliable and the comfort is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Not satisfied with the PulseBottle Pro. The build quality failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+The SonicWave Lite is acceptable. The comfort is average and delivery took the expected time.,neutral,neutral,positive,True,False
+The AeroRun Flex is acceptable. The sole quality is average and delivery took the expected time.,neutral,neutral,positive,True,False
+Very happy with the PulseBottle Pro. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Excellent purchase. The AeroRun Flex has strong sole quality and arrived in perfect condition.,positive,positive,positive,True,True
+Very happy with the PulseBottle Pro. The build quality exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"Bad experience. The AeroRun Flex has weak sole quality, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+The SonicWave Lite costs too much for this level of comfort. I requested a return.,negative,negative,negative,True,True
+Excellent purchase. The PulseBottle Pro has strong temperature retention and arrived in perfect condition.,positive,positive,positive,True,True
+The AeroRun Flex costs too much for this level of comfort. I requested a return.,negative,negative,negative,True,True
+The AeroRun Flex feels reliable and the comfort is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Very happy with the AeroRun Flex. The comfort exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The SonicWave Lite is acceptable. The comfort is average and delivery took the expected time.,neutral,neutral,positive,True,False
+Excellent purchase. The FitTrack Neo has strong battery and arrived in perfect condition.,positive,positive,positive,True,True
+"I have used the SonicWave Lite for several weeks. Great battery, simple setup, and helpful service.",positive,positive,positive,True,True
+The SonicWave Lite feels reliable and the comfort is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+"I have used the SonicWave Lite for several weeks. Great comfort, simple setup, and helpful service.",positive,positive,positive,True,True
+"I have used the AeroRun Flex for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+"I received the SonicWave Lite. It works as described, although the battery is neither great nor poor.",neutral,neutral,positive,True,False
+Very happy with the FitTrack Neo. The battery exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"Bad experience. The PulseBottle Pro has weak temperature retention, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+The PulseBottle Pro disappointed me. The price is poor and support took too long to respond.,negative,negative,negative,True,True
+"Bad experience. The AeroRun Flex has weak fit, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+"Bad experience. The FitTrack Neo has weak display, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+An ordinary experience with the PulseBottle Pro. The build quality is okay for the price.,neutral,neutral,positive,True,False
+Very happy with the FitTrack Neo. The fitness tracking exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"I have used the AeroRun Flex for several weeks. Great sole quality, simple setup, and helpful service.",positive,positive,positive,True,True
+Very happy with the PulseBottle Pro. The lid seal exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Excellent purchase. The AeroRun Flex has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+An ordinary experience with the PulseBottle Pro. The price is okay for the price.,neutral,neutral,positive,True,False
+"I received the SonicWave Lite. It works as described, although the sound quality is neither great nor poor.",neutral,neutral,positive,True,False
+"I received the AeroRun Flex. It works as described, although the price is neither great nor poor.",neutral,neutral,positive,True,False
+The SonicWave Lite is fine for regular use. The comfort matches the listed specifications.,neutral,neutral,positive,True,False
+"I have used the AeroRun Flex for several weeks. Great comfort, simple setup, and helpful service.",positive,positive,positive,True,True
+"I received the PulseBottle Pro. It works as described, although the temperature retention is neither great nor poor.",neutral,neutral,positive,True,False
+Very happy with the PulseBottle Pro. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"I received the PulseBottle Pro. It works as described, although the build quality is neither great nor poor.",neutral,neutral,positive,True,False
+Very happy with the FitTrack Neo. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+An ordinary experience with the AeroRun Flex. The sole quality is okay for the price.,neutral,neutral,positive,True,False
+An ordinary experience with the SonicWave Lite. The battery is okay for the price.,neutral,neutral,positive,True,False
+Very happy with the FitTrack Neo. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"I have used the PulseBottle Pro for several weeks. Great build quality, simple setup, and helpful service.",positive,positive,positive,True,True
+The AeroRun Flex is acceptable. The sole quality is average and delivery took the expected time.,neutral,neutral,positive,True,False
+Excellent purchase. The AeroRun Flex has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+Excellent purchase. The FitTrack Neo has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+The AeroRun Flex is acceptable. The fit is average and delivery took the expected time.,neutral,neutral,positive,True,False
+Excellent purchase. The FitTrack Neo has strong display and arrived in perfect condition.,positive,positive,positive,True,True
+"Bad experience. The FitTrack Neo has weak fitness tracking, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+Excellent purchase. The PulseBottle Pro has strong build quality and arrived in perfect condition.,positive,positive,positive,True,True
+Not satisfied with the AeroRun Flex. The sole quality failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+The PulseBottle Pro disappointed me. The temperature retention is poor and support took too long to respond.,negative,negative,negative,True,True
+The PulseBottle Pro disappointed me. The price is poor and support took too long to respond.,negative,negative,negative,True,True
+The FitTrack Neo costs too much for this level of fitness tracking. I requested a return.,negative,negative,negative,True,True
+Very happy with the FitTrack Neo. The battery exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Very happy with the PulseBottle Pro. The temperature retention exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Excellent purchase. The FitTrack Neo has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+The PulseBottle Pro feels reliable and the lid seal is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Very happy with the FitTrack Neo. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"I have used the FitTrack Neo for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+Excellent purchase. The PulseBottle Pro has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+The AeroRun Flex feels reliable and the comfort is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Not satisfied with the SonicWave Lite. The battery failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+"Bad experience. The PulseBottle Pro has weak build quality, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+"I have used the SonicWave Lite for several weeks. Great comfort, simple setup, and helpful service.",positive,positive,positive,True,True
+"I have used the PulseBottle Pro for several weeks. Great temperature retention, simple setup, and helpful service.",positive,positive,positive,True,True
+"Bad experience. The SonicWave Lite has weak sound quality, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+The AeroRun Flex costs too much for this level of price. I requested a return.,negative,negative,negative,True,True
+Very happy with the AeroRun Flex. The sole quality exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"I have used the AeroRun Flex for several weeks. Great fit, simple setup, and helpful service.",positive,positive,positive,True,True
+Very happy with the SonicWave Lite. The battery exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Excellent purchase. The SonicWave Lite has strong battery and arrived in perfect condition.,positive,positive,positive,True,True
+"I received the AeroRun Flex. It works as described, although the fit is neither great nor poor.",neutral,neutral,positive,True,False
+"I have used the PulseBottle Pro for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+The PulseBottle Pro disappointed me. The lid seal is poor and support took too long to respond.,negative,negative,negative,True,True
+Excellent purchase. The AeroRun Flex has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+The AeroRun Flex disappointed me. The sole quality is poor and support took too long to respond.,negative,negative,negative,True,True
+Excellent purchase. The FitTrack Neo has strong price and arrived in perfect condition.,positive,positive,positive,True,True
+The AeroRun Flex disappointed me. The fit is poor and support took too long to respond.,negative,negative,negative,True,True
+An ordinary experience with the SonicWave Lite. The comfort is okay for the price.,neutral,neutral,positive,True,False
+Very happy with the PulseBottle Pro. The build quality exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Very happy with the FitTrack Neo. The display exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+The AeroRun Flex feels reliable and the comfort is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+Very happy with the PulseBottle Pro. The price exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+"I have used the AeroRun Flex for several weeks. Great price, simple setup, and helpful service.",positive,positive,positive,True,True
+Very happy with the SonicWave Lite. The comfort exceeded my expectations and the price feels fair.,positive,positive,positive,True,True
+Not satisfied with the SonicWave Lite. The sound quality failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+The PulseBottle Pro is acceptable. The lid seal is average and delivery took the expected time.,neutral,neutral,positive,True,False
+The FitTrack Neo is acceptable. The price is average and delivery took the expected time.,neutral,neutral,positive,True,False
+The FitTrack Neo feels reliable and the price is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+The PulseBottle Pro is acceptable. The temperature retention is average and delivery took the expected time.,neutral,neutral,positive,True,False
+"I received the FitTrack Neo. It works as described, although the fitness tracking is neither great nor poor.",neutral,neutral,positive,True,False
+"Bad experience. The SonicWave Lite has weak comfort, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+"Bad experience. The SonicWave Lite has weak battery, confusing setup, and unhelpful service.",negative,negative,negative,True,True
+Excellent purchase. The FitTrack Neo has strong display and arrived in perfect condition.,positive,positive,positive,True,True
+Not satisfied with the AeroRun Flex. The price failed within a few days and delivery was delayed.,negative,negative,negative,True,True
+The FitTrack Neo feels reliable and the fitness tracking is excellent. Delivery was quick and I would recommend it.,positive,positive,positive,True,True
+An ordinary experience with the AeroRun Flex. The fit is okay for the price.,neutral,neutral,positive,True,False
+The SonicWave Lite costs too much for this level of comfort. I requested a return.,negative,negative,negative,True,True
