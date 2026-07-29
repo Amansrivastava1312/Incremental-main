@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Forecast with LSTM · MarketPulse AI</title>
+
 <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
 </head>
 <body>
@@ -66,11 +67,7 @@ async function runModel() {
         }
 
         const result = await response.json();
-
-        out.innerHTML =
-            "<pre>" +
-            JSON.stringify(result, null, 2) +
-            "</pre>";
+        showResult(result);
 
     } catch (error) {
         out.innerHTML =
@@ -78,6 +75,36 @@ async function runModel() {
             error.message +
             "</span>";
     }
+}
+
+// build a nice view from the response
+function showResult(result) {
+    const out = document.getElementById("model-output");
+
+    // the actual data is nested inside prediction.data
+    const info = result.prediction.data;
+    const sales = info.predicted_sales;
+
+    // header with product details
+    let html = "<div class='result-header'>";
+    html += "Status: <span class='status-ok'>✅ " + result.prediction.status + "</span><br>";
+    html += "Method: <b>" + result.method.toUpperCase() + "</b><br>";
+    html += "Product ID: <b>" + info.product_id + "</b><br>";
+    html += "Product Name: <b>" + info.product_name + "</b><br>";
+    html += "Horizon: <b>" + info.horizon_days + " days</b>";
+    html += "</div>";
+
+    // table of day-wise predictions
+    html += "<table class='pred-table'>";
+    html += "<tr><th>Day</th><th>Predicted Sales</th></tr>";
+
+    for (let i = 0; i < sales.length; i++) {
+        html += "<tr><td>Day " + (i + 1) + "</td><td>" + sales[i] + "</td></tr>";
+    }
+
+    html += "</table>";
+
+    out.innerHTML = html;
 }
 </script>
 </div>

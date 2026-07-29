@@ -91,3 +91,48 @@ body{background:var(--bg);color:var(--text);}
   .page-title{font-size:26px;}
   .hero h1{font-size:28px;}
 }
+
+
+
+/* ============================================================
+   FORECAST RESULT VIEW  (day-wise prediction table)
+============================================================ */
+.result-header{
+    margin-bottom:14px;
+    line-height:1.7;
+    font-size:14px;
+}
+.result-header b{color:var(--primary);}
+
+.pred-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:12px;
+    font-size:14px;
+    background:var(--card);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+}
+.pred-table th,
+.pred-table td{
+    padding:12px 14px;
+    border-bottom:1px solid var(--border);
+    text-align:center;
+}
+.pred-table th{
+    background:var(--primary);
+    color:#fff;
+    font-weight:700;
+}
+.pred-table td:first-child{
+    font-weight:700;
+    background:#f8fafc;
+}
+.pred-table tr:nth-child(even) td{background:#f4f6fb;}
+.pred-table tr:hover td{background:#eef2ff;}
+
+.status-ok{
+    color:var(--success);
+    font-weight:700;
+}
