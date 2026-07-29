@@ -3,15 +3,21 @@ from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from fastapi import HTTPException
 from pydantic import BaseModel
 from dotenv import load_dotenv
-from Forecaster.scripts import forecast_sales
 
 
+# ML
+from nlp_sentiment.distil_bert_test import predict as dist_prd
+from fastapi import  UploadFile, File
 
+from fastapi.responses import JSONResponse
 
-from rag_chatbot.script import run_chatbot
-from ml_tech.scripts.output import decision_tree,svm,random_forest
+UPLOAD_DIR = "uploads"
+
+os.makedirs(UPLOAD_DIR, exist_ok=True)
+ALLOWED_TYPES = ["image/jpeg", "image/png", "image/jpg", "image/webp"]
 
 load_dotenv()
 
@@ -67,9 +73,19 @@ def ml_page(request: Request):
     return templates.TemplateResponse(request, "lstm.html")
 
 
+@app.get("/cnn", response_class=HTMLResponse)
+def ml_page(request: Request):
+    return templates.TemplateResponse(request, "cnn.html")
+
+@app.get("/transfer", response_class=HTMLResponse)
+def ml_page(request: Request):
+    return templates.TemplateResponse(request, "transfer.html")
+
 # ---------- API ENDPOINT ----------
 @app.post("/predict-ml")
 def predict_ml(data: ChurnInput):
+    from ml_tech.scripts.output import decision_tree,svm,random_forest
+
     x=dict(data)
     print(x)
     li = list(x.values())
@@ -97,15 +113,30 @@ def predict_ml(data: ChurnInput):
 # ---------- API ENDPOINTS ----------
 @app.post("/forecast-arima")
 def forecast_arima(data: ForecastInput):
-    result = forecast_sales(data.product_id, data.days, "arima")
+    from Forecaster.scripts import forecast_sales
+
+    result = forecast_sales(
+        data.product_id,
+        data.days,
+        "arima"
+    )
+
     return {
         "method": "arima",
         "prediction": result
     }
-    
+
+
 @app.post("/forecast-lstm")
-def forecast_arima(data: ForecastInput):
-    result = forecast_sales(data.product_id, data.days, "lstm")
+def forecast_lstm(data: ForecastInput):
+    from Forecaster.scripts import forecast_sales
+
+    result = forecast_sales(
+        data.product_id,
+        data.days,
+        "lstm"
+    )
+
     return {
         "method": "lstm",
         "prediction": result
@@ -114,7 +145,14 @@ def forecast_arima(data: ForecastInput):
 
 @app.post("/forecast-sarima")
 def forecast_sarima(data: ForecastInput):
-    result = forecast_sales(data.product_id, data.days, "sarima")
+    from Forecaster.scripts import forecast_sales
+
+    result = forecast_sales(
+        data.product_id,
+        data.days,
+        "sarima"
+    )
+
     return {
         "method": "sarima",
         "prediction": result
@@ -123,35 +161,124 @@ def forecast_sarima(data: ForecastInput):
 
 @app.post("/forecast-garima")
 def forecast_garima(data: ForecastInput):
-    result = forecast_sales(data.product_id, data.days, "garima")
+    from Forecaster.scripts import forecast_sales
+
+    result = forecast_sales(
+        data.product_id,
+        data.days,
+        "garima"
+    )
+
     return {
         "method": "garima",
         "prediction": result
     }
-    
+
+# ---------- INPUT SCHEMA ----------
+class SentimentInput(BaseModel):
+    text: str
 
 
-# request body for chatbot
-class ChatInput(BaseModel):
-    question: str
 
-# serve the chatbot page
-@app.get("/rag-chatbot", response_class=HTMLResponse)
-def agent_page(request: Request):
-    return templates.TemplateResponse(request, "rag-chatbot.html")
+@app.get("/bert", response_class=HTMLResponse)
+def bert_page(request: Request):
+    return templates.TemplateResponse(request, "bert.html")
 
-# chatbot answer endpoint
-@app.post("/rag-chatbot")
-def chat(data: ChatInput):
+
+@app.get("/logistic", response_class=HTMLResponse)
+def logistic_page(request: Request):
+    return templates.TemplateResponse(request, "logistic.html")
+
+
+# ---------- API ENDPOINTS ----------
+@app.post("/sentiment-bert")
+def sentiment_bert(data: SentimentInput):
+    result = dist_prd(data.text.strip())
+
+    return {
+        "model": "BERT",
+        "sentiment": result
+    }
+
+
+ 
+
+@app.post("/predict-cnn")
+async def predict_cnn_endpoint(image: UploadFile = File(...)):
+
+    # 1. check the file is a valid image
+    if image.content_type not in ALLOWED_TYPES:
+        return JSONResponse(
+            status_code=400,
+            content={
+                "status": "error",
+                "message": "Please upload a valid image (jpg, png, webp)",
+            },
+        )
+
+    # 2. save the file into uploads folder
+    file_path = os.path.join(UPLOAD_DIR, image.filename)
+    with open(file_path, "wb") as f:
+        content = await image.read()
+        f.write(content)
+
+    # 3. run the model
     try:
-        answer = run_chatbot(data.question)
-        return {
-            "status": "success",
-            "question": data.question,
-            "answer": answer
-        }
+        prediction = predict_cnn(file_path)
     except Exception as e:
-        return {
-            "status": "error",
-            "message": str(e)
-        }
+        return JSONResponse(
+            status_code=500,
+            content={
+                "status": "error",
+                "message": str(e),
+            },
+        )
+
+    # 4. return result in the shape the HTML expects
+    return {
+        "status": "success",
+        "method": "cnn",
+        "filename": image.filename,
+        "prediction": prediction,
+    }
+    
+    
+@app.post("/predict-transfer")
+async def predict_transfer_endpoint(image: UploadFile = File(...)):
+
+    # 1. check the file is a valid image
+    if image.content_type not in ALLOWED_TYPES:
+        return JSONResponse(
+            status_code=400,
+            content={
+                "status": "error",
+                "message": "Please upload a valid image (jpg, png, webp)",
+            },
+        )
+
+    # 2. save the file into uploads folder
+    file_path = os.path.join(UPLOAD_DIR, image.filename)
+    with open(file_path, "wb") as f:
+        content = await image.read()
+        f.write(content)
+
+    # 3. run the transfer learning model
+    try:
+        prediction = predict_tl(file_path)
+    except Exception as e:
+        return JSONResponse(
+            status_code=500,
+            content={
+                "status": "error",
+                "message": str(e),
+            },
+        )
+
+    # 4. return result in the shape the HTML expects
+    return {
+        "status": "success",
+        "method": "transfer",
+        "filename": image.filename,
+        "prediction": prediction,
+    }
+ 

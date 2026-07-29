@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sentiment (BERT) · MarketPulse AI</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet"  href="{{ url_for('static', path='style.css') }}">
 </head>
 <body>
 <div class="navbar">
@@ -30,34 +30,64 @@
 </div>
 <script>
 const ENDPOINT = "/sentiment-bert";
-const INPUTS = [{"n": "text", "t": "textarea"}];
-const SAMPLE_OUTPUT = {
-  "sentiment": "Pos | Neg | Neutral",
-  "confidence": "number"
-};
-async function runModel(){
+
+async function runModel() {
+  const text = document.getElementById("in-text").value.trim();
   const out = document.getElementById("model-output");
-  out.textContent = "⏳ Sending request to " + ENDPOINT + " …";
-  const data = {};
-  INPUTS.forEach(inp => {
-    const el = document.getElementById("in-" + inp.n);
-    data[inp.n] = inp.t === "file" ? (el.files[0]?.name || "") : el.value;
-  });
-  /* ---- REAL BACKEND CALL (uncomment when ready) ----
+
+  if (!text) {
+    out.textContent = "Please enter text before predicting.";
+    return;
+  }
+
+  out.textContent = "⏳ Predicting sentiment...";
+
   try {
     const res = await fetch(ENDPOINT, {
-      method:"POST", headers:{"Content-Type":"application/json"},
-      body: JSON.stringify(data)
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ text: text })
     });
+
     const json = await res.json();
-    out.textContent = JSON.stringify(json, null, 2);
-  } catch(err) { out.textContent = "❌ Error: " + err.message; }
-  -------------------------------------------------- */
-  setTimeout(() => {
-    out.textContent =
-      "REQUEST:\n" + JSON.stringify(data, null, 2) +
-      "\n\nRESPONSE (sample):\n" + JSON.stringify(SAMPLE_OUTPUT, null, 2);
-  }, 500);
+
+    if (!res.ok) {
+      throw new Error(json.detail || "Prediction failed.");
+    }
+
+    out.innerHTML = `
+      <div class="prediction-result">
+        <p>
+          <strong>Text:</strong>
+          ${escapeHtml(text)}
+        </p>
+
+        <p>
+          <strong>Model:</strong>
+          ${escapeHtml(json.model)}
+        </p>
+
+        <p>
+          <strong>Sentiment:</strong>
+          <span class="sentiment ${json.sentiment.toLowerCase()}">
+            ${escapeHtml(json.sentiment.toUpperCase())}
+          </span>
+        </p>
+      </div>
+    `;
+
+  } catch (error) {
+    console.error("Prediction error:", error);
+    out.textContent = "❌ Error: " + error.message;
+  }
+}
+
+function escapeHtml(value) {
+  const element = document.createElement("div");
+  element.textContent = String(value);
+  return element.innerHTML;
 }
 </script>
 </div>

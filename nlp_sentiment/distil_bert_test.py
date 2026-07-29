@@ -1,34 +1,74 @@
-"""Load the saved BERT sentiment model and expose a predict function.
+import os
+from pathlib import Path
 
-Import from app.py, or run directly:
-    python3 src/run_bert.py "your review text here"
-"""
-import sys
+# Configure native libraries before importing Transformers
+# os.environ["TOKENIZERS_PARALLELISM"] = "false"
+# os.environ["CUDA_VISIBLE_DEVICES"] = ""
 
-BERT_DIR = "models/bert_sentiment"
+BERT_DIR = (
+    Path(__file__).resolve().parent
+    / "models"
+    / "bert_sentiment"
+)
 
 _pipe = None
 
 
 def load_model():
-    """Load the saved HuggingFace pipeline once and cache it."""
     global _pipe
+
     if _pipe is None:
+        print(
+            f"[BERT] Loading model from: {BERT_DIR}",
+            flush=True
+        )
+
+        if not BERT_DIR.exists():
+            raise FileNotFoundError(
+                f"BERT model directory not found: {BERT_DIR}"
+            )
+
+        # Lazy import: import only when BERT is requested
         from transformers import pipeline
-        _pipe = pipeline("sentiment-analysis", model=BERT_DIR,
-                         tokenizer=BERT_DIR, truncation=True)
+
+        print(
+            "[BERT] Creating PyTorch pipeline...",
+            flush=True
+        )
+
+        _pipe = pipeline(
+            task="sentiment-analysis",
+            model=str(BERT_DIR),
+            tokenizer=str(BERT_DIR),
+            framework="pt",
+            device=-1
+        )
+
+        print(
+            "[BERT] Model loaded successfully.",
+            flush=True
+        )
+
     return _pipe
 
 
 def predict(text):
-    """Return (label, score) for a single string."""
+    if not isinstance(text, str) or not text.strip():
+        raise ValueError("Text cannot be empty.")
+
     pipe = load_model()
-    r = pipe(text)[0]
-    return r["label"].lower()
-#, round(float(r["score"]), 4)
 
+    print("[BERT] Running inference...", flush=True)
 
-# if __name__ == "__main__":
-#     text = " ".join(sys.argv[1:]) or "Great price and fast delivery"
-#     label, score = predict(text)
-#     print(f"[bert] {label} ({score})  <-  {text}")
+    result = pipe(
+        text.strip(),
+        truncation=True,
+        max_length=512
+    )[0]
+
+    print(
+        f"[BERT] Raw prediction: {result}",
+        flush=True
+    )
+
+    return result["label"].lower()
