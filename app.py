@@ -5,6 +5,10 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 from dotenv import load_dotenv
+from Forecaster.scripts import forecast_sales
+
+
+
 
 #Ml
 from ml_tech.scripts.output import decision_tree,svm,random_forest
@@ -34,6 +38,10 @@ class ChurnInput(BaseModel):
     EstimatedSalary: float
     Model: str
 
+# ---------- Forecast----------
+class ForecastInput(BaseModel):
+    product_id: str
+    days: int
 
 # ---------- PAGES ----------
 # home page
@@ -45,6 +53,18 @@ def home(request: Request):
 @app.get("/mlmodel", response_class=HTMLResponse)
 def ml_page(request: Request):
     return templates.TemplateResponse(request, "ml.html")
+
+@app.get("/sarima", response_class=HTMLResponse)
+def ml_page(request: Request):
+    return templates.TemplateResponse(request, "sarima.html")
+
+@app.get("/arima", response_class=HTMLResponse)
+def ml_page(request: Request):
+    return templates.TemplateResponse(request, "arima.html")
+
+@app.get("/lstm", response_class=HTMLResponse)
+def ml_page(request: Request):
+    return templates.TemplateResponse(request, "lstm.html")
 
 
 # ---------- API ENDPOINT ----------
@@ -68,5 +88,43 @@ def predict_ml(data: ChurnInput):
     
     return {
         "model": data.Model,
+        "prediction": result
+    }
+    
+
+
+
+# ---------- API ENDPOINTS ----------
+@app.post("/forecast-arima")
+def forecast_arima(data: ForecastInput):
+    result = forecast_sales(data.product_id, data.days, "arima")
+    return {
+        "method": "arima",
+        "prediction": result
+    }
+    
+@app.post("/forecast-lstm")
+def forecast_arima(data: ForecastInput):
+    result = forecast_sales(data.product_id, data.days, "lstm")
+    return {
+        "method": "lstm",
+        "prediction": result
+    }
+
+
+@app.post("/forecast-sarima")
+def forecast_sarima(data: ForecastInput):
+    result = forecast_sales(data.product_id, data.days, "sarima")
+    return {
+        "method": "sarima",
+        "prediction": result
+    }
+
+
+@app.post("/forecast-garima")
+def forecast_garima(data: ForecastInput):
+    result = forecast_sales(data.product_id, data.days, "garima")
+    return {
+        "method": "garima",
         "prediction": result
     }

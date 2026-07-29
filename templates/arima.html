@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Forecast with ARIMA · MarketPulse AI</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
 </head>
 <body>
 <div class="navbar">
@@ -41,34 +41,43 @@
 </div>
 <script>
 const ENDPOINT = "/forecast-arima";
-const INPUTS = [{"n": "product_id", "t": "text"}, {"n": "days", "t": "number"}];
-const SAMPLE_OUTPUT = {
-  "method": "ARIMA",
-  "predicted_sales": "array"
-};
-async function runModel(){
-  const out = document.getElementById("model-output");
-  out.textContent = "⏳ Sending request to " + ENDPOINT + " …";
-  const data = {};
-  INPUTS.forEach(inp => {
-    const el = document.getElementById("in-" + inp.n);
-    data[inp.n] = inp.t === "file" ? (el.files[0]?.name || "") : el.value;
-  });
-  /* ---- REAL BACKEND CALL (uncomment when ready) ----
-  try {
-    const res = await fetch(ENDPOINT, {
-      method:"POST", headers:{"Content-Type":"application/json"},
-      body: JSON.stringify(data)
-    });
-    const json = await res.json();
-    out.textContent = JSON.stringify(json, null, 2);
-  } catch(err) { out.textContent = "❌ Error: " + err.message; }
-  -------------------------------------------------- */
-  setTimeout(() => {
-    out.textContent =
-      "REQUEST:\n" + JSON.stringify(data, null, 2) +
-      "\n\nRESPONSE (sample):\n" + JSON.stringify(SAMPLE_OUTPUT, null, 2);
-  }, 500);
+
+async function runModel() {
+    const out = document.getElementById("model-output");
+
+    const data = {
+        product_id: document.getElementById("in-product_id").value,
+        days: Number(document.getElementById("in-days").value)
+    };
+
+    out.innerHTML = "⏳ Predicting...";
+
+    try {
+        const response = await fetch(ENDPOINT, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+        }
+
+        const result = await response.json();
+
+        out.innerHTML =
+            "<pre>" +
+            JSON.stringify(result, null, 2) +
+            "</pre>";
+
+    } catch (error) {
+        out.innerHTML =
+            "<span style='color:red'>❌ " +
+            error.message +
+            "</span>";
+    }
 }
 </script>
 </div>
