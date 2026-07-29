@@ -10,7 +10,7 @@ from Forecaster.scripts import forecast_sales
 
 
 
-#Ml
+from rag_chatbot.script import run_chatbot
 from ml_tech.scripts.output import decision_tree,svm,random_forest
 
 load_dotenv()
@@ -128,3 +128,30 @@ def forecast_garima(data: ForecastInput):
         "method": "garima",
         "prediction": result
     }
+    
+
+
+# request body for chatbot
+class ChatInput(BaseModel):
+    question: str
+
+# serve the chatbot page
+@app.get("/rag-chatbot", response_class=HTMLResponse)
+def agent_page(request: Request):
+    return templates.TemplateResponse(request, "rag-chatbot.html")
+
+# chatbot answer endpoint
+@app.post("/rag-chatbot")
+def chat(data: ChatInput):
+    try:
+        answer = run_chatbot(data.question)
+        return {
+            "status": "success",
+            "question": data.question,
+            "answer": answer
+        }
+    except Exception as e:
+        return {
+            "status": "error",
+            "message": str(e)
+        }
