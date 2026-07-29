@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sentiment (BERT) · MarketPulse AI</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="navbar">
+  <a class="brand" href="index.html">📈 MarketPulse AI</a>
+  <div class="nav-links">
+    <a class="nav-btn active" href="index.html">General</a>
+    <a class="nav-btn" href="comparison.html">Comparison</a>
+    <a class="nav-btn" href="agent.html">Agent</a>
+  </div>
+</div>
+<div class="container">
+<a class="back-btn" href="index.html">← Back to Models</a>
+<h1 class="page-title">🔤  Sentiment (BERT)</h1>
+<p class="page-subtitle">Endpoint: POST /sentiment-bert  •  Use case: Contextual sentiment</p>
+<div class="card">
+  <div class="section-title">Input</div>
+      <div class="form-group"><label class="form-label">text</label><textarea class="form-textarea" id="in-text"></textarea></div>
+      <button class="submit-btn" onclick="runModel()">Predict</button>
+</div>
+<div class="card">
+  <div class="section-title">Output</div>
+  <div class="output-card" id="model-output">Result will appear here…</div>
+</div>
+<script>
+const ENDPOINT = "/sentiment-bert";
+const INPUTS = [{"n": "text", "t": "textarea"}];
+const SAMPLE_OUTPUT = {
+  "sentiment": "Pos | Neg | Neutral",
+  "confidence": "number"
+};
+async function runModel(){
+  const out = document.getElementById("model-output");
+  out.textContent = "⏳ Sending request to " + ENDPOINT + " …";
+  const data = {};
+  INPUTS.forEach(inp => {
+    const el = document.getElementById("in-" + inp.n);
+    data[inp.n] = inp.t === "file" ? (el.files[0]?.name || "") : el.value;
+  });
+  /* ---- REAL BACKEND CALL (uncomment when ready) ----
+  try {
+    const res = await fetch(ENDPOINT, {
+      method:"POST", headers:{"Content-Type":"application/json"},
+      body: JSON.stringify(data)
+    });
+    const json = await res.json();
+    out.textContent = JSON.stringify(json, null, 2);
+  } catch(err) { out.textContent = "❌ Error: " + err.message; }
+  -------------------------------------------------- */
+  setTimeout(() => {
+    out.textContent =
+      "REQUEST:\n" + JSON.stringify(data, null, 2) +
+      "\n\nRESPONSE (sample):\n" + JSON.stringify(SAMPLE_OUTPUT, null, 2);
+  }, 500);
+}
+</script>
+</div>
+</body>
+</html>

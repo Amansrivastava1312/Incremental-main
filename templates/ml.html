@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ML Model - Customer Churn Prediction</title>
+<link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+</head>
+<body>
+<div class="navbar">
+    <a class="brand" href="index.html">📈 MarketPulse AI</a>
+    <div class="nav-links">
+        <a class="nav-btn active" href="index.html">General</a>
+        <a class="nav-btn" href="comparison.html">Comparison</a>
+        <a class="nav-btn" href="agent.html">Agent</a>
+    </div>
+</div>
+<div class="container">
+    <a class="back-btn" href="index.html">← Back to Models</a>
+    <h1 class="page-title">📊 Customer Churn Prediction</h1>
+    <p class="page-subtitle">Endpoint: POST /predict-ml • Use Case: Customer Churn Prediction</p>
+
+    <!-- INPUT -->
+    <div class="card">
+        <div class="section-title">Input</div>
+        <div class="form-group">
+            <label class="form-label">Credit Score</label>
+            <input type="number" class="form-input" id="creditScore">
+        </div>
+        <div class="form-group">
+            <label class="form-label">Geography</label>
+            <select class="form-input" id="geography">
+                <option>France</option>
+                <option>Germany</option>
+                <option>Spain</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-label">Gender</label>
+            <select class="form-input" id="gender">
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-label">Age</label>
+            <input type="number" class="form-input" id="age">
+        </div>
+        <div class="form-group">
+            <label class="form-label">Tenure</label>
+            <input type="number" class="form-input" id="tenure">
+        </div>
+        <div class="form-group">
+            <label class="form-label">Balance</label>
+            <input type="number" class="form-input" id="balance">
+        </div>
+        <div class="form-group">
+            <label class="form-label">Number Of Products</label>
+            <input type="number" class="form-input" id="numProducts">
+        </div>
+        <div class="form-group">
+            <label class="form-label">Has Credit Card</label>
+            <select class="form-input" id="hasCrCard">
+                <option value="1">1</option>
+                <option value="0">0</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-label">Is Active Member</label>
+            <select class="form-input" id="isActiveMember">
+                <option value="1">1</option>
+                <option value="0">0</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-label">Estimated Salary</label>
+            <input type="number" class="form-input" id="estimatedSalary">
+        </div>
+        <div class="form-group">
+            <label class="form-label">Model</label>
+            <select class="form-input" id="model">
+                <option>SVM</option>
+                <option>Decision Tree</option>
+                <option>Random Forest</option>
+            </select>
+        </div>
+        <button class="submit-btn" onclick="runModel()">Predict Churn</button>
+    </div>
+
+    <!-- OUTPUT -->
+    <div class="card">
+        <div class="section-title">Output</div>
+        <div class="output-card" id="model-output">Prediction result will appear here...</div>
+    </div>
+</div>
+<script>
+const ENDPOINT = "/predict-ml";
+
+async function runModel() {
+    const output = document.getElementById("model-output");
+
+    // 1. collect data from the form
+    const data = {
+        CreditScore: Number(document.getElementById("creditScore").value),
+        Geography: document.getElementById("geography").value,
+        Gender: document.getElementById("gender").value,
+        Age: Number(document.getElementById("age").value),
+        Tenure: Number(document.getElementById("tenure").value),
+        Balance: Number(document.getElementById("balance").value),
+        NumOfProducts: Number(document.getElementById("numProducts").value),
+        HasCrCard: Number(document.getElementById("hasCrCard").value),
+        IsActiveMember: Number(document.getElementById("isActiveMember").value),
+        EstimatedSalary: Number(document.getElementById("estimatedSalary").value),
+        Model: document.getElementById("model").value
+    };
+
+    output.innerHTML = "⏳ Processing...";
+
+    // 2. send data to backend and get result
+    try {
+        const response = await fetch(ENDPOINT, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        // 3. show result in output card
+        output.innerHTML =
+            `<strong>Selected Model:</strong> ${result.model}<br><br>` +
+            `<strong>Prediction:</strong> ${result.prediction}`;
+
+    } catch (error) {
+        output.innerHTML = `❌ Error: ${error.message}`;
+    }
+}
+</script>
+</body>
+</html>

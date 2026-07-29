@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comparison · MarketPulse AI</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="navbar">
+  <a class="brand" href="index.html">📈 MarketPulse AI</a>
+  <div class="nav-links">
+    <a class="nav-btn" href="index.html">General</a>
+    <a class="nav-btn active" href="comparison.html">Comparison</a>
+    <a class="nav-btn" href="agent.html">Agent</a>
+  </div>
+</div>
+<div class="container">
+<h1 class="page-title">Compare Models</h1>
+<p class="page-subtitle">Pick a comparison, enter the input once, then run it across all models side by side.</p>
+
+<div class="compare-btns">
+    <button class="compare-btn" onclick="pickCmp(0, this)">CNN vs Transfer Learning</button>
+    <button class="compare-btn" onclick="pickCmp(1, this)">ARIMA vs SARIMA vs LSTM</button>
+    <button class="compare-btn" onclick="pickCmp(2, this)">Logistic vs BERT</button>
+</div>
+
+<!-- STEP 1: INPUT -->
+<div class="card" id="input-card" style="display:none;">
+  <div class="section-title">Step 1 · Input</div>
+  <div id="input-fields"></div>
+  <button class="submit-btn" onclick="runCompare()">Run Comparison</button>
+</div>
+
+<!-- STEP 2: RESULT -->
+<div id="compare-result"></div>
+
+<script>
+const COMPARISONS = [
+  {"label": "CNN vs Transfer Learning", "models": ["cnn", "transfer"], "inputs": [{"n":"image","t":"file"}]},
+  {"label": "ARIMA vs SARIMA vs LSTM", "models": ["arima", "sarima", "lstm"], "inputs": [{"n":"product_id","t":"text"},{"n":"days","t":"number"}]},
+  {"label": "Logistic vs BERT", "models": ["logistic", "bert"], "inputs": [{"n":"text","t":"textarea"}]}
+];
+
+const MODELS = {
+  "cnn": {"name": "CNN", "icon": "🖼️", "endpoint": "/predict-cnn", "use": "Image classification", "output": {"class":"Cat","confidence":0.94}},
+  "transfer": {"name": "CNN Transfer Learning", "icon": "🔁", "endpoint": "/predict-transfer", "use": "Image classification (pretrained)", "output": {"class":"Cat","confidence":0.98}},
+  "arima": {"name": "Forecast ARIMA", "icon": "📈", "endpoint": "/forecast-arima", "use": "Time-series forecast", "output": {"method":"ARIMA","predicted_sales":[120,124,131]}},
+  "sarima": {"name": "Forecast SARIMA", "icon": "📉", "endpoint": "/forecast-sarima", "use": "Seasonal forecast", "output": {"method":"SARIMA","predicted_sales":[118,129,140]}},
+  "lstm": {"name": "Forecast LSTM", "icon": "⏳", "endpoint": "/forecast-lstm", "use": "Deep-learning forecast", "output": {"method":"LSTM","predicted_sales":[122,127,135]}},
+  "logistic": {"name": "Sentiment (Logistic)", "icon": "💬", "endpoint": "/sentiment-logistic", "use": "Fast sentiment", "output": {"sentiment":"Positive","confidence":0.81}},
+  "bert": {"name": "Sentiment (BERT)", "icon": "🔤", "endpoint": "/sentiment-bert", "use": "Contextual sentiment", "output": {"sentiment":"Positive","confidence":0.96}}
+};
+
+let currentCmp = null;
+
+function fieldHtml(inp){
+  const n = inp.n, t = inp.t;
+  let ctrl;
+  if(t === "textarea") ctrl = `<textarea class="form-textarea" id="cmp-${n}"></textarea>`;
+  else if(t === "file") ctrl = `<input type="file" class="form-input" id="cmp-${n}">`;
+  else if(t === "number") ctrl = `<input type="number" class="form-input" id="cmp-${n}">`;
+  else ctrl = `<input type="text" class="form-input" id="cmp-${n}">`;
+  return `<div class="form-group"><label class="form-label">${n}</label>${ctrl}</div>`;
+}
+
+function pickCmp(i, btn){
+  currentCmp = COMPARISONS[i];
+  document.querySelectorAll(".compare-btn").forEach(x=>x.classList.remove("active"));
+  btn.classList.add("active");
+  // reset previous result
+  document.getElementById("compare-result").innerHTML = "";
+  // build input form
+  document.getElementById("input-fields").innerHTML = currentCmp.inputs.map(fieldHtml).join("");
+  document.getElementById("input-card").style.display = "block";
+}
+
+function collectInput(){
+  const data = {};
+  currentCmp.inputs.forEach(inp=>{
+    const el = document.getElementById("cmp-" + inp.n);
+    data[inp.n] = inp.t === "file" ? (el.files[0]?.name || "(no file)") : (el.value || "(empty)");
+  });
+  return data;
+}
+
+function runCompare(){
+  if(!currentCmp) return;
+  const data = collectInput();
+  const cols = currentCmp.models.map(id => MODELS[id]);
+
+  const th   = cols.map(m=>`<th>${m.icon} ${m.name}</th>`).join("");
+  const uses = cols.map(m=>`<td>${m.use}</td>`).join("");
+  const eps  = cols.map(m=>`<td>${m.endpoint}</td>`).join("");
+  const outs = cols.map(m=>`<td><pre style="margin:0;white-space:pre-wrap;font-size:13px;">${JSON.stringify(m.output, null, 2)}</pre></td>`).join("");
+
+  document.getElementById("compare-result").innerHTML = `
+    <div class="card">
+      <div class="section-title">Your Input</div>
+      <div class="output-card">${JSON.stringify(data, null, 2)}</div>
+    </div>
+    <div class="card">
+      <div class="section-title">Step 2 · Comparison Result</div>
+      <table class="compare-table">
+        <tr><th>Attribute</th>${th}</tr>
+        <tr><td>Use case</td>${uses}</tr>
+        <tr><td>Endpoint</td>${eps}</tr>
+        <tr><td>Output</td>${outs}</tr>
+      </table>
+    </div>`;
+  document.getElementById("compare-result").scrollIntoView({behavior:"smooth"});
+}
+</script>
+</div>
+</body>
+</html>

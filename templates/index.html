@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MarketPulse AI</title>
+<link rel="stylesheet"   href="{{ url_for('static', path='style.css') }}">
+</head>
+<body>
+<div class="navbar">
+  <a class="brand" href="index.html">📈 MarketPulse AI</a>
+  <div class="nav-links">
+    <a class="nav-btn active" href="index.html">General</a>
+    <a class="nav-btn" href="comparison.html">Comparison</a>
+    <a class="nav-btn" href="agent.html">Agent</a>
+  </div>
+</div>
+<div class="container">
+<div class="hero">
+  <h1>📈 MarketPulse AI</h1>
+  <p>MarketPulse AI is a unified financial &amp; data-intelligence platform bringing together
+  machine learning, deep learning, computer vision, forecasting and NLP models in one place.
+  Pick any model below to run live predictions, compare forecasting models side by side, or
+  talk to intelligent agents — all from a single dashboard.</p>
+</div>
+<h2 class="page-title" style="font-size:24px;">All Models</h2>
+<p class="page-subtitle">Click any model to open its own page with input &amp; output.</p>
+<div class="models-grid">
+    <a class="model-btn" href="mlmodel"><span class="icon">📊</span>ML Model</a>
+    <a class="model-btn" href="cnn.html"><span class="icon">🖼️</span>CNN</a>
+    <a class="model-btn" href="transfer.html"><span class="icon">🔁</span>CNN Transfer Learning</a>
+    <a class="model-btn" href="object.html"><span class="icon">🎯</span>Object Detection</a>
+    <a class="model-btn" href="imagegen.html"><span class="icon">🎨</span>Image Generation</a>
+    <a class="model-btn" href="audiogen.html"><span class="icon">🔊</span>Audio Generation</a>
+    <a class="model-btn" href="arima.html"><span class="icon">📈</span>Forecast with ARIMA</a>
+    <a class="model-btn" href="sarima.html"><span class="icon">📉</span>Forecast with SARIMA</a>
+    <a class="model-btn" href="lstm.html"><span class="icon">⏳</span>Forecast with LSTM</a>
+    <a class="model-btn" href="logistic.html"><span class="icon">💬</span>Sentiment (Logistic)</a>
+    <a class="model-btn" href="bert.html"><span class="icon">🔤</span>Sentiment (BERT)</a>
+</div>
+</div>
+</body>
+</html>
