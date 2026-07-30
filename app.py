@@ -6,7 +6,7 @@ from fastapi.templating import Jinja2Templates
 from fastapi import HTTPException
 from pydantic import BaseModel
 from dotenv import load_dotenv
-
+# from deep_learning.script import predict_cnn,predict_tl
 
 # ML
 from nlp_sentiment.distil_bert_test import predict as dist_prd
@@ -205,7 +205,7 @@ def sentiment_bert(data: SentimentInput):
 
 @app.post("/predict-cnn")
 async def predict_cnn_endpoint(image: UploadFile = File(...)):
-
+    from deep_learning.script import predict_cnn
     # 1. check the file is a valid image
     if image.content_type not in ALLOWED_TYPES:
         return JSONResponse(
@@ -245,7 +245,7 @@ async def predict_cnn_endpoint(image: UploadFile = File(...)):
     
 @app.post("/predict-transfer")
 async def predict_transfer_endpoint(image: UploadFile = File(...)):
-
+    from deep_learning.script import predict_tl
     # 1. check the file is a valid image
     if image.content_type not in ALLOWED_TYPES:
         return JSONResponse(

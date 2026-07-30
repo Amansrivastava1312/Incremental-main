@@ -4,6 +4,182 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Forecast with LSTM · MarketPulse AI</title>
+<link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="navbar">
+  <a class="brand" href="index.html">📈 MarketPulse AI</a>
+  <div class="nav-links">
+    <a class="nav-btn active" href="index.html">General</a>
+    <a class="nav-btn" href="comparison.html">Comparison</a>
+    <a class="nav-btn" href="agent.html">Agent</a>
+  </div>
+</div>
+<div class="container">
+<a class="back-btn" href="index.html">← Back to Models</a>
+<h1 class="page-title">⏳  Forecast with LSTM</h1>
+<p class="page-subtitle">Endpoint: POST /forecast-lstm  •  Use case: Deep-learning forecast</p>
+<div class="card">
+  <div class="section-title">Input</div>
+      <div class="form-group"><label class="form-label">product_id</label><input type="text" class="form-input" id="in-product_id"></div>
+      <div class="form-group"><label class="form-label">days</label><input type="number" class="form-input" id="in-days"></div>
+      <button class="submit-btn" onclick="runModel()">Predict</button>
+</div>
+<div class="card">
+  <div class="section-title">Output</div>
+  <div class="output-card" id="model-output">Result will appear here…</div>
+  <canvas id="forecast-chart" style="display:none; margin-top:16px;"></canvas>
+</div>
+<div class="card">
+  <div class="section-title">📦 LSTM Artifacts</div>
+  <ul class="artifact-list">
+    <li><span class="file-icon">📄</span>lstm_model.h5<span class="file-tag">model</span></li>
+    <li><span class="file-icon">📄</span>scaler.pkl<span class="file-tag">preprocess</span></li>
+    <li><span class="file-icon">📄</span>loss_curve.png<span class="file-tag">plot</span></li>
+    <li><span class="file-icon">📄</span>forecast_plot.png<span class="file-tag">plot</span></li>
+    <li><span class="file-icon">📄</span>metrics.json<span class="file-tag">metrics</span></li>
+  </ul>
+</div>
+<script>
+const ENDPOINT = "/forecast-lstm";
+
+// keep one chart object so we can destroy it before drawing a new one
+let chart = null;
+
+async function runModel() {
+    const out = document.getElementById("model-output");
+
+    const data = {
+        product_id: document.getElementById("in-product_id").value,
+        days: Number(document.getElementById("in-days").value)
+    };
+
+    out.innerHTML = "⏳ Predicting...";
+
+    try {
+        const response = await fetch(ENDPOINT, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+        }
+
+        const result = await response.json();
+        showResult(result);
+
+    } catch (error) {
+        out.innerHTML =
+            "<span style='color:red'>❌ " +
+            error.message +
+            "</span>";
+    }
+}
+
+// build header text + draw the chart
+function showResult(result) {
+    const out = document.getElementById("model-output");
+
+    // the actual data is nested inside prediction.data
+    const info = result.prediction.data;
+    const sales = info.predicted_sales;
+
+    // header with product details
+    let html = "<div class='result-header'>";
+    html += "Status: <span class='status-ok'>✅ " + result.prediction.status + "</span><br>";
+    html += "Method: <b>" + result.method.toUpperCase() + "</b><br>";
+    html += "Product ID: <b>" + info.product_id + "</b><br>";
+    html += "Product Name: <b>" + info.product_name + "</b><br>";
+    html += "Horizon: <b>" + info.horizon_days + " days</b>";
+    html += "</div>";
+
+    out.innerHTML = html;
+
+    // draw the bar chart
+    drawChart(sales);
+}
+
+// draw predicted sales as a bar chart (histogram style)
+function drawChart(sales) {
+    const canvas = document.getElementById("forecast-chart");
+    canvas.style.display = "block";
+
+    // make labels: Day 1, Day 2, ...
+    const labels = [];
+    for (let i = 0; i < sales.length; i++) {
+        labels.push("Day " + (i + 1));
+    }
+
+    // remove old chart before drawing new one
+    if (chart !== null) {
+        chart.destroy();
+    }
+
+    chart = new Chart(canvas, {
+        type: "bar",
+        data: {
+            labels: labels,
+            datasets: [{
+                label: "Predicted Sales",
+                data: sales,
+                backgroundColor: "#4f8cff",
+                borderRadius: 6,
+                barPercentage: 0.9,
+                categoryPercentage: 0.95
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: true },
+                title: { display: true, text: "Day-wise Predicted Sales" }
+            },
+            scales: {
+                y: { beginAtZero: true, title: { display: true, text: "Sales" } },
+                x: { title: { display: true, text: "Day" } }
+            }
+        }
+    });
+}
+</script>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forecast with LSTM · MarketPulse AI</title>
 
 <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
 </head>
@@ -109,4 +285,4 @@ function showResult(result) {
 </script>
 </div>
 </body>
-</html>
+</html> -->

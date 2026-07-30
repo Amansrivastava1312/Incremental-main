@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CNN · MarketPulse AI</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
 </head>
 <body>
 <div class="navbar">
@@ -21,7 +21,7 @@
 <p class="page-subtitle">Endpoint: POST /predict-cnn  •  Use case: Image classification</p>
 <div class="card">
   <div class="section-title">Input</div>
-      <div class="form-group"><label class="form-label">image</label><input type="file" class="form-input" id="in-image"></div>
+      <div class="form-group"><label class="form-label">image</label><input type="file" accept="image/*" class="form-input" id="in-image"></div>
       <button class="submit-btn" onclick="runModel()">Predict</button>
 </div>
 <div class="card">
@@ -30,34 +30,77 @@
 </div>
 <script>
 const ENDPOINT = "/predict-cnn";
-const INPUTS = [{"n": "image", "t": "file"}];
-const SAMPLE_OUTPUT = {
-  "class": "string",
-  "confidence": "number"
-};
-async function runModel(){
-  const out = document.getElementById("model-output");
-  out.textContent = "⏳ Sending request to " + ENDPOINT + " …";
-  const data = {};
-  INPUTS.forEach(inp => {
-    const el = document.getElementById("in-" + inp.n);
-    data[inp.n] = inp.t === "file" ? (el.files[0]?.name || "") : el.value;
-  });
-  /* ---- REAL BACKEND CALL (uncomment when ready) ----
-  try {
-    const res = await fetch(ENDPOINT, {
-      method:"POST", headers:{"Content-Type":"application/json"},
-      body: JSON.stringify(data)
-    });
-    const json = await res.json();
-    out.textContent = JSON.stringify(json, null, 2);
-  } catch(err) { out.textContent = "❌ Error: " + err.message; }
-  -------------------------------------------------- */
-  setTimeout(() => {
-    out.textContent =
-      "REQUEST:\n" + JSON.stringify(data, null, 2) +
-      "\n\nRESPONSE (sample):\n" + JSON.stringify(SAMPLE_OUTPUT, null, 2);
-  }, 500);
+
+async function runModel() {
+    const out = document.getElementById("model-output");
+    const fileInput = document.getElementById("in-image");
+
+    // check a file is selected
+    if (!fileInput.files[0]) {
+        out.innerHTML = "<span style='color:red'>❌ Please select an image first</span>";
+        return;
+    }
+
+    // build form-data for file upload
+    const formData = new FormData();
+    formData.append("image", fileInput.files[0]);
+
+    out.innerHTML = "⏳ Predicting...";
+
+    try {
+        const response = await fetch(ENDPOINT, {
+            method: "POST",
+            body: formData   // no Content-Type header, browser sets it
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+        }
+
+        const result = await response.json();
+        showResult(result);
+
+    } catch (error) {
+        out.innerHTML =
+            "<span style='color:red'>❌ " +
+            error.message +
+            "</span>";
+    }
+}
+
+// build a nice view from the response
+function showResult(result) {
+    const out = document.getElementById("model-output");
+
+    if (result.status !== "success") {
+        out.innerHTML = "<span style='color:red'>❌ " + result.message + "</span>";
+        return;
+    }
+
+    const pred = result.prediction;
+
+    let html = "<div class='result-header'>";
+    html += "Status: <span class='status-ok'>✅ " + result.status + "</span><br>";
+    html += "Method: <b>" + result.method.toUpperCase() + "</b><br>";
+    html += "File: <b>" + result.filename + "</b>";
+    html += "</div>";
+
+    // show prediction as a small table
+    html += "<table class='pred-table'>";
+    html += "<tr><th>Field</th><th>Value</th></tr>";
+
+    // if prediction is an object, loop its keys; else just show it
+    if (typeof pred === "object" && pred !== null) {
+        for (const key in pred) {
+            html += "<tr><td>" + key + "</td><td>" + pred[key] + "</td></tr>";
+        }
+    } else {
+        html += "<tr><td>result</td><td>" + pred + "</td></tr>";
+    }
+
+    html += "</table>";
+
+    out.innerHTML = html;
 }
 </script>
 </div>

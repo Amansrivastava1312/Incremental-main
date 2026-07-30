@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Forecast with SARIMA · MarketPulse AI</title>
 <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
-
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 <div class="navbar">
   <a class="brand" href="index.html">📈 MarketPulse AI</a>
   <div class="nav-links">
-    ">General</a>
+    <a class="nav-btn active" href="index.html">General</a>
     <a class="nav-btn" href="comparison.html">Comparison</a>
     <a class="nav-btn" href="agent.html">Agent</a>
   </div>
@@ -29,6 +29,7 @@
 <div class="card">
   <div class="section-title">Output</div>
   <div class="output-card" id="model-output">Result will appear here…</div>
+  <canvas id="forecast-chart" style="display:none; margin-top:16px;"></canvas>
 </div>
 <div class="card">
   <div class="section-title">📦 SARIMA Artifacts</div>
@@ -42,6 +43,9 @@
 </div>
 <script>
 const ENDPOINT = "/forecast-sarima";
+
+// keep one chart object so we can destroy it before drawing a new one
+let chart = null;
 
 async function runModel() {
     const out = document.getElementById("model-output");
@@ -77,7 +81,7 @@ async function runModel() {
     }
 }
 
-// build a nice view from the response
+// build header text + draw the chart
 function showResult(result) {
     const out = document.getElementById("model-output");
 
@@ -94,17 +98,53 @@ function showResult(result) {
     html += "Horizon: <b>" + info.horizon_days + " days</b>";
     html += "</div>";
 
-    // table of day-wise predictions
-    html += "<table class='pred-table'>";
-    html += "<tr><th>Day</th><th>Predicted Sales</th></tr>";
+    out.innerHTML = html;
 
+    // draw the bar chart
+    drawChart(sales);
+}
+
+// draw predicted sales as a bar chart (histogram style)
+function drawChart(sales) {
+    const canvas = document.getElementById("forecast-chart");
+    canvas.style.display = "block";
+
+    // make labels: Day 1, Day 2, ...
+    const labels = [];
     for (let i = 0; i < sales.length; i++) {
-        html += "<tr><td>Day " + (i + 1) + "</td><td>" + sales[i] + "</td></tr>";
+        labels.push("Day " + (i + 1));
     }
 
-    html += "</table>";
+    // remove old chart before drawing new one
+    if (chart !== null) {
+        chart.destroy();
+    }
 
-    out.innerHTML = html;
+    chart = new Chart(canvas, {
+        type: "bar",
+        data: {
+            labels: labels,
+            datasets: [{
+                label: "Predicted Sales",
+                data: sales,
+                backgroundColor: "#4f8cff",
+                borderRadius: 6,
+                barPercentage: 0.9,
+                categoryPercentage: 0.95
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: true },
+                title: { display: true, text: "Day-wise Predicted Sales" }
+            },
+            scales: {
+                y: { beginAtZero: true, title: { display: true, text: "Sales" } },
+                x: { title: { display: true, text: "Day" } }
+            }
+        }
+    });
 }
 </script>
 </div>
