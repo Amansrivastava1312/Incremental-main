@@ -1,4 +1,11 @@
 import os
+os.environ["USE_TF"] = "0"
+
+os.environ["TRANSFORMERS_NO_TF"] = "1"
+
+os.environ["CUDA_VISIBLE_DEVICES"] = ""
+
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
@@ -20,7 +27,8 @@ os.makedirs(UPLOAD_DIR, exist_ok=True)
 ALLOWED_TYPES = ["image/jpeg", "image/png", "image/jpg", "image/webp"]
 
 load_dotenv()
-
+import asyncio
+import sys
 app = FastAPI()
 
 # serve static files (css, js, images) from "static" folder
@@ -192,8 +200,44 @@ def logistic_page(request: Request):
 
 # ---------- API ENDPOINTS ----------
 @app.post("/sentiment-bert")
-def sentiment_bert(data: SentimentInput):
-    result = dist_prd(data.text.strip())
+async def sentiment_bert(data: SentimentInput):
+    text = data.text.strip()
+
+    if not text:
+        raise HTTPException(
+            status_code=400,
+            detail="Text cannot be empty."
+        )
+
+    process = await asyncio.create_subprocess_exec(
+        sys.executable,
+        "-m",
+        "nlp_sentiment.distil_bert_test",
+        text,
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.PIPE
+    )
+
+    stdout, stderr = await process.communicate()
+
+    if process.returncode != 0:
+        error_message = stderr.decode().strip()
+
+        raise HTTPException(
+            status_code=500,
+            detail=error_message or "BERT prediction failed."
+        )
+
+    result = stdout.decode().strip()
+
+    print("BERT stdout:", repr(result), flush=True)
+    print("BERT stderr:", stderr.decode().strip(), flush=True)
+
+    if not result:
+        raise HTTPException(
+            status_code=500,
+            detail="BERT returned an empty prediction."
+        )
 
     return {
         "model": "BERT",

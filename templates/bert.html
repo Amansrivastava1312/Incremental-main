@@ -58,25 +58,18 @@ async function runModel() {
     }
 
     out.innerHTML = `
-      <div class="prediction-result">
-        <p>
-          <strong>Text:</strong>
-          ${escapeHtml(text)}
-        </p>
-
-        <p>
-          <strong>Model:</strong>
-          ${escapeHtml(json.model)}
-        </p>
-
-        <p>
-          <strong>Sentiment:</strong>
-          <span class="sentiment ${json.sentiment.toLowerCase()}">
-            ${escapeHtml(json.sentiment.toUpperCase())}
-          </span>
-        </p>
-      </div>
-    `;
+  <div class="prediction-result">
+    <div class="prediction-line">
+      <strong>Text:</strong> ${escapeHtml(text)}
+    </div>
+    <div class="prediction-line">
+      <strong>Model:</strong> ${escapeHtml(json.model)}
+    </div>
+    <div class="prediction-line">
+      <strong>Sentiment:</strong> ${escapeHtml(json.sentiment.toUpperCase())}
+    </div>
+  </div>
+`;
 
   } catch (error) {
     console.error("Prediction error:", error);

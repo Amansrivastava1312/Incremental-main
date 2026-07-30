@@ -1,9 +1,10 @@
 import os
+import sys
 from pathlib import Path
 
 # Configure native libraries before importing Transformers
-# os.environ["TOKENIZERS_PARALLELISM"] = "false"
-# os.environ["CUDA_VISIBLE_DEVICES"] = ""
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+os.environ["CUDA_VISIBLE_DEVICES"] = ""
 
 BERT_DIR = (
     Path(__file__).resolve().parent
@@ -20,6 +21,7 @@ def load_model():
     if _pipe is None:
         print(
             f"[BERT] Loading model from: {BERT_DIR}",
+            file=sys.stderr,
             flush=True
         )
 
@@ -33,6 +35,7 @@ def load_model():
 
         print(
             "[BERT] Creating PyTorch pipeline...",
+            file=sys.stderr,
             flush=True
         )
 
@@ -46,6 +49,7 @@ def load_model():
 
         print(
             "[BERT] Model loaded successfully.",
+            file=sys.stderr,
             flush=True
         )
 
@@ -58,7 +62,9 @@ def predict(text):
 
     pipe = load_model()
 
-    print("[BERT] Running inference...", flush=True)
+    print("[BERT] Running inference...", 
+          file=sys.stderr,
+          flush=True)
 
     result = pipe(
         text.strip(),
@@ -68,7 +74,23 @@ def predict(text):
 
     print(
         f"[BERT] Raw prediction: {result}",
+        file=sys.stderr,
         flush=True
     )
 
     return result["label"].lower()
+
+
+if __name__ == "__main__":
+    import sys
+
+    text = " ".join(sys.argv[1:]).strip()
+
+    if not text:
+        print("Text cannot be empty.", file=sys.stderr)
+        sys.exit(1)
+
+    prediction = predict(text)
+
+    # This is captured by app.py as stdout
+    print(prediction, flush=True)
