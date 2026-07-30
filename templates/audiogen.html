@@ -22,7 +22,7 @@
 <div class="card">
   <div class="section-title">Input</div>
       <div class="form-group"><label class="form-label">text</label><textarea class="form-textarea" id="in-text"></textarea></div>
-      <button class="submit-btn" onclick="runModel()">Predict</button>
+      <button class="submit-btn" onclick="runModel()">Generate</button>
 </div>
 <div class="card">
   <div class="section-title">Output</div>
@@ -36,27 +36,31 @@ async function runModel() {
   const text = document.getElementById("in-text").value.trim();
 
   if (!text) {
-    out.textContent = "Please enter text before generating audio.";
+    out.textContent =
+      "Please enter text before generating audio.";
+
     return;
   }
 
   out.textContent = "⏳ Generating audio...";
 
   try {
-    const res = await fetch(ENDPOINT, {
+    const response = await fetch(ENDPOINT, {
       method: "POST",
+
       headers: {
         "Content-Type": "application/json"
       },
+
       body: JSON.stringify({
         text: text,
         language: "en"
       })
     });
 
-    const json = await res.json();
+    const json = await response.json();
 
-    if (!res.ok) {
+    if (!response.ok) {
       throw new Error(
         json.detail ||
         json.message ||
@@ -70,42 +74,83 @@ async function runModel() {
       );
     }
 
-    out.innerHTML = `
-      <div>
-        <div>
-          <strong>Text:</strong> ${escapeHtml(text)}
-        </div>
+    out.innerHTML = "";
 
-        <div>
-          <strong>Language:</strong>
-          ${escapeHtml(json.language)}
-        </div>
+    const resultContainer =
+      document.createElement("div");
 
-        <div>
-          <strong>File:</strong>
-          ${escapeHtml(json.filename)}
-        </div>
+    // Text
+    const textLine = document.createElement("div");
+    const textLabel = document.createElement("strong");
 
-        ${encodeURI(json.audio_url)}
-          Your browser does not support audio playback.
-        </audio>
+    textLabel.textContent = "Text: ";
+    textLine.appendChild(textLabel);
+    textLine.appendChild(
+      document.createTextNode(text)
+    );
 
-        ${encodeURI(json.audio_url)}
-          Download Audio
-        </a>
-      </div>
-    `;
+    resultContainer.appendChild(textLine);
+
+    // Language
+    const languageLine =
+      document.createElement("div");
+
+    const languageLabel =
+      document.createElement("strong");
+
+    languageLabel.textContent = "Language: ";
+
+    languageLine.appendChild(languageLabel);
+
+    languageLine.appendChild(
+      document.createTextNode(json.language || "en")
+    );
+
+    resultContainer.appendChild(languageLine);
+
+    // Filename
+    const fileLine = document.createElement("div");
+    const fileLabel = document.createElement("strong");
+
+    fileLabel.textContent = "File: ";
+    fileLine.appendChild(fileLabel);
+
+    fileLine.appendChild(
+      document.createTextNode(json.filename)
+    );
+
+    resultContainer.appendChild(fileLine);
+
+    // Create playable audio control
+    const audioPlayer =
+      document.createElement("audio");
+
+    audioPlayer.controls = true;
+    audioPlayer.preload = "metadata";
+    audioPlayer.src = json.audio_url;
+
+    audioPlayer.style.display = "block";
+    audioPlayer.style.width = "100%";
+    audioPlayer.style.maxWidth = "600px";
+    audioPlayer.style.marginTop = "15px";
+
+    resultContainer.appendChild(audioPlayer);
+
+    
+    out.appendChild(resultContainer);
+
+    // Fetch audio metadata and prepare playback
+    audioPlayer.load();
 
   } catch (error) {
-    console.error("Audio generation error:", error);
-    out.textContent = "❌ Error: " + error.message;
-  }
-}
+    console.error(
+      "Audio generation error:",
+      error
+    );
 
-function escapeHtml(value) {
-  const element = document.createElement("div");
-  element.textContent = String(value);
-  return element.innerHTML;
+    out.textContent =
+      "❌ Error: " + error.message;
+  }
 }
 </script>
 </div>
