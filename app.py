@@ -57,6 +57,10 @@ class ForecastInput(BaseModel):
     product_id: str
     days: int
 
+# ---------- INPUT SCHEMA ----------
+class ImageInput(BaseModel):
+    prompt: str
+
 # ---------- PAGES ----------
 # home page
 @app.get("/", response_class=HTMLResponse)
@@ -88,6 +92,10 @@ def ml_page(request: Request):
 @app.get("/transfer", response_class=HTMLResponse)
 def ml_page(request: Request):
     return templates.TemplateResponse(request, "transfer.html")
+
+@app.get("/imagegen", response_class=HTMLResponse)
+def image_page(request: Request):
+    return templates.TemplateResponse(request, "imagegen.html")
 
 # ---------- API ENDPOINT ----------
 @app.post("/predict-ml")
@@ -326,3 +334,37 @@ async def predict_transfer_endpoint(image: UploadFile = File(...)):
         "prediction": prediction,
     }
  
+
+
+# ---------- API ENDPOINT ----------
+@app.post("/generate-image")
+def generate_image_endpoint(data: ImageInput):
+    from mainproj.src.image_generation import ImageGenerator
+
+    prompt = data.prompt.strip()
+    if not prompt:
+        raise HTTPException(status_code=400, detail="Prompt cannot be empty.")
+
+    # save into static so browser can load it
+    token = os.getenv("HF_TOKEN")
+    generator = ImageGenerator(
+        hf_token=token,
+        output_dir="static/generated"
+    )
+
+    try:
+        output_path = generator.generate_image(
+            prompt=prompt,
+            negative_prompt="blurry, low quality, distorted, watermark, text",
+        )
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+    # build url from filename
+    filename = os.path.basename(output_path)
+    image_url = "/static/generated/" + filename
+
+    return {
+        "status": "success",
+        "generated_image": image_url
+    }

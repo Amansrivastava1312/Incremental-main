@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Image Generation · MarketPulse AI</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
 </head>
 <body>
 <div class="navbar">
@@ -16,7 +16,7 @@
   </div>
 </div>
 <div class="container">
-<a class="back-btn" href="index.html">← Back to Models</a>
+index.html">← Back to Models</a>
 <h1 class="page-title">🎨  Image Generation</h1>
 <p class="page-subtitle">Endpoint: POST /generate-image  •  Use case: Text → Image</p>
 <div class="card">
@@ -30,33 +30,35 @@
 </div>
 <script>
 const ENDPOINT = "/generate-image";
-const INPUTS = [{"n": "prompt", "t": "text"}];
-const SAMPLE_OUTPUT = {
-  "generated_image": "image_url"
-};
+
 async function runModel(){
   const out = document.getElementById("model-output");
-  out.textContent = "⏳ Sending request to " + ENDPOINT + " …";
-  const data = {};
-  INPUTS.forEach(inp => {
-    const el = document.getElementById("in-" + inp.n);
-    data[inp.n] = inp.t === "file" ? (el.files[0]?.name || "") : el.value;
-  });
-  /* ---- REAL BACKEND CALL (uncomment when ready) ----
+  const prompt = document.getElementById("in-prompt").value.trim();
+
+  if (!prompt){
+    out.textContent = "⚠️ Please enter a prompt.";
+    return;
+  }
+
+  out.textContent = "⏳ Generating image, this can take a moment…";
+
   try {
     const res = await fetch(ENDPOINT, {
-      method:"POST", headers:{"Content-Type":"application/json"},
-      body: JSON.stringify(data)
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ prompt: prompt })
     });
+
     const json = await res.json();
-    out.textContent = JSON.stringify(json, null, 2);
-  } catch(err) { out.textContent = "❌ Error: " + err.message; }
-  -------------------------------------------------- */
-  setTimeout(() => {
-    out.textContent =
-      "REQUEST:\n" + JSON.stringify(data, null, 2) +
-      "\n\nRESPONSE (sample):\n" + JSON.stringify(SAMPLE_OUTPUT, null, 2);
-  }, 500);
+
+    if (json.status === "success"){
+      out.innerHTML = '<img src="' + json.generated_image + '" alt="generated image" style="max-width:100%; border-radius:8px;">';
+    } else {
+      out.textContent = "❌ Error: " + (json.detail || "generation failed");
+    }
+  } catch(err) {
+    out.textContent = "❌ Error: " + err.message;
+  }
 }
 </script>
 </div>

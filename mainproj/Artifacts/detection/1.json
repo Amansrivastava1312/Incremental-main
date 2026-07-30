@@ -1,0 +1,81 @@
+{
+    "image_name": "1.jpg",
+    "total_objects": 7,
+    "object_counts": {
+        "trousers": 3,
+        "long_sleeve_outwear": 4
+    },
+    "detections": [
+        {
+            "class": "trousers",
+            "confidence": 0.6975,
+            "bounding_box": {
+                "x1": 238,
+                "y1": 317,
+                "x2": 323,
+                "y2": 531
+            }
+        },
+        {
+            "class": "long_sleeve_outwear",
+            "confidence": 0.5846,
+            "bounding_box": {
+                "x1": 108,
+                "y1": 179,
+                "x2": 224,
+                "y2": 382
+            }
+        },
+        {
+            "class": "long_sleeve_outwear",
+            "confidence": 0.4497,
+            "bounding_box": {
+                "x1": 152,
+                "y1": 189,
+                "x2": 204,
+                "y2": 320
+            }
+        },
+        {
+            "class": "trousers",
+            "confidence": 0.342,
+            "bounding_box": {
+                "x1": 270,
+                "y1": 313,
+                "x2": 323,
+                "y2": 524
+            }
+        },
+        {
+            "class": "long_sleeve_outwear",
+            "confidence": 0.3335,
+            "bounding_box": {
+                "x1": 280,
+                "y1": 179,
+                "x2": 323,
+                "y2": 381
+            }
+        },
+        {
+            "class": "trousers",
+            "confidence": 0.3297,
+            "bounding_box": {
+                "x1": 79,
+                "y1": 295,
+                "x2": 176,
+                "y2": 543
+            }
+        },
+        {
+            "class": "long_sleeve_outwear",
+            "confidence": 0.289,
+            "bounding_box": {
+                "x1": 151,
+                "y1": 254,
+                "x2": 197,
+                "y2": 320
+            }
+        }
+    ],
+    "annotated_image": "Artifacts/detected_1.jpg"
+}
