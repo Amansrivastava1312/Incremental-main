@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chatbot · MarketPulse AI</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
 </head>
 <body>
 <div class="navbar">
@@ -30,38 +30,122 @@
 
 <script>
 const ENDPOINT = "/chatbot";
-const AGENT_NAME = "Chatbot";
 const history = [];
 
-function render(){
+function render() {
   const win = document.getElementById("chat-window");
-  if(history.length === 0){
-    win.innerHTML = `<div class="chat-bubble bot-msg">🤖 Chatbot ready. Ask me anything 🚀</div>`;
+
+  if (history.length === 0) {
+    win.innerHTML = `
+      <div class="chat-bubble bot-msg">
+        🤖 Chatbot ready. Ask me anything 🚀
+      </div>
+    `;
   } else {
-    win.innerHTML = history.map(h=>`<div class="chat-bubble ${h.role}-msg">${h.text}</div>`).join("");
+    win.innerHTML = "";
+
+    history.forEach(item => {
+      const bubble = document.createElement("div");
+
+      bubble.className =
+        "chat-bubble " + item.role + "-msg";
+
+      bubble.textContent = item.text;
+
+      win.appendChild(bubble);
+    });
   }
+
   win.scrollTop = win.scrollHeight;
 }
 
-async function sendChat(){
+
+async function sendChat() {
   const input = document.getElementById("chat-input");
-  const msg = input.value.trim();
-  if(!msg) return;
-  history.push({role:"user", text:msg});
-  render();
+  const message = input.value.trim();
+
+  if (!message) {
+    return;
+  }
+
+  history.push({
+    role: "user",
+    text: message
+  });
+
   input.value = "";
-  /* ---- REAL BACKEND CALL ----
-  const res = await fetch(ENDPOINT, {method:"POST",
-    headers:{"Content-Type":"application/json"},
-    body: JSON.stringify({message:msg})});
-  const json = await res.json();
-  const reply = json.answer || json.response;
-  ---------------------------- */
-  setTimeout(()=>{
-    const reply = `🤖 (${AGENT_NAME} demo) You said: "${msg}". Connect ${ENDPOINT} for real answers.`;
-    history.push({role:"bot", text:reply});
+  input.disabled = true;
+
+  render();
+
+  history.push({
+    role: "bot",
+    text: "🤖 Thinking..."
+  });
+
+  render();
+
+  try {
+    const response = await fetch(ENDPOINT, {
+      method: "POST",
+
+      headers: {
+        "Content-Type": "application/json"
+      },
+
+      body: JSON.stringify({
+        message: message
+      })
+    });
+
+    const result = await response.json();
+
+    // Remove the temporary "Thinking..." message
+    history.pop();
+
+    if (!response.ok) {
+      throw new Error(
+        result.detail ||
+        result.message ||
+        "Chatbot request failed."
+      );
+    }
+
+    if (!result.answer) {
+      throw new Error(
+        "The chatbot returned an empty answer."
+      );
+    }
+
+    history.push({
+      role: "bot",
+      text: "🤖 " + result.answer
+    });
+
+  } catch (error) {
+    console.error("Chatbot error:", error);
+
+    // Remove "Thinking..." if it still exists
+    const lastMessage = history[history.length - 1];
+
+    if (
+      lastMessage &&
+      lastMessage.role === "bot" &&
+      lastMessage.text === "🤖 Thinking..."
+    ) {
+      history.pop();
+    }
+
+    history.push({
+      role: "bot",
+      text: "❌ Error: " + error.message
+    });
+
+  } finally {
+    input.disabled = false;
+    input.focus();
     render();
-  }, 400);
+  }
 }
 </script>
 </div>

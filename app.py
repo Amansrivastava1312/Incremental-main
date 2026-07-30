@@ -18,13 +18,17 @@ from LANGRAPH.scripts import run_chatbot
 # from deep_learning.script import predict_cnn,predict_tl
 
 # ML
-from nlp_sentiment.distil_bert_test import predict as dist_prd
+from mainproj.src.audio_generation import AudioGenerator
+from pathlib import Path
 from fastapi import  UploadFile, File
 
 from fastapi.responses import JSONResponse
-
+PROJECT_ROOT = Path(__file__).resolve().parent
 UPLOAD_DIR = "uploads"
+STATIC_DIR = PROJECT_ROOT / "static"
+AUDIO_OUTPUT_DIR = STATIC_DIR / "audio"
 
+AUDIO_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 ALLOWED_TYPES = ["image/jpeg", "image/png", "image/jpg", "image/webp"]
 
@@ -53,6 +57,17 @@ class ChurnInput(BaseModel):
     IsActiveMember: int
     EstimatedSalary: float
     Model: str
+
+
+ 
+# ---------- Audio----------
+class AudioInput(BaseModel):
+    text: str
+    language: str = "en"
+
+# ---------- Chatbot----------
+class ChatbotInput(BaseModel):
+    message: str
 
 # ---------- Forecast----------
 class ForecastInput(BaseModel):
@@ -106,6 +121,20 @@ def image_page(request: Request):
 def chatbot_page(request: Request):
     return templates.TemplateResponse(request, "langraphchatbot.html")
 
+
+@app.get("/audiogen", response_class=HTMLResponse)
+def audio_generation_page(request: Request):
+    return templates.TemplateResponse(
+        request=request,
+        name="audiogen.html"
+    )
+
+@app.get("/chatbot", response_class=HTMLResponse)
+def chatbot_page(request: Request):
+    return templates.TemplateResponse(
+        request=request,
+        name="chatbot.html"
+    )
 
 # ---------- API ENDPOINT ----------
 @app.post("/predict-ml")
@@ -404,4 +433,110 @@ def chatbot_response(data: LanggraphChatbotInput):
         raise HTTPException(
             status_code=500,
             detail=str(e)
+        )
+
+@app.post("/generate-audio")
+async def generate_audio_endpoint(data: AudioInput):
+    text = data.text.strip()
+    language = data.language.strip() or "en"
+
+    if not text:
+        raise HTTPException(
+            status_code=400,
+            detail="Text cannot be empty."
+        )
+
+    try:
+        # Change this import only if your file is elsewhere
+        from mainproj.src.audio_generation import AudioGenerator
+
+        generator = AudioGenerator(
+            output_dir=str(AUDIO_OUTPUT_DIR)
+        )
+
+        output_file = await asyncio.to_thread(
+            generator.generate_audio,
+            text,
+            language
+        )
+
+        output_path = Path(output_file)
+
+        if not output_path.exists():
+            raise RuntimeError("Audio file was not created.")
+
+        if output_path.stat().st_size == 0:
+            raise RuntimeError("Generated audio file is empty.")
+
+        return {
+            "status": "success",
+            "text": text,
+            "language": language,
+            "filename": output_path.name,
+            "audio_url": f"/static/audio/{output_path.name}"
+        }
+
+    except ValueError as error:
+        raise HTTPException(
+            status_code=400,
+            detail=str(error)
+        )
+
+    except Exception as error:
+        print(
+            "Audio generation error:",
+            repr(error),
+            flush=True
+        )
+
+        raise HTTPException(
+            status_code=500,
+            detail=f"Audio generation failed: {error}"
+        )
+
+
+@app.post("/chatbot")
+async def chatbot_endpoint(data: ChatbotInput):
+    question = data.message.strip()
+
+    if not question:
+        raise HTTPException(
+            status_code=400,
+            detail="Message cannot be empty."
+        )
+
+    try:
+        # Lazy import keeps FastAPI startup lightweight
+        from chatbot.script import run_chatbot
+
+        # The chatbot call is synchronous and may take time,
+        # so run it in a worker thread.
+        answer = await asyncio.to_thread(
+            run_chatbot,
+            question
+        )
+
+        if not answer:
+            raise RuntimeError(
+                "The chatbot returned an empty response."
+            )
+
+        return {
+            "status": "success",
+            "answer": str(answer)
+        }
+
+    except HTTPException:
+        raise
+
+    except Exception as error:
+        print(
+            "Chatbot error:",
+            repr(error),
+            flush=True
+        )
+
+        raise HTTPException(
+            status_code=500,
+            detail=f"Chatbot failed: {error}"
         )
