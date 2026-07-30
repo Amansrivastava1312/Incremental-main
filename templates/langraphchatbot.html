@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>LangGraph · MarketPulse AI</title>
+
+    <link rel="stylesheet"  href="{{ url_for('static', path='style.css') }}">
+</head>
+
+<body>
+
+    <div class="navbar">
+
+        <a class="brand" href="/">
+            📈 MarketPulse AI
+        </a>
+
+        <div class="nav-links">
+
+            <a class="nav-btn" href="/">
+                General
+            </a>
+
+            <a class="nav-btn" href="/">
+                Comparison
+            </a>
+
+            <a class="nav-btn active" href="/">
+                Agent
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="container">
+
+        <a class="back-btn" href="/">
+            ← Back to Agents
+        </a>
+
+        <h1 class="page-title">
+            🕸️ LangGraph
+        </h1>
+
+        <p class="page-subtitle">
+            Endpoint: POST /chatbot-response • Stateful multi-step LangGraph agent
+        </p>
+
+
+        <div class="chat-window" id="chat-window">
+
+            <div class="chat-bubble bot-msg">
+                🕸️ LangGraph ready. Ask me anything 🚀
+            </div>
+
+        </div>
+
+
+        <div class="chat-input-row">
+
+            <input
+                type="text"
+                id="chat-input"
+                placeholder="Type your message..."
+                autocomplete="off"
+            >
+
+            <button
+                type="button"
+                id="send-button"
+                onclick="sendChat()"
+            >
+                Send
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script>
+        const ENDPOINT = "/chatbot-response";
+        const history = [];
+
+        const chatInput = document.getElementById("chat-input");
+        const sendButton = document.getElementById("send-button");
+
+
+        chatInput.addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                sendChat();
+            }
+        });
+
+
+        function render() {
+            const chatWindow = document.getElementById("chat-window");
+
+            if (history.length === 0) {
+                chatWindow.innerHTML =
+                    '<div class="chat-bubble bot-msg">' +
+                    '🕸️ LangGraph ready. Ask me anything 🚀' +
+                    '</div>';
+            } else {
+                chatWindow.innerHTML = "";
+
+                history.forEach(function(item) {
+                    const bubble = document.createElement("div");
+
+                    bubble.className =
+                        "chat-bubble " + item.role + "-msg";
+
+                    bubble.textContent = item.text;
+
+                    chatWindow.appendChild(bubble);
+                });
+            }
+
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+        }
+
+
+        async function sendChat() {
+            const message = chatInput.value.trim();
+
+            if (!message) {
+                return;
+            }
+
+            history.push({
+                role: "user",
+                text: message
+            });
+
+            render();
+
+            chatInput.value = "";
+            chatInput.disabled = true;
+            sendButton.disabled = true;
+            sendButton.textContent = "Thinking...";
+
+            try {
+                const response = await fetch(ENDPOINT, {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        question: message
+                    })
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(
+                        data.detail || "Unable to get response"
+                    );
+                }
+
+                let reply = data.answer || "No answer received.";
+
+                if (data.approved !== undefined) {
+                    reply += "\n\nApproved: " +
+                        (data.approved ? "Yes" : "No");
+                }
+
+                if (data.issues && data.issues.length > 0) {
+                    reply += "\n\nIssues Found:";
+
+                    data.issues.forEach(function(issue) {
+                        reply += "\n- " + issue;
+                    });
+                }
+
+                history.push({
+                    role: "bot",
+                    text: reply
+                });
+
+            } catch (error) {
+                history.push({
+                    role: "bot",
+                    text: "Error: " + error.message
+                });
+
+            } finally {
+                render();
+
+                chatInput.disabled = false;
+                sendButton.disabled = false;
+                sendButton.textContent = "Send";
+
+                chatInput.focus();
+            }
+        }
+    </script>
+
+</body>
+
+</html>

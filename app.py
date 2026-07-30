@@ -13,6 +13,8 @@ from fastapi.templating import Jinja2Templates
 from fastapi import HTTPException
 from pydantic import BaseModel
 from dotenv import load_dotenv
+from LANGRAPH.scripts import run_chatbot
+
 # from deep_learning.script import predict_cnn,predict_tl
 
 # ML
@@ -60,6 +62,9 @@ class ForecastInput(BaseModel):
 # ---------- INPUT SCHEMA ----------
 class ImageInput(BaseModel):
     prompt: str
+    
+class LanggraphChatbotInput(BaseModel):
+    question: str
 
 # ---------- PAGES ----------
 # home page
@@ -96,6 +101,11 @@ def ml_page(request: Request):
 @app.get("/imagegen", response_class=HTMLResponse)
 def image_page(request: Request):
     return templates.TemplateResponse(request, "imagegen.html")
+
+@app.get("/langraphchatbot", response_class=HTMLResponse)
+def chatbot_page(request: Request):
+    return templates.TemplateResponse(request, "langraphchatbot.html")
+
 
 # ---------- API ENDPOINT ----------
 @app.post("/predict-ml")
@@ -368,3 +378,30 @@ def generate_image_endpoint(data: ImageInput):
         "status": "success",
         "generated_image": image_url
     }
+
+
+@app.post("/chatbot-response")
+def chatbot_response(data: LanggraphChatbotInput):
+    question = data.question.strip()
+
+    if not question:
+        raise HTTPException(
+            status_code=400,
+            detail="Question cannot be empty."
+        )
+
+    try:
+        result = run_chatbot(question)
+
+        return {
+            "status": "success",
+            "answer": result.get("answer", ""),
+            "approved": result.get("approved", False),
+            "issues": result.get("issues", [])
+        }
+
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=str(e)
+        )
