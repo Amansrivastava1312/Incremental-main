@@ -250,11 +250,11 @@ def bert_page(request: Request):
     return templates.TemplateResponse(request, "bert.html")
 
 
-@app.get("/logistic", response_class=HTMLResponse)
-def logistic_page(request: Request):
-    return templates.TemplateResponse(request, "logistic.html")
+# @app.get("/logistic", response_class=HTMLResponse)
+# def logistic_page(request: Request):
+#     return templates.TemplateResponse(request, "logistic.html")
 
-@app.get
+
 
 # ---------- API ENDPOINTS ----------
 @app.post("/sentiment-bert")
