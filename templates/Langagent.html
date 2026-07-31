@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lang Agent · MarketPulse AI</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+</head>
+<body>
+
+<div class="navbar">
+
+  /
+    📈 MarketPulse AI
+  </a>
+
+  <div class="nav-links">
+
+    /
+      General
+    </a>
+
+    /comparison
+      Comparison
+    </a>
+
+    /Langagent
+      Agent
+    </a>
+
+  </div>
+</div>
+
+
+<div class="container">
+
+  /
+    ← Back
+  </a>
+
+  <h1 class="page-title">
+    🤖 Lang Agent
+  </h1>
+
+  <p class="page-subtitle">
+    Endpoint: POST /langchain-agent •
+    Forecasting, sentiment analysis, and image detection
+  </p>
+
+
+  <div
+    class="chat-window"
+    id="chat-window"
+  >
+
+    <div class="chat-bubble bot-msg">
+      🤖 MarketPulse Agent ready. Ask for a sales forecast,
+      enter a customer review for sentiment analysis,
+      or upload an image for object detection.
+    </div>
+
+  </div>
+
+
+  <div class="chat-input-row">
+
+    <label
+      for="image-upload"
+      class="upload-btn"
+      id="upload-label"
+      title="Upload image"
+    >
+      📷
+    </label>
+
+    <input
+      type="file"
+      id="image-upload"
+      accept=".jpg,.jpeg,.png,.webp"
+      hidden
+      onchange="onImageSelect(this)"
+    >
+
+    <input
+      type="text"
+      id="chat-input"
+      placeholder="Type your message..."
+      autocomplete="off"
+      onkeydown="handleKeyDown(event)"
+    >
+
+    <button
+      id="send-button"
+      type="button"
+      onclick="sendChat()"
+    >
+      Send
+    </button>
+
+  </div>
+
+
+  <p
+    id="image-name"
+    class="page-subtitle"
+    style="margin-top: 8px; display: none;"
+  ></p>
+
+</div>
+
+
+<script>
+const ENDPOINT = "/langchain-agent";
+
+const history = [];
+
+let selectedImage = null;
+let requestInProgress = false;
+
+
+function handleKeyDown(event) {
+  if (
+    event.key === "Enter" &&
+    !event.shiftKey &&
+    !requestInProgress
+  ) {
+    event.preventDefault();
+    sendChat();
+  }
+}
+
+
+function onImageSelect(input) {
+  const file =
+    input.files && input.files[0];
+
+  const label =
+    document.getElementById("image-name");
+
+  if (!file) {
+    clearSelectedImage();
+    return;
+  }
+
+  const allowedTypes = [
+    "image/jpeg",
+    "image/png",
+    "image/jpg",
+    "image/webp"
+  ];
+
+  if (!allowedTypes.includes(file.type)) {
+    selectedImage = null;
+    input.value = "";
+
+    label.style.display = "block";
+    label.textContent =
+      "❌ Please select a JPG, JPEG, PNG, or WEBP image.";
+
+    return;
+  }
+
+  selectedImage = file;
+
+  label.style.display = "block";
+  label.textContent =
+    "📎 Selected: " + file.name;
+}
+
+
+function clearSelectedImage() {
+  selectedImage = null;
+
+  const imageInput =
+    document.getElementById("image-upload");
+
+  const imageLabel =
+    document.getElementById("image-name");
+
+  imageInput.value = "";
+
+  imageLabel.style.display = "none";
+  imageLabel.textContent = "";
+}
+
+
+function render() {
+  const win =
+    document.getElementById("chat-window");
+
+  if (history.length === 0) {
+    win.innerHTML = `
+      <div class="chat-bubble bot-msg">
+        🤖 MarketPulse Agent ready. Ask for a sales forecast,
+        enter a customer review for sentiment analysis,
+        or upload an image for object detection.
+      </div>
+    `;
+
+    return;
+  }
+
+  win.innerHTML = "";
+
+  history.forEach(function (item) {
+    const bubble =
+      document.createElement("div");
+
+    bubble.className =
+      "chat-bubble " +
+      item.role +
+      "-msg";
+
+    if (item.error === true) {
+      bubble.classList.add("error-msg");
+    }
+
+    if (item.thinking === true) {
+      bubble.classList.add("thinking-msg");
+    }
+
+    bubble.textContent = item.text;
+
+    win.appendChild(bubble);
+  });
+
+  win.scrollTop =
+    win.scrollHeight;
+}
+
+
+function removeThinkingMessage() {
+  const lastMessage =
+    history[history.length - 1];
+
+  if (
+    lastMessage &&
+    lastMessage.role === "bot" &&
+    lastMessage.thinking === true
+  ) {
+    history.pop();
+  }
+}
+
+
+function setLoadingState(isLoading) {
+  const input =
+    document.getElementById("chat-input");
+
+  const imageInput =
+    document.getElementById("image-upload");
+
+  const sendButton =
+    document.getElementById("send-button");
+
+  const uploadLabel =
+    document.getElementById("upload-label");
+
+  requestInProgress = isLoading;
+
+  input.disabled = isLoading;
+  imageInput.disabled = isLoading;
+  sendButton.disabled = isLoading;
+
+  if (isLoading) {
+    sendButton.textContent = "Processing...";
+    uploadLabel.classList.add("disabled");
+  } else {
+    sendButton.textContent = "Send";
+    uploadLabel.classList.remove("disabled");
+  }
+}
+
+
+async function readResponse(response) {
+  const responseText =
+    await response.text();
+
+  console.log(
+    "Raw server response:",
+    responseText
+  );
+
+  if (!responseText.trim()) {
+    throw new Error(
+      "The server returned an empty response."
+    );
+  }
+
+  try {
+    return JSON.parse(responseText);
+  } catch (error) {
+    throw new Error(
+      "The server returned a non-JSON response: " +
+      responseText
+    );
+  }
+}
+
+
+// function formatAgentAnswer(result) {
+//   if (
+//     result.answer !== undefined &&
+//     result.answer !== null &&
+//     String(result.answer).trim()
+//   ) {
+//     return String(result.answer);
+//   }
+
+//   if (
+//     result.result !== undefined &&
+//     result.result !== null
+//   ) {
+//     return JSON.stringify(
+//       result.result,
+//       null,
+//       2
+//     );
+//   }
+
+//   return "";
+// }
+function formatAgentAnswer(apiResponse) {
+  const agentResult =
+    apiResponse.result &&
+    typeof apiResponse.result === "object"
+      ? apiResponse.result
+      : null;
+
+  const selectedTool =
+    agentResult?.selected_tool || "";
+
+  const toolInput =
+    agentResult?.tool_input || {};
+
+  const toolOutput =
+    agentResult?.tool_output;
+
+
+  // Format forecast response
+  if (
+    selectedTool === "forecast_lookup" &&
+    toolOutput
+  ) {
+    const forecastData =
+      toolOutput.data || toolOutput;
+
+    const productId =
+      forecastData.product_id ||
+      toolInput.product_id ||
+      "Unknown product";
+
+    const productName =
+      forecastData.product_name || "";
+
+    const method =
+      toolOutput.method ||
+      forecastData.method ||
+      toolInput.forecast_method ||
+      "forecast";
+
+    const horizonDays =
+      forecastData.horizon_days ||
+      toolInput.horizon_days ||
+      "";
+
+    const predictions =
+      forecastData.predicted_sales ||
+      forecastData.forecast ||
+      [];
+
+    let productText =
+      String(productId);
+
+    if (productName) {
+      productText +=
+        " (" + productName + ")";
+    }
+
+    let responseText =
+      String(method).toUpperCase() +
+      " sales forecast\n\n";
+
+    responseText +=
+      "Product: " + productText + "\n";
+
+    if (horizonDays) {
+      responseText +=
+        "Forecast period: " +
+        horizonDays +
+        " days\n";
+    }
+
+    if (
+      !Array.isArray(predictions) ||
+      predictions.length === 0
+    ) {
+      return (
+        responseText +
+        "\nNo prediction values were returned."
+      );
+    }
+
+    responseText +=
+      "\nPredicted sales:\n";
+
+    predictions.forEach(
+      function (prediction, index) {
+        if (
+          typeof prediction === "number" ||
+          typeof prediction === "string"
+        ) {
+          responseText +=
+            "Day " +
+            (index + 1) +
+            ": " +
+            prediction +
+            "\n";
+
+          return;
+        }
+
+        if (
+          prediction &&
+          typeof prediction === "object"
+        ) {
+          const date =
+            prediction.date ||
+            "Day " + (index + 1);
+
+          const value =
+            prediction.predicted_sales ??
+            prediction.sales ??
+            prediction.value ??
+            JSON.stringify(prediction);
+
+          responseText +=
+            date +
+            ": " +
+            value +
+            "\n";
+        }
+      }
+    );
+
+    return responseText.trim();
+  }
+
+
+  // Format sentiment response
+  if (
+    selectedTool === "sentiment_lookup" &&
+    toolOutput
+  ) {
+    const sentiment =
+      toolOutput.sentiment_result ??
+      toolOutput.sentiment ??
+      toolOutput.label ??
+      toolOutput.result ??
+      toolOutput;
+
+    const sentimentText =
+      String(sentiment)
+        .trim()
+        .replace(/^['"]|['"]$/g, "");
+
+    return (
+      "Sentiment analysis result\n\n" +
+      "Predicted sentiment: " +
+      capitalizeText(sentimentText)
+    );
+  }
+
+
+  // Format vision response
+  if (
+    selectedTool === "vision_result_lookup" &&
+    toolOutput
+  ) {
+    const detectedObjects =
+      toolOutput.objects ||
+      toolOutput.detected_objects ||
+      toolOutput.detections ||
+      toolOutput.labels;
+
+    if (
+      Array.isArray(detectedObjects) &&
+      detectedObjects.length > 0
+    ) {
+      let visionText =
+        "Image detection result\n\n" +
+        "Detected objects:\n";
+
+      detectedObjects.forEach(
+        function (item, index) {
+          if (
+            typeof item === "string" ||
+            typeof item === "number"
+          ) {
+            visionText +=
+              (index + 1) +
+              ". " +
+              capitalizeText(String(item)) +
+              "\n";
+
+            return;
+          }
+
+          const label =
+            item.label ||
+            item.class_name ||
+            item.class ||
+            item.name ||
+            item.object ||
+            "Object " + (index + 1);
+
+          const confidence =
+            item.confidence ??
+            item.score ??
+            item.probability;
+
+          visionText +=
+            (index + 1) +
+            ". " +
+            capitalizeText(String(label));
+
+          if (
+            confidence !== undefined &&
+            confidence !== null &&
+            !Number.isNaN(Number(confidence))
+          ) {
+            const numericConfidence =
+              Number(confidence);
+
+            const percentage =
+              numericConfidence <= 1
+                ? numericConfidence * 100
+                : numericConfidence;
+
+            visionText +=
+              " (" +
+              percentage.toFixed(1) +
+              "% confidence)";
+          }
+
+          visionText += "\n";
+        }
+      );
+
+      return visionText.trim();
+    }
+
+    if (
+      typeof toolOutput === "object"
+    ) {
+      return (
+        "Image detection result\n\n" +
+        formatReadableObject(toolOutput)
+      );
+    }
+
+    return (
+      "Image detection result\n\n" +
+      String(toolOutput)
+    );
+  }
+
+
+  // Generic tool-output fallback
+  if (
+    toolOutput !== undefined &&
+    toolOutput !== null
+  ) {
+    return formatReadableObject(
+      toolOutput
+    );
+  }
+
+
+  // Existing answer fallback
+  if (
+    apiResponse.answer !== undefined &&
+    apiResponse.answer !== null &&
+    String(apiResponse.answer).trim()
+  ) {
+    return String(apiResponse.answer);
+  }
+
+
+  // Existing result fallback
+  if (
+    apiResponse.result !== undefined &&
+    apiResponse.result !== null
+  ) {
+    return formatReadableObject(
+      apiResponse.result
+    );
+  }
+
+
+  return "";
+}
+
+
+function formatReadableObject(
+  value,
+  indentation = 0
+) {
+  const spacing =
+    "  ".repeat(indentation);
+
+  if (
+    value === null ||
+    value === undefined
+  ) {
+    return "Not available";
+  }
+
+  if (
+    typeof value === "string" ||
+    typeof value === "number" ||
+    typeof value === "boolean"
+  ) {
+    return String(value);
+  }
+
+  if (Array.isArray(value)) {
+    return value
+      .map(
+        function (item, index) {
+          return (
+            spacing +
+            (index + 1) +
+            ". " +
+            formatReadableObject(
+              item,
+              indentation + 1
+            )
+          );
+        }
+      )
+      .join("\n");
+  }
+
+  if (typeof value === "object") {
+    return Object.entries(value)
+      .map(
+        function ([key, item]) {
+          const readableKey =
+            key
+              .replace(/_/g, " ")
+              .replace(
+                /\b\w/g,
+                function (character) {
+                  return character.toUpperCase();
+                }
+              );
+
+          if (
+            item &&
+            typeof item === "object"
+          ) {
+            return (
+              spacing +
+              readableKey +
+              ":\n" +
+              formatReadableObject(
+                item,
+                indentation + 1
+              )
+            );
+          }
+
+          return (
+            spacing +
+            readableKey +
+            ": " +
+            String(item)
+          );
+        }
+      )
+      .join("\n");
+  }
+
+  return String(value);
+}
+
+
+function capitalizeText(value) {
+  if (!value) {
+    return "";
+  }
+
+  return (
+    value.charAt(0).toUpperCase() +
+    value.slice(1)
+  );
+}
+
+
+async function sendChat() {
+  if (requestInProgress) {
+    return;
+  }
+
+  const input =
+    document.getElementById("chat-input");
+
+  const message =
+    input.value.trim();
+
+  const currentImage =
+    selectedImage;
+
+  if (!message && !currentImage) {
+    history.push({
+      role: "bot",
+      text: "❌ Enter a message or select an image.",
+      error: true
+    });
+
+    render();
+    return;
+  }
+
+  const requestMessage =
+    message || "Analyze this image";
+
+  const displayText =
+    currentImage
+      ? (
+          requestMessage +
+          " [" +
+          currentImage.name +
+          "]"
+        )
+      : requestMessage;
+
+  history.push({
+    role: "user",
+    text: displayText
+  });
+
+  history.push({
+    role: "bot",
+    text: "🤖 Thinking...",
+    thinking: true
+  });
+
+  render();
+  setLoadingState(true);
+
+  try {
+    /*
+     * Always use FormData.
+     *
+     * The corresponding FastAPI endpoint expects:
+     *
+     * message: str = Form("")
+     * image: UploadFile | None = File(None)
+     */
+    const formData =
+      new FormData();
+
+    formData.append(
+      "message",
+      requestMessage
+    );
+
+    if (currentImage) {
+      formData.append(
+        "image",
+        currentImage,
+        currentImage.name
+      );
+    }
+
+    console.log(
+      "Calling MarketPulse endpoint:",
+      {
+        endpoint: ENDPOINT,
+        message: requestMessage,
+        image: currentImage
+          ? currentImage.name
+          : null
+      }
+    );
+
+    const response =
+      await fetch(
+        ENDPOINT,
+        {
+          method: "POST",
+          body: formData
+        }
+      );
+
+    const result =
+      await readResponse(response);
+
+    removeThinkingMessage();
+
+    if (!response.ok) {
+      throw new Error(
+        result.detail ||
+        result.message ||
+        (
+          "Agent request failed with HTTP " +
+          response.status
+        )
+      );
+    }
+
+    const answer =
+      formatAgentAnswer(result);
+
+    if (!answer.trim()) {
+      throw new Error(
+        "The MarketPulse agent returned an empty answer."
+      );
+    }
+
+    history.push({
+      role: "bot",
+      text: "🤖 " + answer
+    });
+
+    input.value = "";
+
+    clearSelectedImage();
+
+  } catch (error) {
+    removeThinkingMessage();
+
+    console.error(
+      "MarketPulse agent error:",
+      error
+    );
+
+    history.push({
+      role: "bot",
+      text: "❌ Error: " + error.message,
+      error: true
+    });
+
+  } finally {
+    setLoadingState(false);
+
+    input.focus();
+
+    render();
+  }
+}
+
+
+render();
+</script>
+
+
+<style>
+.upload-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+  padding: 0 16px;
+
+  font-size: 20px;
+  cursor: pointer;
+
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.upload-btn:hover {
+  background: var(--border);
+}
+
+.upload-btn.disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+#send-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+#chat-input:disabled {
+  cursor: wait;
+  opacity: 0.75;
+}
+
+.chat-bubble {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.error-msg {
+  color: #b42318;
+  background: #fef3f2;
+  border: 1px solid #fecdca;
+}
+
+.thinking-msg {
+  opacity: 0.75;
+}
+</style>
+
+</body>
+</html>

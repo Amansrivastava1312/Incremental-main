@@ -14,13 +14,13 @@ from fastapi import HTTPException
 from pydantic import BaseModel
 from dotenv import load_dotenv
 from LANGRAPH.scripts import run_chatbot
-
+from LangChain.agent.script import run_marketpulse
 # from deep_learning.script import predict_cnn,predict_tl
 
 # ML
 from mainproj.src.audio_generation import AudioGenerator
 from pathlib import Path
-from fastapi import  UploadFile, File
+from fastapi import  UploadFile, File , Form
 
 from fastapi.responses import JSONResponse
 PROJECT_ROOT = Path(__file__).resolve().parent
@@ -136,6 +136,16 @@ def chatbot_page(request: Request):
         name="chatbot.html"
     )
 
+# ---------- LangChain Agent Page ----------
+
+@app.get("/Langagent", response_class=HTMLResponse)
+def langchain_agent_page(request: Request):
+    return templates.TemplateResponse(
+        request=request,
+        name="Langagent.html",
+    )
+
+
 # ---------- API ENDPOINT ----------
 @app.post("/predict-ml")
 def predict_ml(data: ChurnInput):
@@ -244,6 +254,7 @@ def bert_page(request: Request):
 def logistic_page(request: Request):
     return templates.TemplateResponse(request, "logistic.html")
 
+@app.get
 
 # ---------- API ENDPOINTS ----------
 @app.post("/sentiment-bert")
@@ -540,3 +551,91 @@ async def chatbot_endpoint(data: ChatbotInput):
             status_code=500,
             detail=f"Chatbot failed: {error}"
         )
+
+
+
+
+# ---------- LangChain Agent API ----------
+
+@app.post("/langchain-agent")
+async def langchain_agent_endpoint(
+    message: str = Form(...),
+    image: UploadFile | None = File(None),
+):
+    question = message.strip()
+
+    if not question and image is None:
+        raise HTTPException(
+            status_code=400,
+            detail="Message cannot be empty.",
+        )
+
+    if not question:
+        question = "Analyze this image"
+
+    image_path = None
+
+    try:
+        if image is not None:
+            if image.content_type not in ALLOWED_TYPES:
+                raise HTTPException(
+                    status_code=400,
+                    detail=(
+                        "Please upload a valid image "
+                        "(jpg, png, webp)"
+                    ),
+                )
+
+            original_name = image.filename or "uploaded_image"
+            safe_filename = Path(original_name).name
+
+            file_path = PROJECT_ROOT / UPLOAD_DIR / safe_filename
+
+            content = await image.read()
+
+            with open(file_path, "wb") as file:
+                file.write(content)
+
+            image_path = str(file_path)
+
+        result = await asyncio.to_thread(
+            run_marketpulse,
+            question,
+            None,          # product_id
+            14,            # horizon_days
+            "arima",       # forecast_method
+            None,          # image
+            image_path,    # image_path
+        )
+
+        if isinstance(result, dict):
+            tool_output = result.get("tool_output", result)
+            answer = str(tool_output)
+        else:
+            answer = str(result)
+
+        if not answer.strip():
+            raise RuntimeError(
+                "The LangChain agent returned an empty response."
+            )
+
+        return {
+            "status": "success",
+            "answer": answer,
+            "result": result if isinstance(result, dict) else None,
+        }
+
+    except HTTPException:
+        raise
+
+    except Exception as error:
+        print(
+            "LangChain agent error:",
+            repr(error),
+            flush=True,
+        )
+
+        raise HTTPException(
+            status_code=500,
+            detail=f"LangChain agent failed: {error}",
+        ) from error
