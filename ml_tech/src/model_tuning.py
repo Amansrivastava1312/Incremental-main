@@ -15,54 +15,7 @@ from sklearn.metrics import f1_score
 
 class ModelTuning:
 
-    # =====================================
-    # Learning Curve
-    # =====================================
-
-    def plot_learning_curve(
-        self,
-        model,
-        X_train,
-        y_train,
-        model_name
-    ):
-
-        train_sizes, train_scores, test_scores = learning_curve(
-            model,
-            X_train,
-            y_train,
-            cv=3,
-            scoring="accuracy"
-        )
-
-        train_mean = train_scores.mean(axis=1)
-        test_mean = test_scores.mean(axis=1)
-
-        plt.figure(figsize=(8, 5))
-
-        plt.plot(
-            train_sizes,
-            train_mean,
-            label="Training Score"
-        )
-
-        plt.plot(
-            train_sizes,
-            test_mean,
-            label="Validation Score"
-        )
-
-        plt.title(f"{model_name} Learning Curve")
-        plt.xlabel("Training Examples")
-        plt.ylabel("Accuracy")
-        plt.legend()
-
-        plt.savefig(
-            f"reports/{model_name}_learning_curve.png"
-        )
-
-        plt.close()
-
+    
     # =====================================
     # Check Class Imbalance
     # =====================================

@@ -1,13 +1,11 @@
-#output.py
- 
- 
+import os
 import joblib
 import pandas as pd
- 
+
 from tensorflow.keras.models import load_model
 from ml_tech.src.feature_engineering import FeatureEngineering
- 
- 
+
+
 COLUMNS = [
     "CreditScore",
     "Geography",
@@ -20,41 +18,60 @@ COLUMNS = [
     "IsActiveMember",
     "EstimatedSalary"
 ]
- 
- 
-import os
- 
+
 BASE_DIR = os.path.dirname(
     os.path.dirname(
         os.path.abspath(__file__)
     )
 )
- 
- 
- 
+
+
 def preprocess_input(user_input):
- 
+
     df = pd.DataFrame(
         [user_input],
         columns=COLUMNS
     )
- 
+
     fe = FeatureEngineering()
- 
+
     df = fe.create_features(df)
- 
+
     preprocessor = joblib.load(
-    os.path.join(
-        BASE_DIR,
-        "reports",
-        "preprocessor.pkl"
+        os.path.join(
+            BASE_DIR,
+            "reports",
+            "preprocessor.pkl"
         )
     )
- 
+
     return preprocessor.transform(df)
- 
+
+
+def prepare_response(
+    prediction,
+    metrics
+):
+    if prediction == 1:
+        pred = "Churned"
+    else:
+        pred = "Not Churned"
+
+    return f"""
+    Prediction: {pred}
+
+    Accuracy: {metrics["accuracy"]}
+
+    Precision: {metrics["precision"]}
+
+    Recall: {metrics["recall"]}
+
+    f1_score: {metrics["f1_score"]}
+    """
+
+
 def decision_tree(user_input):
- 
+
     model = joblib.load(
         os.path.join(
             BASE_DIR,
@@ -62,16 +79,27 @@ def decision_tree(user_input):
             "decision_tree.pkl"
         )
     )
- 
-    data = preprocess_input(user_input)
- 
-    prediction = model.predict(data)[0]
- 
-    return "Churned" if prediction == 1 else "Not Churned"
- 
- 
+
+    metrics = joblib.load(
+        os.path.join(
+            BASE_DIR,
+            "reports",
+            "decision_tree_metrics.pkl"
+        )
+    )
+
+    prediction = model.predict(
+        preprocess_input(user_input)
+    )[0]
+
+    return prepare_response(
+        prediction,
+        metrics
+    )
+
+
 def random_forest(user_input):
- 
+
     model = joblib.load(
         os.path.join(
             BASE_DIR,
@@ -79,16 +107,27 @@ def random_forest(user_input):
             "random_forest.pkl"
         )
     )
- 
-    data = preprocess_input(user_input)
- 
-    prediction = model.predict(data)[0]
- 
-    return "Churned" if prediction == 1 else "Not Churned"
- 
- 
+
+    metrics = joblib.load(
+        os.path.join(
+            BASE_DIR,
+            "reports",
+            "random_forest_metrics.pkl"
+        )
+    )
+
+    prediction = model.predict(
+        preprocess_input(user_input)
+    )[0]
+
+    return prepare_response(
+        prediction,
+        metrics
+    )
+
+
 def svm(user_input):
- 
+
     model = joblib.load(
         os.path.join(
             BASE_DIR,
@@ -96,16 +135,27 @@ def svm(user_input):
             "svm.pkl"
         )
     )
- 
-    data = preprocess_input(user_input)
- 
-    prediction = model.predict(data)[0]
- 
-    return "Churned" if prediction == 1 else "Not Churned"
- 
- 
+
+    metrics = joblib.load(
+        os.path.join(
+            BASE_DIR,
+            "reports",
+            "svm_metrics.pkl"
+        )
+    )
+
+    prediction = model.predict(
+        preprocess_input(user_input)
+    )[0]
+
+    return prepare_response(
+        prediction,
+        metrics
+    )
+
+
 def ann(user_input):
- 
+
     model = load_model(
         os.path.join(
             BASE_DIR,
@@ -113,12 +163,22 @@ def ann(user_input):
             "ann_model.keras"
         )
     )
- 
-    data = preprocess_input(user_input)
- 
+
     prediction = model.predict(
-        data,
+        preprocess_input(user_input),
         verbose=0
     )[0][0]
- 
-    return "Churned" if prediction > 0.5 else "Not Churned"
+
+    pred = 1 if prediction > 0.5 else 0
+
+    metrics = {
+        "accuracy": "N/A",
+        "precision": "N/A",
+        "recall": "N/A",
+        "f1_score": "N/A"
+    }
+
+    return prepare_response(
+        pred,
+        metrics
+    )
