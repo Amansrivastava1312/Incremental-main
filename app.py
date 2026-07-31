@@ -1,11 +1,5 @@
 import os
-os.environ["USE_TF"] = "0"
 
-os.environ["TRANSFORMERS_NO_TF"] = "1"
-
-os.environ["CUDA_VISIBLE_DEVICES"] = ""
-
-os.environ["TOKENIZERS_PARALLELISM"] = "false"
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
@@ -255,8 +249,10 @@ def bert_page(request: Request):
 #     return templates.TemplateResponse(request, "logistic.html")
 
 
+from fastapi.concurrency import run_in_threadpool
+from nlp_sentiment.distil_bert_test import predict
 
-# ---------- API ENDPOINTS ----------
+
 @app.post("/sentiment-bert")
 async def sentiment_bert(data: SentimentInput):
     text = data.text.strip()
@@ -267,41 +263,18 @@ async def sentiment_bert(data: SentimentInput):
             detail="Text cannot be empty."
         )
 
-    process = await asyncio.create_subprocess_exec(
-        sys.executable,
-        "-m",
-        "nlp_sentiment.distil_bert_test",
-        text,
-        stdout=asyncio.subprocess.PIPE,
-        stderr=asyncio.subprocess.PIPE
-    )
-
-    stdout, stderr = await process.communicate()
-
-    if process.returncode != 0:
-        error_message = stderr.decode().strip()
-
+    try:
+        sentiment = await run_in_threadpool(predict, text)
+    except Exception as e:
         raise HTTPException(
             status_code=500,
-            detail=error_message or "BERT prediction failed."
-        )
-
-    result = stdout.decode().strip()
-
-    print("BERT stdout:", repr(result), flush=True)
-    print("BERT stderr:", stderr.decode().strip(), flush=True)
-
-    if not result:
-        raise HTTPException(
-            status_code=500,
-            detail="BERT returned an empty prediction."
+            detail=f"BERT prediction failed: {e}"
         )
 
     return {
         "model": "BERT",
-        "sentiment": result
+        "sentiment": sentiment
     }
-
 
  
 

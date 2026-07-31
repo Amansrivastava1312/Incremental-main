@@ -1,6 +1,5 @@
 
 import re
-from collections import Counter
 import pandas as pd
 
 # ---- paths ----
@@ -22,9 +21,15 @@ ASPECT_KEYWORDS = {
 
 def clean_text(text):
     text = str(text).lower()
-    text = re.sub(r"[^a-z\s]", " ", text)
-    text = re.sub(r"\s+", " ", text).strip()
-    return text
+    for ch in text:
+        if ('a' <= ch <= 'z') or ch.isspace():
+            cleaned += ch
+        else:
+            cleaned += " "
+    # replace multiple spaces/newlines/tabs with single space
+    text = " ".join(cleaned.split()) 
+    return text 
+    
 
 
 def extract_aspects(text):
@@ -41,21 +46,24 @@ def main():
     label_col = "true_label" if "true_label" in df.columns else "bert_pred"
 
     # Task 1 + 3: count each aspect per sentiment
-    table = {a: Counter() for a in ASPECT_KEYWORDS}
+    table = {a: {} for a in ASPECT_KEYWORDS}
     for _, row in df.iterrows():
         for aspect in extract_aspects(row["review_text"]):
-            table[aspect][row[label_col]] += 1
+            label = row[label_col]
+            table[aspect][label] = table[aspect].get(label, 0) + 1
 
     # build a tidy DataFrame
-    out = pd.DataFrame(table).T.fillna(0).astype(int)
+    out = pd.DataFrame(table)
+    out = out.T    #transpose 
+    out = out.fillna(0).astype(int) #fill empty and type change 
     out.index.name = "aspect"
-    out["total"] = out.sum(axis=1)
-    out = out.sort_values("total", ascending=False)
+    out["total"] = out.sum(axis=1)  # Rows addition and  store in "Total Column"
+    out = out.sort_values("total", ascending=False) # sort with Total column and Descending order 
 
     out.to_csv(OUT_FILE)
     print(f"[saved] aspect-sentiment counts -> {OUT_FILE}")
     print(out.to_string())
 
-
 if __name__ == "__main__":
     main()
+ 
