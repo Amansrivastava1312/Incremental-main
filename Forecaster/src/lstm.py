@@ -8,10 +8,12 @@ from sklearn.preprocessing import MinMaxScaler
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.models import load_model
 from tensorflow.keras.layers import LSTM, Dense
+
 from pathlib import Path
 
+
 BASE_DIR = Path(__file__).resolve().parent.parent
-MODEL_DIR = BASE_DIR/"models"
+MODEL_DIR = BASE_DIR / "models"
 
 MODEL_PATH = f"{MODEL_DIR}/LSTM_GLOBAL.keras"
 SCALER_PATH = f"{MODEL_DIR}/LSTM_SCALER.joblib"
@@ -32,7 +34,6 @@ def create_sequences(data, lookback):
     y = []
 
     for i in range(lookback, len(data)):
-
         X.append(data[i - lookback:i])
         y.append(data[i])
 
@@ -41,16 +42,34 @@ def create_sequences(data, lookback):
 
 def train_lstm():
 
-    os.makedirs(MODEL_DIR, exist_ok=True)
+    os.makedirs(
+        MODEL_DIR,
+        exist_ok=True,
+    )
 
-    df = pd.read_csv("Forecaster/data/daily_product_sales.csv")
+    df = pd.read_csv(
+        "Forecaster/data/daily_product_sales.csv"
+    )
 
-    df["date"] = pd.to_datetime(df["date"])
+    df["date"] = pd.to_datetime(
+        df["date"]
+    )
+
+    # FIXED:
+    # Fit scaler once on complete dataset
+    scaler = MinMaxScaler()
+
+    all_values = (
+        df["units_sold"]
+        .astype(float)
+        .values
+        .reshape(-1, 1)
+    )
+
+    scaler.fit(all_values)
 
     all_X = []
     all_y = []
-
-    scaler = MinMaxScaler()
 
     for product in df["product_id"].unique():
 
@@ -66,7 +85,9 @@ def train_lstm():
             .reshape(-1, 1)
         )
 
-        scaled_values = scaler.fit_transform(values)
+        scaled_values = scaler.transform(
+            values
+        )
 
         X, y = create_sequences(
             scaled_values,
@@ -85,7 +106,10 @@ def train_lstm():
                 32,
                 input_shape=(LOOKBACK, 1),
             ),
-            Dense(16, activation="relu"),
+            Dense(
+                16,
+                activation="relu",
+            ),
             Dense(1),
         ]
     )
@@ -110,7 +134,9 @@ def train_lstm():
         SCALER_PATH,
     )
 
-    print("Global LSTM model saved.")
+    print(
+        "Global LSTM model saved."
+    )
 
 
 def predict_sales(
@@ -121,12 +147,13 @@ def predict_sales(
     product_id = product_id.upper()
 
     if product_id not in PRODUCTS:
-
         raise Exception(
             "Invalid Product Id"
         )
 
-    model = load_model(MODEL_PATH)
+    model = load_model(
+        MODEL_PATH
+    )
 
     scaler = joblib.load(
         SCALER_PATH
@@ -162,7 +189,9 @@ def predict_sales(
 
     for _ in range(days):
 
-        X = np.array(window).reshape(
+        X = np.array(
+            window
+        ).reshape(
             1,
             LOOKBACK,
             1,
@@ -193,10 +222,15 @@ def predict_sales(
 
     response = {
         "product_id": product_id,
-        "product_name": PRODUCTS[product_id],
+        "product_name": PRODUCTS[
+            product_id
+        ],
         "horizon_days": days,
         "predicted_sales": [
-            round(float(x), 2)
+            round(
+                float(x),
+                2,
+            )
             for x in predictions.flatten()
         ],
     }
@@ -206,20 +240,28 @@ def predict_sales(
 
 if __name__ == "__main__":
 
-    # product_id = input(
-    #     "Enter Product Id: "
-    # )
+    if (
+        not os.path.exists(MODEL_PATH)
+        or not os.path.exists(SCALER_PATH)
+    ):
+        print(
+            "Model not found. Training..."
+        )
+        train_lstm()
 
-    # days = int(
-    #     input("Enter Days: ")
-    # )
+    product_id = input(
+        "Enter Product Id: "
+    )
 
-    # print(
-    #     predict_sales(
-    #         product_id,
-    #         days,
-    #     )
-    # )
+    days = int(
+        input(
+            "Enter Forecast Horizon (Days): "
+        )
+    )
 
-    # First time run:
-    train_lstm()
+    result = predict_sales(
+        product_id,
+        days,
+    )
+
+    print(result) 

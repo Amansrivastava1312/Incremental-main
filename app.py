@@ -224,18 +224,18 @@ def forecast_sarima(data: ForecastInput):
     }
 
 
-@app.post("/forecast-garima")
-def forecast_garima(data: ForecastInput):
+@app.post("/forecast-arima")
+def forecast_arima(data: ForecastInput):
     from Forecaster.scripts import forecast_sales
 
     result = forecast_sales(
         data.product_id,
         data.days,
-        "garima"
+        "arima"
     )
 
     return {
-        "method": "garima",
+        "method": "arima",
         "prediction": result
     }
 

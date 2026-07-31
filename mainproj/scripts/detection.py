@@ -3,12 +3,12 @@ from pathlib import Path
 from mainproj.src.detector import FashionDetector
 
 
-def main():
+def main(image_path):
 
     project_dir = Path(__file__).resolve().parent.parent
     detector = FashionDetector(project_dir / "model" / "best.pt")
 
-    image_path = input("Enter image path: ").strip()
+    # image_path = input("Enter image path: ").strip()
 
     annotated_image, summary, output_image_path, json_path = detector.detect_objects(
         image_path,
@@ -44,4 +44,6 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    image_path = input("Enter the path: ").strip()
+    main(image_path)
+
