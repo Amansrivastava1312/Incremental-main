@@ -1,54 +1,36 @@
-from pathlib import Path
-
-from .src.tool_agent import (
-    forecast_lookup_tool,
-    run_tool_agent,
-    sentiment_lookup_tool,
-    vision_result_lookup_tool,
-)
+import json
+from LangChain.agent.src.tool_agent import agent
 
 
-def run_forecast(
-    product_id: str,
-    horizon_days: int = 14,
-    forecast_method: str = "arima",
-):
-    return forecast_lookup_tool(
-        product_id=product_id,
-        horizon_days=horizon_days,
-        forecast_method=forecast_method,
+def run_tool_agent(question: str):
+
+    if not question or not question.strip():
+        raise ValueError("question is required")
+
+    response = agent.invoke(
+        {
+            "messages": [
+                {
+                    "role": "user",
+                    "content": question.strip(),
+                }
+            ]
+        }
     )
 
+    final_msg = response["messages"][-1].content
 
-def run_sentiment(review_text: str):
-    return sentiment_lookup_tool(
-        review_text=review_text,
-    )
+    if (
+        isinstance(final_msg, list)
+        and len(final_msg) > 0
+        and isinstance(final_msg[0], dict)
+        and "text" in final_msg[0]
+    ):
+        text = final_msg[0]["text"]
 
+        try:
+            return json.loads(text)
+        except Exception:
+            return text
 
-def run_vision(
-    image=None,
-    image_path: str | Path | None = None,
-):
-    return vision_result_lookup_tool(
-        image=image,
-        image_path=image_path,
-    )
-
-
-def run_marketpulse(
-    question: str,
-    product_id: str | None = None,
-    horizon_days: int = 14,
-    forecast_method: str = "arima",
-    image=None,
-    image_path: str | Path | None = None,
-):
-    return run_tool_agent(
-        question=question,
-        product_id=product_id,
-        horizon_days=horizon_days,
-        forecast_method=forecast_method,
-        image=image,
-        image_path=image_path,
-    )
+    return final_msg

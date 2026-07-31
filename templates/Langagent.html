@@ -220,7 +220,7 @@ function render() {
       bubble.classList.add("thinking-msg");
     }
 
-    bubble.textContent = item.text;
+    bubble.innerHTML = item.text;
 
     win.appendChild(bubble);
   });
@@ -473,99 +473,58 @@ function formatAgentAnswer(apiResponse) {
   }
 
 
+
   // Format vision response
-  if (
+if (
     selectedTool === "vision_result_lookup" &&
     toolOutput
-  ) {
-    const detectedObjects =
-      toolOutput.objects ||
-      toolOutput.detected_objects ||
-      toolOutput.detections ||
-      toolOutput.labels;
+) {
 
-    if (
-      Array.isArray(detectedObjects) &&
-      detectedObjects.length > 0
-    ) {
-      let visionText =
-        "Image detection result\n\n" +
-        "Detected objects:\n";
+    console.log("Vision Result:", toolOutput);
 
-      detectedObjects.forEach(
-        function (item, index) {
-          if (
-            typeof item === "string" ||
-            typeof item === "number"
-          ) {
-            visionText +=
-              (index + 1) +
-              ". " +
-              capitalizeText(String(item)) +
-              "\n";
+    let objectList = "";
 
-            return;
-          }
-
-          const label =
-            item.label ||
-            item.class_name ||
-            item.class ||
-            item.name ||
-            item.object ||
-            "Object " + (index + 1);
-
-          const confidence =
-            item.confidence ??
-            item.score ??
-            item.probability;
-
-          visionText +=
-            (index + 1) +
-            ". " +
-            capitalizeText(String(label));
-
-          if (
-            confidence !== undefined &&
-            confidence !== null &&
-            !Number.isNaN(Number(confidence))
-          ) {
-            const numericConfidence =
-              Number(confidence);
-
-            const percentage =
-              numericConfidence <= 1
-                ? numericConfidence * 100
-                : numericConfidence;
-
-            visionText +=
-              " (" +
-              percentage.toFixed(1) +
-              "% confidence)";
-          }
-
-          visionText += "\n";
-        }
-      );
-
-      return visionText.trim();
+    if (toolOutput.object_counts) {
+        Object.entries(toolOutput.object_counts).forEach(
+            ([name, count]) => {
+                objectList += `<li>${name}: ${count}</li>`;
+            }
+        );
     }
 
-    if (
-      typeof toolOutput === "object"
-    ) {
-      return (
-        "Image detection result\n\n" +
-        formatReadableObject(toolOutput)
-      );
-    }
+    return `
+        <div class="vision-result">
 
-    return (
-      "Image detection result\n\n" +
-      String(toolOutput)
-    );
-  }
+            <b>📸 Image Detection Result</b>
+            <br><br>
 
+            <b>Image Name:</b>
+            ${toolOutput.image_name || "N/A"}
+
+            <br>
+
+            <b>Total Objects:</b>
+            ${toolOutput.total_objects || 0}
+
+            <br><br>
+
+            <b>Detected Objects:</b>
+
+            <ul>
+                ${objectList}
+            </ul>
+
+            ${
+                toolOutput.annotated_image
+                ? `
+                    ${toolOutput.annotated_image}
+                  `
+                : ""
+            }
+
+        </div>
+    `;
+}
 
   // Generic tool-output fallback
   if (

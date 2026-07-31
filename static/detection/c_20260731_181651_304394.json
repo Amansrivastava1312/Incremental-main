@@ -1,0 +1,33 @@
+{
+    "image_name": "c_20260731_181651_304394.jpg",
+    "source_image_path": "/home/kasm-user/Downloads/Incremental-main/static/detection/c_20260731_181651_304394.jpg",
+    "total_objects": 2,
+    "object_counts": {
+        "long_sleeve_top": 1,
+        "trousers": 1
+    },
+    "detections": [
+        {
+            "class": "long_sleeve_top",
+            "confidence": 0.3695,
+            "bounding_box": {
+                "x1": 365,
+                "y1": 215,
+                "x2": 772,
+                "y2": 532
+            }
+        },
+        {
+            "class": "trousers",
+            "confidence": 0.3136,
+            "bounding_box": {
+                "x1": 175,
+                "y1": 373,
+                "x2": 707,
+                "y2": 666
+            }
+        }
+    ],
+    "annotated_image_path": "/home/kasm-user/Downloads/Incremental-main/static/detection/detected_c_20260731_181651_304394.jpg",
+    "json_file_path": "/home/kasm-user/Downloads/Incremental-main/static/detection/c_20260731_181651_304394.json"
+}

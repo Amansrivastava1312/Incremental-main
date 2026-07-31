@@ -1,5 +1,11 @@
 import os
+os.environ["USE_TF"] = "0"
 
+os.environ["TRANSFORMERS_NO_TF"] = "1"
+
+os.environ["CUDA_VISIBLE_DEVICES"] = ""
+
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
@@ -8,7 +14,7 @@ from fastapi import HTTPException
 from pydantic import BaseModel
 from dotenv import load_dotenv
 from LANGRAPH.scripts import run_chatbot
-from LangChain.agent.script import run_marketpulse
+from LangChain.agent.script import run_tool_agent
 # from deep_learning.script import predict_cnn,predict_tl
 
 # ML
@@ -26,6 +32,10 @@ AUDIO_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 ALLOWED_TYPES = ["image/jpeg", "image/png", "image/jpg", "image/webp"]
 
+DETECTION_DIR = PROJECT_ROOT / "mainproj" / "Artifacts"
+
+
+
 load_dotenv()
 import asyncio
 import sys
@@ -33,6 +43,12 @@ app = FastAPI()
 
 # serve static files (css, js, images) from "static" folder
 app.mount("/static", StaticFiles(directory="static"), name="static")
+
+app.mount(
+    "/detections",
+    StaticFiles(directory=str(DETECTION_DIR)),
+    name="detections"
+)
 
 # templates folder (same as flask "templates")
 templates = Jinja2Templates(directory="templates")
@@ -537,82 +553,76 @@ async def langchain_agent_endpoint(
 ):
     question = message.strip()
 
-    if not question and image is None:
-        raise HTTPException(
-            status_code=400,
-            detail="Message cannot be empty.",
-        )
-
-    if not question:
-        question = "Analyze this image"
-
-    image_path = None
-
     try:
+
         if image is not None:
+
             if image.content_type not in ALLOWED_TYPES:
                 raise HTTPException(
                     status_code=400,
-                    detail=(
-                        "Please upload a valid image "
-                        "(jpg, png, webp)"
-                    ),
+                    detail="Please upload a valid image",
                 )
 
-            original_name = image.filename or "uploaded_image"
-            safe_filename = Path(original_name).name
-
-            file_path = PROJECT_ROOT / UPLOAD_DIR / safe_filename
+            file_path = (
+                PROJECT_ROOT
+                / UPLOAD_DIR
+                / image.filename
+            )
 
             content = await image.read()
 
-            with open(file_path, "wb") as file:
-                file.write(content)
+            with open(file_path, "wb") as f:
+                f.write(content)
 
             image_path = str(file_path)
 
-        result = await asyncio.to_thread(
-            run_marketpulse,
-            question,
-            None,          # product_id
-            14,            # horizon_days
-            "arima",       # forecast_method
-            None,          # image
-            image_path,    # image_path
-        )
-
-        if isinstance(result, dict):
-            tool_output = result.get("tool_output", result)
-            answer = str(tool_output)
-        else:
-            answer = str(result)
-
-        if not answer.strip():
-            raise RuntimeError(
-                "The LangChain agent returned an empty response."
+            question = (
+                f"{question}\n\n"
+                f"Image path: {image_path}"
             )
 
+        result = await asyncio.to_thread(
+            run_tool_agent,
+            question,
+        )
+
+        print("AGENT RESULT:", result)
+
+        # If tool returns dictionary
+        if isinstance(result, dict):
+
+            return {
+                "status": "success",
+                "answer": result.get("answer", ""),
+                "image_url": result.get("annotated_image"),
+                "result": result,
+            }
+
+        # If tool returns plain text
         return {
             "status": "success",
-            "answer": answer,
-            "result": result if isinstance(result, dict) else None,
+            "answer": str(result),
+            "image_url": None,
         }
 
     except HTTPException:
         raise
 
     except Exception as error:
+
         print(
-            "LangChain agent error:",
+            "LangChain Agent Error:",
             repr(error),
             flush=True,
         )
 
         raise HTTPException(
             status_code=500,
-            detail=f"LangChain agent failed: {error}",
-        ) from error
-        
+            detail=str(error),
+        )
+    
+
+
 
 # ---------- OBJECT DETECTION ----------
 DETECTION_OUTPUT_DIR = STATIC_DIR / "detection"
