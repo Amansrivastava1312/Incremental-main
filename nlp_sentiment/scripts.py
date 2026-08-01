@@ -1,19 +1,21 @@
 """Setup orchestrator — prepares the whole project so app.py is ready to run.
 
 Runs every step in order:
-  1. create required folders (models/, results/)
+  1. create required folders (models/, artifact/)
   2. train + save the Logistic Regression model
-  3. download + save the BERT model
-  4. compare both models -> results CSVs
-  5. build the aspect-sentiment table
+  3. compare both models -> results CSVs
+  4. build the aspect-sentiment table
+
+The BERT model is loaded directly from the pretrained hub
+(cardiffnlp/twitter-roberta-base-sentiment-latest) at runtime,
+so there is no separate download/save step.
 
 After this finishes successfully, just run:
     python3 app.py
 
 Usage:
     python3 scripts.py                # run everything
-    python3 scripts.py --skip-bert    # skip the heavy BERT download
-    python3 scripts.py --force        # re-run even if models already exist
+    python3 scripts.py --force        # re-run even if the logreg model exists
 """
 import os
 import sys
@@ -25,10 +27,8 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 MODELS_DIR = os.path.join(ROOT, "models")
 RESULTS_DIR = os.path.join(ROOT, "artifact")
 LOGREG_FILE = os.path.join(MODELS_DIR, "logreg_model.joblib")
-BERT_DIR = os.path.join(MODELS_DIR, "bert_sentiment")
 
 # ---- CLI flags ----
-SKIP_BERT = "--skip-bert" in sys.argv
 FORCE = "--force" in sys.argv
 
 
@@ -48,7 +48,7 @@ def run_step(name, command):
 
 
 def ensure_folders():
-    log("Step 1/5 — Creating folders")
+    log("Step 1/4 — Creating folders")
     os.makedirs(MODELS_DIR, exist_ok=True)
     os.makedirs(RESULTS_DIR, exist_ok=True)
     print(f"[OK] {MODELS_DIR}")
@@ -75,26 +75,17 @@ def main():
 
     # 2) baseline model
     if FORCE or not os.path.exists(LOGREG_FILE):
-        run_step("Step 2/5 — Training Logistic Regression model",
+        run_step("Step 2/4 — Training Logistic Regression model",
                  f"{py} src/train_logreg.py")
     else:
         print("\n[skip] logreg model already exists (use --force to retrain)")
 
-    # 3) BERT model
-    if SKIP_BERT:
-        print("\n[skip] BERT training skipped (--skip-bert)")
-    elif FORCE or not os.path.isdir(BERT_DIR):
-        run_step("Step 3/5 — Downloading + saving BERT model",
-                 f"{py} src/train_bert.py")
-    else:
-        print("\n[skip] BERT model already exists (use --force to re-download)")
-
-    # 4) comparison
-    run_step("Step 4/5 — Comparing models -> results CSVs",
+    # 3) comparison
+    run_step("Step 3/4 — Comparing models -> results CSVs",
              f"{py} src/compare_models.py")
 
-    # 5) aspects
-    run_step("Step 5/5 — Building aspect-sentiment table",
+    # 4) aspects
+    run_step("Step 4/4 — Building aspect-sentiment table",
              f"{py} src/aspects.py")
 
     log("SETUP COMPLETE ✅")

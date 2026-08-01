@@ -3,6 +3,7 @@
 Run:
     python train_logreg.py
 """
+import os
 import re
 import joblib
 import pandas as pd
@@ -12,9 +13,12 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 
+# ---- project root (one level above this file: src/ -> nlp_sentiment/) ----
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 # ---- paths / columns ----
-DATA_FILE = "data/competitor_reviews_labeled.csv"
-MODEL_FILE = "models/logreg_model.joblib"
+DATA_FILE = os.path.join(ROOT, "data", "competitor_reviews_labeled.csv")
+MODEL_FILE = os.path.join(ROOT, "models", "logreg_model.joblib")
 TEXT_COL = "review_text"
 LABEL_COL = "sentiment_label"
 
@@ -28,6 +32,9 @@ def clean_text(text):
 
 
 def main():
+    # make sure the models folder exists before saving
+    os.makedirs(os.path.join(ROOT, "models"), exist_ok=True)
+
     df = pd.read_csv(DATA_FILE).dropna(subset=[TEXT_COL, LABEL_COL])
     X = df[TEXT_COL].apply(clean_text)
     y = df[LABEL_COL]

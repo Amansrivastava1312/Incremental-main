@@ -2,7 +2,6 @@
 
 Requires that you already ran:
     python train_logreg.py
-    python train_bert.py
 
 Run:
     python compare_models.py
@@ -11,18 +10,21 @@ Outputs:
     artifact/predictions.csv   -> per-review: true label + both model predictions
     artifact/metrics.csv       -> accuracy of each model
 """
+import os
 import re
 import joblib
 import pandas as pd
 from transformers import pipeline
 from sklearn.metrics import accuracy_score
 
+# ---- project root (one level above this file: src/ -> nlp_sentiment/) ----
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 # ---- paths / columns ----
-DATA_FILE = "data/competitor_reviews_labeled.csv"
-LOGREG_FILE = "models/logreg_model.joblib"
-BERT_DIR = "models/bert_sentiment"
-PRED_FILE = "artifact/predictions.csv"
-METRICS_FILE = "artifact/metrics.csv"
+DATA_FILE = os.path.join(ROOT, "data", "competitor_reviews_labeled.csv")
+LOGREG_FILE = os.path.join(ROOT, "models", "logreg_model.joblib")
+PRED_FILE = os.path.join(ROOT, "artifact", "predictions.csv")
+METRICS_FILE = os.path.join(ROOT, "artifact", "metrics.csv")
 TEXT_COL = "review_text"
 LABEL_COL = "sentiment_label"
 
@@ -36,6 +38,9 @@ def clean_text(text):
 
 
 def main():
+    # make sure the output folder exists
+    os.makedirs(os.path.join(ROOT, "artifact"), exist_ok=True)
+
     df = pd.read_csv(DATA_FILE).dropna(subset=[TEXT_COL, LABEL_COL])
     texts = df[TEXT_COL].tolist()
     y_true = df[LABEL_COL].str.lower().tolist()
@@ -45,7 +50,8 @@ def main():
     logreg_preds = [str(p).lower() for p in logreg.predict([clean_text(t) for t in texts])]
 
     # ---- BERT predictions ----
-    bert = pipeline("sentiment-analysis", model=BERT_DIR, tokenizer=BERT_DIR, truncation=True)
+    MODEL_ID = "cardiffnlp/twitter-roberta-base-sentiment-latest"
+    bert = pipeline("sentiment-analysis", model=MODEL_ID, tokenizer=MODEL_ID, truncation=True)
     bert_preds = [r["label"].lower() for r in bert(texts)]
 
     # ---- per-review comparison table ----

@@ -3,11 +3,15 @@
 Import from app.py, or run directly:
     python3 src/run_logreg.py "your review text here"
 """
+import os
 import re
 import sys
 import joblib
 
-MODEL_FILE = "models/logreg_model.joblib"
+# ---- project root (one level above this file: src/ -> nlp_sentiment/) ----
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+MODEL_FILE = os.path.join(ROOT, "models", "logreg_model.joblib")
 
 _model = None
 
