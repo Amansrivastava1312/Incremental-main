@@ -1,0 +1,113 @@
+{
+    "image_name": "d_20260731_180823_824075_20260801_054601_664988.png",
+    "source_image_path": "/home/kasm-user/Downloads/Incremental-main/static/detection/d_20260731_180823_824075_20260801_054601_664988.png",
+    "total_objects": 10,
+    "object_counts": {
+        "long_sleeve_top": 7,
+        "trousers": 3
+    },
+    "detections": [
+        {
+            "class": "long_sleeve_top",
+            "confidence": 0.8565,
+            "bounding_box": {
+                "x1": 790,
+                "y1": 325,
+                "x2": 1372,
+                "y2": 828
+            }
+        },
+        {
+            "class": "long_sleeve_top",
+            "confidence": 0.8113,
+            "bounding_box": {
+                "x1": 1192,
+                "y1": 390,
+                "x2": 1374,
+                "y2": 832
+            }
+        },
+        {
+            "class": "long_sleeve_top",
+            "confidence": 0.74,
+            "bounding_box": {
+                "x1": 793,
+                "y1": 398,
+                "x2": 882,
+                "y2": 786
+            }
+        },
+        {
+            "class": "trousers",
+            "confidence": 0.7032,
+            "bounding_box": {
+                "x1": 885,
+                "y1": 785,
+                "x2": 1067,
+                "y2": 1077
+            }
+        },
+        {
+            "class": "trousers",
+            "confidence": 0.5365,
+            "bounding_box": {
+                "x1": 1055,
+                "y1": 779,
+                "x2": 1256,
+                "y2": 1075
+            }
+        },
+        {
+            "class": "long_sleeve_top",
+            "confidence": 0.4027,
+            "bounding_box": {
+                "x1": 1216,
+                "y1": 690,
+                "x2": 1373,
+                "y2": 834
+            }
+        },
+        {
+            "class": "trousers",
+            "confidence": 0.3948,
+            "bounding_box": {
+                "x1": 885,
+                "y1": 780,
+                "x2": 1064,
+                "y2": 1074
+            }
+        },
+        {
+            "class": "long_sleeve_top",
+            "confidence": 0.3211,
+            "bounding_box": {
+                "x1": 789,
+                "y1": 661,
+                "x2": 875,
+                "y2": 783
+            }
+        },
+        {
+            "class": "long_sleeve_top",
+            "confidence": 0.3001,
+            "bounding_box": {
+                "x1": 1215,
+                "y1": 654,
+                "x2": 1373,
+                "y2": 832
+            }
+        },
+        {
+            "class": "long_sleeve_top",
+            "confidence": 0.2894,
+            "bounding_box": {
+                "x1": 788,
+                "y1": 688,
+                "x2": 872,
+                "y2": 786
+            }
+        }
+    ],
+    "annotated_image_path": "/home/kasm-user/Downloads/Incremental-main/static/detection/detected_d_20260731_180823_824075_20260801_054601_664988.png",
+    "json_file_path": "/home/kasm-user/Downloads/Incremental-main/static/detection/d_20260731_180823_824075_20260801_054601_664988.json"
+}

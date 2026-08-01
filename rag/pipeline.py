@@ -46,17 +46,19 @@ class RAGPipeline:
 
         loader = DocumentLoader(DATA_DIR)
         documents = loader.load_documents()
-
+        print(1)
         chunker = Chunking(
             documents,
             self.embedding_model,
         )
         chunks = chunker.semantic_chunking()
-
+        print(1)
         vectorizer = Vectorizer(
             self.chroma_dir,
             self.embedding_model,
         )
+
+        print(1)
 
         vector_store = vectorizer.build_vector(chunks)
 
