@@ -1,11 +1,4 @@
 import os
-os.environ["USE_TF"] = "0"
-
-os.environ["TRANSFORMERS_NO_TF"] = "1"
-
-os.environ["CUDA_VISIBLE_DEVICES"] = ""
-
-os.environ["TOKENIZERS_PARALLELISM"] = "false"
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
@@ -24,6 +17,8 @@ from fastapi import  UploadFile, File , Form
 
 from fastapi.responses import JSONResponse
 PROJECT_ROOT = Path(__file__).resolve().parent
+
+# all the upload directory
 UPLOAD_DIR = "uploads"
 STATIC_DIR = PROJECT_ROOT / "static"
 AUDIO_OUTPUT_DIR = STATIC_DIR / "audio"
