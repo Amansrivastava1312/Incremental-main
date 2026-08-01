@@ -475,55 +475,100 @@ function formatAgentAnswer(apiResponse) {
 
 
   // Format vision response
+// Format vision response
 if (
-    selectedTool === "vision_result_lookup" &&
-    toolOutput
+  selectedTool === "vision_result_lookup" &&
+  toolOutput
 ) {
+  console.log(
+    "Vision Result:",
+    toolOutput
+  );
 
-    console.log("Vision Result:", toolOutput);
+  let objectList = "";
 
-    let objectList = "";
+  if (
+    toolOutput.object_counts &&
+    typeof toolOutput.object_counts === "object"
+  ) {
+    Object.entries(
+      toolOutput.object_counts
+    ).forEach(function ([name, count]) {
+      const readableName =
+        String(name).replaceAll("_", " ");
 
-    if (toolOutput.object_counts) {
-        Object.entries(toolOutput.object_counts).forEach(
-            ([name, count]) => {
-                objectList += `<li>${name}: ${count}</li>`;
-            }
-        );
-    }
+      objectList +=
+        "<li>" +
+        readableName +
+        ": " +
+        count +
+        "</li>";
+    });
+  }
 
-    return `
-        <div class="vision-result">
+  const imageUrl =
+    apiResponse.image_url ||
+    agentResult?.annotated_image ||
+    toolOutput.annotated_image ||
+    "";
 
-            <b>📸 Image Detection Result</b>
-            <br><br>
+  console.log(
+    "Annotated image URL:",
+    imageUrl
+  );
 
-            <b>Image Name:</b>
-            ${toolOutput.image_name || "N/A"}
+  const imageSection = imageUrl
+    ? (
+        '<img ' +
+        'src="' + imageUrl + '" ' +
+        'alt="Detection Result" ' +
+        'class="detection-image" ' +
+        'onerror="this.style.display=\'none\'; ' +
+        'this.nextElementSibling.style.display=\'block\';">' +
 
-            <br>
+        '<p class="image-error" style="display:none;">' +
+        'Could not load image: ' +
+        imageUrl +
+        '</p>'
+      )
+    : (
+        '<p class="image-error">' +
+        'No annotated image URL was returned.' +
+        '</p>'
+      );
 
-            <b>Total Objects:</b>
-            ${toolOutput.total_objects || 0}
+  return (
+    '<div class="vision-result">' +
 
-            <br><br>
+      '<div class="vision-title">' +
+      '📸 Image Detection Result' +
+      '</div>' +
 
-            <b>Detected Objects:</b>
+      '<p>' +
+      '<strong>Image Name:</strong> ' +
+      String(toolOutput.image_name || "N/A") +
+      '</p>' +
 
-            <ul>
-                ${objectList}
-            </ul>
+      '<p>' +
+      '<strong>Total Objects:</strong> ' +
+      String(toolOutput.total_objects ?? 0) +
+      '</p>' +
 
-            ${
-                toolOutput.annotated_image
-                ? `
-                    ${toolOutput.annotated_image}
-                  `
-                : ""
-            }
+      '<div class="detected-objects">' +
+      '<strong>Detected Objects:</strong>' +
 
-        </div>
-    `;
+      '<ul>' +
+      (
+        objectList ||
+        '<li>No objects detected</li>'
+      ) +
+      '</ul>' +
+      '</div>' +
+
+      imageSection +
+
+    '</div>'
+  );
 }
 
   // Generic tool-output fallback

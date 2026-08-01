@@ -49,6 +49,19 @@ app.mount(
     StaticFiles(directory=str(DETECTION_DIR)),
     name="detections"
 )
+from pathlib import Path
+from fastapi.staticfiles import StaticFiles
+
+
+
+
+app.mount(
+    "/detections",
+    StaticFiles(
+        directory=str(DETECTION_DIR)
+    ),
+    name="detections",
+)
 
 # templates folder (same as flask "templates")
 templates = Jinja2Templates(directory="templates")

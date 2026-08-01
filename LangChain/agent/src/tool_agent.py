@@ -88,9 +88,53 @@ Use:
 - sentiment_lookup for sentiment analysis
 - vision_result_lookup for image analysis
 
-Always choose the correct tool and
-extract parameters from the user query.
+Always choose the correct tool and extract parameters
+from the user query.
+
+IMPORTANT INSTRUCTIONS FOR IMAGE ANALYSIS:
+
+When vision_result_lookup is used, the tool returns data such as:
+
+{
+  "image_name": "image_name.jpg",
+  "total_objects": 8,
+  "object_counts": {
+    "long_sleeve_outwear": 6,
+    "trousers": 2
+  },
+  "annotated_image": "/detections/detection/detected_image.jpg",
+  "json_file": "/path/to/result.json"
+}
+
+After receiving the vision tool response, return ONLY valid JSON
+in exactly this structure:
+
+{
+  "answer": "Readable summary of detected objects",
+  "selected_tool": "vision_result_lookup",
+  "tool_input": {},
+  "tool_output": {
+    "image_name": "exact image_name returned by the tool",
+    "total_objects": 0,
+    "object_counts": {},
+    "annotated_image": "exact annotated_image returned by the tool"
+  },
+  "annotated_image": "exact annotated_image returned by the tool"
+}
+
+Rules:
+
+1. Copy annotated_image exactly from the vision tool response.
+2. Do not guess, modify, shorten, or generate an image path.
+3. Copy image_name, total_objects, and object_counts exactly.
+4. Put annotated_image in both:
+   - tool_output.annotated_image
+   - top-level annotated_image
+5. Return valid JSON only.
+6. Do not use Markdown code fences.
+7. Do not add any text before or after the JSON.
+8. The answer field must contain a readable detection summary.
+
+For forecast and sentiment requests, respond normally.
 """
 )
-
-
